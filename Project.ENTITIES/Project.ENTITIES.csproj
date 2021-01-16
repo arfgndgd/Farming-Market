@@ -45,10 +45,23 @@
     <Compile Include="Enums\EmployeeGender.cs" />
     <Compile Include="Enums\EmployeeRole.cs" />
     <Compile Include="Enums\UserRole.cs" />
+    <Compile Include="Models\AppUser.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Shipper.cs" />
+    <Compile Include="Models\Storage.cs" />
+    <Compile Include="Models\StorageCategory.cs" />
+    <Compile Include="Models\StorageOrderDetail.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
