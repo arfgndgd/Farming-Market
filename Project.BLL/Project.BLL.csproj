@@ -52,6 +52,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DesignPatterns\GenericRepositories\BaseRep\BaseRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\AppUserRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\CategoryRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\DepartmentRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\EmployeeRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\OrderDetailRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\OrderRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\ProductRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\ShipperRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\StorageCategoryRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\StorageOrderDetailRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\StorageRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\SupplierRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\UserProfileRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\IntRep\IRepository.cs" />
     <Compile Include="DesignPatterns\SingletonPattern\DbTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,9 +83,7 @@
       <Name>Project.ENTITIES</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DesignPatterns\GenericRepositories\ConcRep\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
