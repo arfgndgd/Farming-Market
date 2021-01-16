@@ -51,7 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DesignPatterns\GenericRepositories\BaseRep\BaseRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\IntRep\IRepository.cs" />
+    <Compile Include="DesignPatterns\SingletonPattern\DbTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +71,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DesignPatterns\GenericRepositories\BaseRep\" />
     <Folder Include="DesignPatterns\GenericRepositories\ConcRep\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
