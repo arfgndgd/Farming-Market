@@ -10,5 +10,13 @@ namespace Project.ENTITIES.Models
     {
         public string CategoryName { get; set; }
         public string Description { get; set; }
+
+        public Category()
+        {
+            Products = new List<Product>();
+        }
+
+        //Relational Properties
+        public virtual List<Product> Products { get; set; }
     }
 }

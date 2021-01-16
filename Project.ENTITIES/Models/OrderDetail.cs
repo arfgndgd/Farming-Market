@@ -13,5 +13,10 @@ namespace Project.ENTITIES.Models
         public decimal TotalPrice { get; set; }
         public short Quantity { get; set; }
         //TODO: indirim eklenebilir
+
+        //Relational Properties
+        public virtual Product Product { get; set; }
+        public virtual Order Order { get; set; }
+
     }
 }

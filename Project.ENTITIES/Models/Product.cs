@@ -14,5 +14,10 @@ namespace Project.ENTITIES.Models
         public string ImagePath { get; set; }
         public int? CategoryID { get; set; }
         public int? SupplierID { get; set; }
+
+        //Relational Properties
+        public virtual Category Category { get; set; }
+        public virtual List<OrderDetail> OrderDetails { get; set; }
+        public virtual Supplier Supplier { get; set; }
     }
 }

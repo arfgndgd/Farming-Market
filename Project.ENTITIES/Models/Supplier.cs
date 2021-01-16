@@ -15,5 +15,9 @@ namespace Project.ENTITIES.Models
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+
+        //Relational Properties
+        public virtual List<Product> Products { get; set; }
+        public virtual List<Storage> Storages { get; set; }
     }
 }

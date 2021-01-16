@@ -11,5 +11,8 @@ namespace Project.ENTITIES.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
+
+        //Relational Properties
+        public virtual AppUser AppUser { get; set; }
     }
 }

@@ -21,5 +21,9 @@ namespace Project.ENTITIES.Models
             URole = UserRole.Member;
             ActivationCode = Guid.NewGuid();
         }
+
+        //Relational Properties
+        public virtual UserProfile UserProfile { get; set; }
+        public virtual List<Order> Orders { get; set; }
     }
 }

@@ -13,5 +13,10 @@ namespace Project.ENTITIES.Models
         public decimal TotalPrice { get; set; }
         public double Weight { get; set; }
         //TODO: hesaplamayı düşün
+
+
+        //Relational Properties
+        public virtual Storage Storage { get; set; }
+        public virtual Order Order { get; set; }
     }
 }

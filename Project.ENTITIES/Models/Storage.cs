@@ -17,5 +17,10 @@ namespace Project.ENTITIES.Models
         public int? StorageCategoryID { get; set; }
 
         //TODO: kilo * fiyat hesaplaması 
+
+        //Relational Properties
+        public virtual Supplier Supplier { get; set; }
+        public virtual StorageCategory StorageCategory { get; set; }
+        public virtual List<StorageOrderDetail> StorageOrderDetails { get; set; }
     }
 }

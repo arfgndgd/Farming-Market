@@ -11,5 +11,8 @@ namespace Project.ENTITIES.Models
         public string ShipperName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+
+        //Relational Properties
+        public virtual List<Order> Orders { get; set; }
     }
 }
