@@ -1,0 +1,39 @@
+﻿@model AppUserVM
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<body class="login-body">
+    <div class="container">
+        @TempData["HesapAktifmi"]
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-signin" }))
+        {
+            if (ViewBag.AktifDegil != null)
+            {
+                <h2>@ViewBag.AktifDegil</h2>
+            }
+
+            <h2 class="form-signin-heading">Giriş Yapınız</h2>
+            <div class="login-wrap">
+
+                @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control", placeholder = "Kullanıcı ismi giriniz" })
+
+                @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Sifre Giriniz" })
+
+
+
+                <br />
+                <button class="btn btn-lg btn-login btn-block" type="submit">Giriş Yap</button>
+
+                <div class="registration">
+
+                    @Html.ActionLink("Üye Ol", "RegisterNow", "Register")
+
+                </div>
+
+            </div>
+
+        }
+    </div>
+</body>
