@@ -21,13 +21,13 @@ namespace Project.WebUI.Controllers
         }
 
         // GET: Register
-        public ActionResult RegisterNow()
+        public ActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult RegisterNow(AppUserVM apvm)
+        public ActionResult Register(AppUserVM apvm)
         {
             AppUser appUser = apvm.AppUser;
             UserProfile profile = apvm.UserProfile;
@@ -60,7 +60,7 @@ namespace Project.WebUI.Controllers
             return View("RegisterOk");
         }
 
-        public ActionResult RegisterOk()
+        public ActionResult RegisterSuccess()
         {
             return View();
         }
