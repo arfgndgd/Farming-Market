@@ -75,10 +75,10 @@ namespace Project.WebUI.Controllers
                 apRep.Update(hesapAktif);
 
                 TempData["HesapAktifmi"] = "Hesap aktivasyonu tamamlandı";
-                return RedirectToAction("Login", "Home");
+                return RedirectToAction("Login", "Account");
             }
             TempData["HesapAktifmi"] = "Aktif edilecek hesap bulunamadı";
-            return RedirectToAction("Login", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
     }
