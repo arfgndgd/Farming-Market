@@ -19,15 +19,14 @@ namespace Project.WebUI.Controllers
             apRep = new AppUserRepository();
             usRep = new UserProfileRepository();
         }
-
         // GET: Register
-        public ActionResult Register()
+        public ActionResult RegisterNow()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Register(AppUserVM apvm)
+        public ActionResult RegisterNow(AppUserVM apvm)
         {
             AppUser appUser = apvm.AppUser;
             UserProfile profile = apvm.UserProfile;
@@ -35,12 +34,12 @@ namespace Project.WebUI.Controllers
             //TODO: şifreleme sınııfın ekle 
 
             //Kayıt işlemi
-            if (apRep.Any(x=>x.UserName == appUser.UserName))
+            if (apRep.Any(x => x.UserName == appUser.UserName))
             {
                 ViewBag.ZatenVar = "Kullanıcı ismi alınmış";
                 return View();
             }
-            else if (apRep.Any(x=>x.Email == appUser.Email))
+            else if (apRep.Any(x => x.Email == appUser.Email))
             {
                 ViewBag.ZatenVar = "Email kayıtlı";
                 return View();
@@ -57,11 +56,13 @@ namespace Project.WebUI.Controllers
                 profile.ID = appUser.ID;
                 usRep.Add(profile);
             }
-            return View("RegisterOk");
+            return View("RegisterSuccess");
+            //TODO: actionlinki değiştir
         }
 
         public ActionResult RegisterSuccess()
         {
+            //TODO: gmail linki ekle
             return View();
         }
 
@@ -77,7 +78,8 @@ namespace Project.WebUI.Controllers
                 return RedirectToAction("Login", "Home");
             }
             TempData["HesapAktifmi"] = "Aktif edilecek hesap bulunamadı";
-            return RedirectToAction("Login","Home");
+            return RedirectToAction("Login", "Home");
         }
+
     }
 }
