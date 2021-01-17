@@ -218,9 +218,11 @@
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="AuthenticationClasses\ManagerAuthentication.cs" />
     <Compile Include="AuthenticationClasses\MemberAuthentication.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\VMClasses\AppUserVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -251,10 +253,9 @@
     <Folder Include="Areas\Manager\Controllers\" />
     <Folder Include="Areas\Manager\Data\" />
     <Folder Include="Areas\Manager\Views\Shared\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\ShoppingTools\" />
-    <Folder Include="Models\VMClasses\" />
     <Folder Include="Pictures\" />
+    <Folder Include="Views\Register\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project.BLL\Project.BLL.csproj">
