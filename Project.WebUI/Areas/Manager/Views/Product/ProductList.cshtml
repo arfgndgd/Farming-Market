@@ -9,12 +9,12 @@
         <table  cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
             <thead>
                 <tr>
+                    <th class="hidden-phone">Ürün Resmi</th>
                     <th class="hidden-phone">Ürün İsmi</th>
                     <th class="hidden-phone">Ürün Fiyatı</th>
                     <th class="hidden-phone">Ürün Stok</th>
                     <th class="hidden-phone">Ürün Kategori</th>
                     <th class="hidden-phone">Ürün Tedarikçi</th>
-                    <th class="hidden-phone">Ürün Resmi</th>
                     <th class="hidden-phone">Durum</th>
                     <th class="hidden-phone">Sil</th>
                     <th class="hidden-phone">Güncelle</th>
@@ -24,35 +24,36 @@
             <tbody>
                 @foreach (Product item in Model.Products)
                 {
-                <tr class="gradeX">
-                    <td>@item.ProductName</td>
-                    <td>@item.UnitPrice</td>
-                    <td>@item.UnitInStock</td>
-                    @if (item.Category == null)
-                    {
-                        <td>Kategori Belirtilmemiş</td>
-                    }
-                    else
-                    {
-                        <td>@item.Category.CategoryName</td>
-                    }
-                    @if (item.Supplier == null)
-                    {
-                        <td>Tedarikçi Belirtilmemiş</td>
-                    }
-                    else
-                    {
-                        <td>@item.Supplier.SupplierName</td>
-                    }
-                    <td><img width="30" height="30" title="@item.ProductName" src="@item.ImagePath" /> </td>
-                    <td class="hidden-phone">@item.Status</td>
+                    <tr class="gradeX">
+                        <td><img width="30" height="30" title="@item.ProductName" src="@item.ImagePath" /> </td>
+                        <td>@item.ProductName</td>
+                        <td>@item.UnitPrice</td>
+                        <td>@item.UnitInStock</td>
+                        @if (item.Category == null)
+                        {
+                            <td>Kategori Belirtilmemiş</td>
+                        }
+                        else
+                        {
+                            <td>@item.Category.CategoryName</td>
+                        }
+                        @if (item.Supplier == null)
+                        {
+                            <td>Tedarikçi Belirtilmemiş</td>
+                        }
+                        else
+                        {
+                            <td>@item.Supplier.SupplierName</td>
+                        }
+                        
+                        <td class="hidden-phone">@item.Status</td>
 
-                    <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                        <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
 
-                    <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                        <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
-                    <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyProduct", new { id = item.ID}, new { @class = "btn btn-dark"})</td>
-                </tr>
+                        <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyProduct", new { id = item.ID}, new { @class = "btn btn-dark"})</td>
+                    </tr>
                 }
             </tbody>
         </table>
