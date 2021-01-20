@@ -139,6 +139,7 @@
     <Content Include="Areas\Manager\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Manager\Views\Product\ProductList.cshtml" />
     <Content Include="Areas\Manager\Views\Product\AddProduct.cshtml" />
+    <Content Include="Areas\Manager\Views\Product\UpdateProduct.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -269,7 +270,6 @@
     <Folder Include="OutherTools\" />
     <Folder Include="Pictures\" />
     <Folder Include="Views\Employee\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project.BLL\Project.BLL.csproj">
