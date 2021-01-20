@@ -106,9 +106,18 @@
 
                     <br /> <br />
 
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">Rol</label>
+                        <div class="col-sm-10">
+                            @Html.EnumDropDownListFor(x => x.Employee.ERole, new { @class = "form-control genislik", placeholder = "Lütfen Seçiniz" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
 
                     <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label"> Ekle </label>
+                        <label class="col-sm-2 col-sm-2 control-label"></label>
                         <div class="col-sm-10">
                             <button class="btn btn-primary">
                                 Çalışan Ekle

@@ -19,6 +19,7 @@
                     <th class="hidden-phone">Adres</th>
                     <th class="hidden-phone">Şehir</th>
                     <th class="hidden-phone">Cinsiyet</th>
+                    <th class="hidden-phone">Rol</th>
                     <th class="hidden-phone">Durum</th>
                     <th class="hidden-phone">Sil</th>
                     <th class="hidden-phone">Güncelle</th>
@@ -28,32 +29,32 @@
             <tbody>
                 @foreach (Employee item in Model.Employees)
                 {
-                    <tr class="gradeX">
-                        <td><img width="30" height="30" title="@item.FirstName" src="@item.Photo" /> </td>
-                        <td>@item.TCNO</td>
-                        <td>@item.FirstName</td>
-                        <td>@item.LastName</td>
-                        @if (item.Department == null)
-                        {
-                            <td>Departman Belirtilmemiş</td>
-                        }
-                        else
-                        {
-                            <td>@item.Department.DepartmentName</td>
-                        }
-                        <td>@item.Email</td>
-                        <td>@item.Phone</td>
-                        <td>@item.Address</td>
-                        <td>@item.City</td>
-                        <td>@item.Gender</td>
-                        <td class="hidden-phone">@item.ERole</td>
+                <tr class="gradeX">
+                    <td><img width="30" height="30" title="@item.FirstName" src="@item.Photo" /> </td>
+                    <td>@item.TCNO</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    @if (item.Department == null)
+                    {
+                        <td>Departman Belirtilmemiş</td>
+                    }
+                    else
+                    {
+                        <td>@item.Department.DepartmentName</td>
+                    }
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Address</td>
+                    <td>@item.City</td>
+                    <td>@item.Gender</td>
+                    <td class="hidden-phone">@item.ERole</td>
+                    <td class="hidden-phone">@item.Status</td>
+                    <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteEmployee", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteEmployee", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                    <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateEmployee", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateEmployee", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
-
-                        <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyEmployee", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
-                    </tr>
+                    <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyEmployee", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
+                </tr>
                 }
             </tbody>
         </table>

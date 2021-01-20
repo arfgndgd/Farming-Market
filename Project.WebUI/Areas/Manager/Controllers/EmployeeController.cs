@@ -59,10 +59,10 @@ namespace Project.WebUI.Areas.Manager.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateEmployee(Employee employee, HttpPostedFileBase resim)
+        public ActionResult UpdateEmployee(Employee employee)
         {
 
-            employee.Photo = ImageUploader.UploadImage("~/EmployeePhoto/", resim);
+          
             eRep.Update(employee);
             return RedirectToAction("EmployeeList");
         }
