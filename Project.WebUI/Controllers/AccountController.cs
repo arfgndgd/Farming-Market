@@ -44,7 +44,8 @@ namespace Project.WebUI.Controllers
                     return AktifKontrol();
                 }
                 Session["member"] = hesap;
-                return RedirectToAction("ShoppingList", "Shopping");
+                return RedirectToAction("ProductList", "Product", new { Area = "Manager" });
+                //Burada ShoppingList vardı 
             }
             ViewBag.KullaniciYok = "Kullanıcı bulunamadı";
             return View();
