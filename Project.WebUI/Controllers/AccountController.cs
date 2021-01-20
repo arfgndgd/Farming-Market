@@ -25,19 +25,19 @@ namespace Project.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(AppUser appUser,Employee employee)
+        public ActionResult Login(AppUser appUser)
         {
             AppUser hesap = appRep.FirstOrDefault(x => x.UserName == appUser.UserName);
-            Employee admin = empRep.FirstOrDefault(x => x.FirstName == employee.FirstName);
+            //Employee admin = empRep.FirstOrDefault(x => x.FirstName == employee.FirstName); prm: ,Employee employee
             //TODO: şifreleme ekle 2
 
-            //TODO: member manager nolacak bu dalgalar. Manager farklı controlde mi olmalı
-            if (admin != null && admin.ERole == ENTITIES.Enums.EmployeeRole.Manager)
-            {
-                Session["manager"] = admin;
-                return RedirectToAction("ProductList", "Product", new { Area = "Manager" });
-            }
-            else if (hesap.URole == ENTITIES.Enums.UserRole.Member)
+                //TODO: member manager nolacak bu dalgalar. Manager farklı controlde mi olmalı
+                //if (admin != null && admin.ERole == ENTITIES.Enums.EmployeeRole.Manager)
+                //{
+                //    Session["manager"] = admin;
+                //    return RedirectToAction("ProductList", "Product", new { Area = "Manager" });
+                //}
+            if (hesap.URole == ENTITIES.Enums.UserRole.Member)
             {
                 if (!hesap.Active)
                 {

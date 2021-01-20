@@ -16,6 +16,12 @@ namespace Project.ENTITIES.Models
         public string Phone { get; set; }
         public string Email { get; set; }
 
+        public Supplier()
+        {
+            Products = new List<Product>();
+            Storages = new List<Storage>();
+        }
+
         //Relational Properties
         public virtual List<Product> Products { get; set; }
         public virtual List<Storage> Storages { get; set; }
