@@ -12,6 +12,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
 {
     public class EmployeeController : Controller
     {
+        //TODO: Authorize nasıl yapılır (coredan farklı galiba)
         EmployeeRepository eRep;
         DepartmentRepository dRep;
         public EmployeeController()
