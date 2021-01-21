@@ -228,6 +228,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Manager\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Manager\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Manager\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Manager\Controllers\ProductController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
@@ -240,6 +241,7 @@
     </Compile>
     <Compile Include="Models\VMClasses\AppUserVM.cs" />
     <Compile Include="Models\VMClasses\CategoryVM.cs" />
+    <Compile Include="Models\VMClasses\DepartmentVM.cs" />
     <Compile Include="Models\VMClasses\EmployeeVM.cs" />
     <Compile Include="Models\VMClasses\ProductVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -275,6 +277,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Manager\Data\" />
+    <Folder Include="Areas\Manager\Views\Department\" />
     <Folder Include="EmployePhoto\" />
     <Folder Include="Models\ShoppingTools\" />
     <Folder Include="OutherTools\" />
