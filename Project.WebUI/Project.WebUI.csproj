@@ -144,6 +144,7 @@
     <Content Include="Areas\Manager\Views\Employee\AddEmployee.cshtml" />
     <Content Include="Areas\Manager\Views\Employee\UpdateEmployee.cshtml" />
     <Content Include="Areas\Manager\Views\Category\CategoryList.cshtml" />
+    <Content Include="Areas\Manager\Views\Category\AddCategory.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
