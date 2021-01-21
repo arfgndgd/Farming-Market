@@ -1,9 +1,9 @@
-﻿@model CategoryVM
+﻿@model DepartmentVM
 @{
-    ViewBag.Title = "CategoryList";
+    ViewBag.Title = "DepartmentList";
 }
 
-<h3>Kategori eklemek için @Html.ActionLink("Tıklayınız", "AddCategory")</h3>
+<h3>Departman eklemek için @Html.ActionLink("Tıklayınız", "AddDepartment")</h3>
 <br /><br />
 <div class="panel-body">
     <div class="adv-table">
@@ -11,7 +11,7 @@
             <thead>
                 <tr>
                     <th class="hidden-phone">ID</th>
-                    <th class="hidden-phone">Kategori</th>
+                    <th class="hidden-phone">Departman</th>
                     <th class="hidden-phone">Açıklama</th>
                     <th class="hidden-phone">Durum</th>
                     <th class="hidden-phone">Sil</th>
@@ -20,22 +20,23 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Category item in Model.Categories)
+                @foreach (Department item in Model.Departments)
                 {
                     <tr class="gradeX">
                         <td>@item.ID</td>
-                        <td>@item.CategoryName</td>
+                        <td>@item.DepartmentName</td>
                         <td>@item.Description</td>
                         <td>@item.Status</td>
-                        <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteCategory", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                        <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteDepartment", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateCategory", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                        <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateDepartment", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyCategory", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
+                        <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyDepartment", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
 </div>
+
 

@@ -3,10 +3,11 @@
     ViewBag.Title = "ProductList";
 }
 
-<h3>Ürün eklemek için @Html.ActionLink("Tıklayınız","AddProduct")</h3>
+<h3>Ürün eklemek için @Html.ActionLink("Tıklayınız", "AddProduct")</h3>
+<br /><br />
 <div class="panel-body">
     <div class="adv-table">
-        <table  cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
             <thead>
                 <tr>
                     <th class="hidden-phone">Ürün Resmi</th>
@@ -45,14 +46,14 @@
                         {
                             <td>@item.Supplier.SupplierName</td>
                         }
-                        
+
                         <td class="hidden-phone">@item.Status</td>
 
                         <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
 
                         <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyProduct", new { id = item.ID}, new { @class = "btn btn-dark"})</td>
+                        <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyProduct", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
                     </tr>
                 }
             </tbody>

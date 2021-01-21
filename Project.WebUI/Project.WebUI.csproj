@@ -146,6 +146,7 @@
     <Content Include="Areas\Manager\Views\Category\CategoryList.cshtml" />
     <Content Include="Areas\Manager\Views\Category\AddCategory.cshtml" />
     <Content Include="Areas\Manager\Views\Category\UpdateCategory.cshtml" />
+    <Content Include="Areas\Manager\Views\Department\DepartmentList.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -277,7 +278,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Manager\Data\" />
-    <Folder Include="Areas\Manager\Views\Department\" />
     <Folder Include="EmployePhoto\" />
     <Folder Include="Models\ShoppingTools\" />
     <Folder Include="OutherTools\" />
