@@ -15,41 +15,43 @@
         <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">Kategori Ekleme Sayfası</header>
-                @*...Resim eklenebilir...
-            <div class="panel-body">
-            <div class="form-group">
-                <label></label>
-                <div>
-                    <input />
-                </div>
-            </div>
-        </div>*@
-
-                <br /> <br />
-
+                <div class="panel-body">
+                    @*...Resim eklenebilir...
+                <div class="panel-body">
                 <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Kategori İsmi</label>
-                    <div class="col-sm-10">
-                        @Html.TextBoxFor(x => x.Category.CategoryName, new { @class = "form-control genislik", placeholder = "Kategori İsmi Giriniz" })
+                    <label></label>
+                    <div>
+                        <input />
                     </div>
                 </div>
+            </div>*@
 
-                <br /> <br />
+                    <br /> <br />
 
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Açıklama</label>
-                    <div class="col-sm-10">
-                        @Html.TextBoxFor(x => x.Category.Description, new { @class = "form-control genislik", placeholder = "Açıklama Giriniz" })
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">Kategori İsmi</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Category.CategoryName, new { @class = "form-control genislik", placeholder = "Kategori İsmi Giriniz" })
+                        </div>
                     </div>
-                </div>
 
-                <br /> <br />
+                    <br /> <br />
 
-                <div class="form-group">
-                    <div class="col-sm-10">
-                        <button class="btn btn-primary">
-                            Kategori Ekle
-                        </button>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">Açıklama</label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Category.Description, new { @class = "form-control genislik", placeholder = "Açıklama Giriniz" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <button class="btn btn-primary">
+                                Kategori Ekle
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
