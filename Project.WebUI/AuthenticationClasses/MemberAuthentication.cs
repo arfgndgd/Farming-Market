@@ -14,7 +14,7 @@ namespace Project.WebUI.AuthenticationClasses
             {
                 return true;
             }
-            httpContext.Response.Redirect("/Home/Login");
+            httpContext.Response.Redirect("/Account/Login");
             return false;
         }
     }
