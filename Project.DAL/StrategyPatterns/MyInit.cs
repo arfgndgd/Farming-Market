@@ -12,7 +12,7 @@ namespace Project.DAL.StrategyPatterns
     {
         protected override void Seed(MyContext context)
         {
-            //TODO: Admin işlemi nasıl yapılacak çünkü Employee kısmından yönetim istiyoruz
+            
         }
     }
 }

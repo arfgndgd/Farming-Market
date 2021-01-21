@@ -73,7 +73,6 @@ namespace Project.WebUI.Areas.Manager.Controllers
         [HttpPost]
         public ActionResult UpdateProduct([Bind(Prefix = "Product")] Product item, HttpPostedFileBase resim)
         {
-            //TODO: Güncellenen resim görüntülenemiyor
             item.ImagePath = ImageUploader.UploadImage("~/Pictures/", resim);
             pRep.Update(item);
             return RedirectToAction("ProductList");

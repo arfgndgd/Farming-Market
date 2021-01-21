@@ -31,7 +31,7 @@ namespace Project.WebUI.Controllers
             AppUser appUser = apvm.AppUser;
             UserProfile profile = apvm.UserProfile;
 
-            //TODO: şifreleme sınııfın ekle 
+            //şifreleme sınııfın ekle 
 
             //Kayıt işlemi
             if (apRep.Any(x => x.UserName == appUser.UserName))
@@ -57,7 +57,6 @@ namespace Project.WebUI.Controllers
                 usRep.Add(profile);
             }
             return View("RegisterSuccess");
-            //TODO: actionlinki değiştir
         }
 
         public ActionResult RegisterSuccess()

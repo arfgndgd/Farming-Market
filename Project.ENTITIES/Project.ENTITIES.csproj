@@ -48,7 +48,6 @@
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Order.cs" />

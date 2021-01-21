@@ -15,7 +15,7 @@ namespace Project.DAL.ContextClasses
         public MyContext() : base("MyConnection")
         {
             //Database.SetInitializer(new MyInit()); 
-            //TODO: SetInitializer eklemeli miyim?
+            //TODO: SetInitializer eklemeli miyim? Admin işlemi nasıl yapılacak MyInitte, Employeede yönetim olmalı
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

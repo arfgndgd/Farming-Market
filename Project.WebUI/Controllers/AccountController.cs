@@ -29,7 +29,7 @@ namespace Project.WebUI.Controllers
         {
             AppUser hesap = appRep.FirstOrDefault(x => x.UserName == appUser.UserName);
             //Employee admin = empRep.FirstOrDefault(x => x.FirstName == employee.FirstName); prm: ,Employee employee
-            //TODO: şifreleme ekle 2
+            //TODO: şifreleme ekle aynı şekilde Registerada 34 satır
 
                 //TODO: member manager nolacak bu dalgalar. Manager farklı controlde mi olmalı
                 //if (admin != null && admin.ERole == ENTITIES.Enums.EmployeeRole.Manager)
