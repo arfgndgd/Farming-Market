@@ -1,0 +1,56 @@
+﻿@model DepartmentVM
+@{
+    ViewBag.Title = "UpdateDepartment";
+}
+
+<style>
+    .genislik {
+        width: 300px;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.Department.ID)
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading">Departman Güncelleme Sayfası</header>
+                <div class="panel-body">
+                  <div class="form-group">
+                      <label class="col-sm-2 col-sm-2 control-label"> Departman İsmi </label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Department.DepartmentName, new { @class = "form-control genislik", placeholder = "Departman İsmini Güncelleyiniz" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label"> Açıklama </label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.Department.Description, new { @class = "form-control genislik", placeholder = "Departman Açıklaması Güncelleyiniz" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <button class="btn btn-primary">
+                                Departman Güncelle
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </section>
+        </div>
+    </div>
+}
+
+
