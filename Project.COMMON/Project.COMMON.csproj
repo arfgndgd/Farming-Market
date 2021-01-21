@@ -43,9 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\DantexCrypt.cs" />
     <Compile Include="Tools\ImageUploader.cs" />
     <Compile Include="Tools\MailSender.cs" />
+    <Compile Include="Tools\MyCrpyt.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

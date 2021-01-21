@@ -28,15 +28,11 @@ namespace Project.WebUI.Controllers
         public ActionResult Login(AppUser appUser)
         {
             AppUser hesap = appRep.FirstOrDefault(x => x.UserName == appUser.UserName);
-            //Employee admin = empRep.FirstOrDefault(x => x.FirstName == employee.FirstName); prm: ,Employee employee
+            
             //TODO: şifreleme ekle aynı şekilde Registerada 34 satır
 
-                //TODO: member manager nolacak bu dalgalar. Manager farklı controlde mi olmalı
-                //if (admin != null && admin.ERole == ENTITIES.Enums.EmployeeRole.Manager)
-                //{
-                //    Session["manager"] = admin;
-                //    return RedirectToAction("ProductList", "Product", new { Area = "Manager" });
-                //}
+            //TODO: member manager nolacak bu dalgalar. Manager farklı controlde mi olmalı
+           
             if (hesap.URole == ENTITIES.Enums.UserRole.Member)
             {
                 if (!hesap.Active)
@@ -47,7 +43,7 @@ namespace Project.WebUI.Controllers
                 return RedirectToAction("ProductList", "Product", new { Area = "Manager" });
                 //Burada ShoppingList vardı 
             }
-            ViewBag.KullaniciYok = "Kullanıcı bulunamadı";
+            
             return View();
         }
 

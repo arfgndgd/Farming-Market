@@ -1,0 +1,35 @@
+﻿@model EmployeeVM
+@{
+    ViewBag.Title = "EmployeeRegisterNow";
+}
+
+<body class="login-body">
+    <div class="container">
+        @using (Html.BeginForm("EmployeeRegisterNow", "EmployeeRegister", FormMethod.Post, new { @class = "form-signin" }))
+        {
+            if (ViewBag.Mevcut != null)
+            {
+                <h2>@ViewBag.Mevcut</h2>
+            }
+            <h2 class="form-signin-heading">Üye Olunuz</h2>
+            <div class="login-wrap">
+                @Html.TextBoxFor(x => x.Employee.EUserName, new { @class = "form-control", placeholder = "Kullanıcı ismi belirleyiniz" })
+               
+                @Html.PasswordFor(x => x.Employee.EPassword, new { @class = "form-control", placeholder = "Şifre belirleyiniz" })
+                @Html.TextBoxFor(x => x.Employee.Email, new { @class = "form-control", placeholder = "e-mail adresinizi yazınız" })
+
+
+
+
+                <button class="btn btn-lg btn-login btn-block" type="submit">Üye Ol</button>
+
+                <div class="registration">
+                    @Html.ActionLink("Giriş Yap", "EmployeeLogin", "EmployeeAccount")
+                </div>
+            </div>
+        }
+    </div>
+</body>
+
+
+

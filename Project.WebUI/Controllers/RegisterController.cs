@@ -14,10 +14,12 @@ namespace Project.WebUI.Controllers
     {
         AppUserRepository apRep;
         UserProfileRepository usRep;
+        
         public RegisterController()
         {
             apRep = new AppUserRepository();
             usRep = new UserProfileRepository();
+         
         }
         // GET: Register
         public ActionResult RegisterNow()
@@ -30,6 +32,7 @@ namespace Project.WebUI.Controllers
         {
             AppUser appUser = apvm.AppUser;
             UserProfile profile = apvm.UserProfile;
+           
 
             //şifreleme sınııfın ekle 
 

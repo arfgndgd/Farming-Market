@@ -16,6 +16,7 @@ namespace Project.ENTITIES.Models
         public string Email { get; set; }
         public UserRole URole { get; set; }
 
+
         public AppUser()
         {
             URole = UserRole.Member;
@@ -25,5 +26,6 @@ namespace Project.ENTITIES.Models
         //Relational Properties
         public virtual UserProfile UserProfile { get; set; }
         public virtual List<Order> Orders { get; set; }
+        //public virtual Employee Employee { get; set; }
     }
 }
