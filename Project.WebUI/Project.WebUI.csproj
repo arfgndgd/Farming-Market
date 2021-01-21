@@ -147,6 +147,7 @@
     <Content Include="Areas\Manager\Views\Category\AddCategory.cshtml" />
     <Content Include="Areas\Manager\Views\Category\UpdateCategory.cshtml" />
     <Content Include="Areas\Manager\Views\Department\DepartmentList.cshtml" />
+    <Content Include="Areas\Manager\Views\Department\AddDepartment.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
