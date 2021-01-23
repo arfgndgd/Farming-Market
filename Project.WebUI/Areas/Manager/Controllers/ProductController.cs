@@ -11,7 +11,8 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
-    //[ManagerAuthentication]
+    [ManagerAuthentication]
+    //[MemberAuthentication]
     public class ProductController : Controller
     {
         ProductRepository pRep;
@@ -39,7 +40,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return View(pvm);
         }
 
-
+        [ManagerAuthentication]
         public ActionResult AddProduct()
         {
             ProductVM pvm = new ProductVM
@@ -51,7 +52,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
             return View(pvm);
         }
-
+        [ManagerAuthentication]
         [HttpPost]
         public ActionResult AddProduct([Bind(Prefix = "Product")] Product item, HttpPostedFileBase resim)
         {

@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
-    [ManagerAuthentication]
+    //[ManagerAuthentication]
     public class DepartmentController : Controller
     {
         DepartmentRepository dRep;
@@ -29,7 +29,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             //TODO: bu ne işe yarıyordu
         }
 
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult DepartmentList()
         {
             DepartmentVM dvm = new DepartmentVM

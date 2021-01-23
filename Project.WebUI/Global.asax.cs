@@ -13,7 +13,7 @@ namespace Project.WebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            GlobalFilters.Filters.Add(new AuthorizeAttribute());
+            //GlobalFilters.Filters.Add(new AuthorizeAttribute());
         }
     }
 }

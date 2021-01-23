@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
-    [ManagerAuthentication]
+    //[ManagerAuthentication]
     public class CategoryController : Controller
     {
         CategoryRepository cRep;
@@ -28,7 +28,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             };
             return View(cvm);
         }
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult CategoryList()
         {
             CategoryVM cvm = new CategoryVM

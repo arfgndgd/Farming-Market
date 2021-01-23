@@ -12,6 +12,7 @@
                 <tr>
                     <th class="hidden-phone">Fotoğraf</th>
                     <th class="hidden-phone">TCNO</th>
+                    <th class="hidden-phone">Şifre</th>
                     <th class="hidden-phone">İsim</th>
                     <th class="hidden-phone">Soyisim</th>
                     <th class="hidden-phone">Departman</th>
@@ -33,6 +34,7 @@
                     <tr class="gradeX">
                         <td><img width="30" height="30" title="@item.FirstName" src="@item.Photo" /> </td>
                         <td>@item.TCNO</td>
+                        <td>@item.Password</td>
                         <td>@item.FirstName</td>
                         <td>@item.LastName</td>
                         @if (item.Department == null)

@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
-    [ManagerAuthentication]
+    //[ManagerAuthentication]
     public class EmployeeController : Controller
     {
         //TODO: Authorize nasıl yapılır (coredan farklı galiba)
@@ -23,7 +23,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             dRep = new DepartmentRepository();
         }
 
-        [AllowAnonymous]
+        //[AllowAnonymous]
         // GET: Manager/Employee
         public ActionResult EmployeeList()
         {
