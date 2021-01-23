@@ -102,5 +102,6 @@ namespace Project.WebUI.Areas.Manager.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
+
     }
 }
