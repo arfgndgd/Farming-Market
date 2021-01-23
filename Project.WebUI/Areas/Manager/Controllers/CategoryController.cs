@@ -1,5 +1,6 @@
 ﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.ENTITIES.Models;
+using Project.WebUI.AuthenticationClasses;
 using Project.WebUI.Models.VMClasses;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
+    [ManagerAuthentication]
     public class CategoryController : Controller
     {
         CategoryRepository cRep;
@@ -26,7 +28,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             };
             return View(cvm);
         }
-
+        [AllowAnonymous]
         public ActionResult CategoryList()
         {
             CategoryVM cvm = new CategoryVM

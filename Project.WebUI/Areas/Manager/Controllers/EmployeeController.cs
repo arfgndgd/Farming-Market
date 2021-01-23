@@ -1,6 +1,7 @@
 ﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.COMMON.Tools;
 using Project.ENTITIES.Models;
+using Project.WebUI.AuthenticationClasses;
 using Project.WebUI.Models.VMClasses;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
+    [ManagerAuthentication]
     public class EmployeeController : Controller
     {
         //TODO: Authorize nasıl yapılır (coredan farklı galiba)
@@ -20,6 +22,8 @@ namespace Project.WebUI.Areas.Manager.Controllers
             eRep = new EmployeeRepository();
             dRep = new DepartmentRepository();
         }
+
+        [AllowAnonymous]
         // GET: Manager/Employee
         public ActionResult EmployeeList()
         {

@@ -20,9 +20,8 @@ namespace Project.ENTITIES.Models
         public EmployeeRole ERole { get; set; }
         public int? DepartmentID { get; set; }
         public EmployeeGender Gender { get; set; }
+        public string Password { get; set; }
 
-        public string EUserName { get; set; }
-        public string EPassword { get; set; }
         public Employee()
         {
             ERole = EmployeeRole.Worker;
@@ -30,7 +29,6 @@ namespace Project.ENTITIES.Models
 
         //Relational Properties
         public virtual Department Department { get; set; }
-        //public virtual AppUser AppUser { get; set; }
 
         //TODO: Order ilişkisi eklenecek ya da direkt olarak Product ve Storage ile ilişkilenmeli ki crud işlemleri yapılsın
     }

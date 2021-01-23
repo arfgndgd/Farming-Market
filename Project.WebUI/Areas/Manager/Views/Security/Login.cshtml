@@ -1,0 +1,33 @@
+﻿@model EmployeeVM
+@{
+    ViewBag.Title = "Login";
+}
+
+<body class="login-body">
+    <div class="container">
+        @using (Html.BeginForm("Login", "Security", FormMethod.Post, new { @class = "form-signin" }))
+        {
+            if (ViewBag.Mesaj != null)
+            {
+                <h2>@ViewBag.Mesaj</h2>
+            }
+
+            <h2 class="form-signin-heading">Giriş Yapınız</h2>
+            <div class="login-wrap">
+
+                @Html.TextBoxFor(x => x.Employee.TCNO, new { @class = "form-control", placeholder = "Kullanıcı ismi giriniz" })
+
+                @Html.PasswordFor(x => x.Employee.Password, new { @class = "form-control", placeholder = "Sifre Giriniz" })
+
+
+
+                <br />
+                <button class="btn btn-lg btn-login btn-block" type="submit">Giriş Yap</button>
+
+              
+
+            </div>
+
+        }
+    </div>
+</body>

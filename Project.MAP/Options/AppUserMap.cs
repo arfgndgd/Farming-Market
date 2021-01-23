@@ -12,7 +12,6 @@ namespace Project.MAP.Options
         public AppUserMap()
         {
             HasOptional(x => x.UserProfile).WithRequired(x => x.AppUser);
-            //HasOptional(x => x.Employee).WithRequired(x => x.AppUser);
         }
     }
 }

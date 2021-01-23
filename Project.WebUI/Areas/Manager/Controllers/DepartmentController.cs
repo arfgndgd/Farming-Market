@@ -1,5 +1,6 @@
 ﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.ENTITIES.Models;
+using Project.WebUI.AuthenticationClasses;
 using Project.WebUI.Models.VMClasses;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
+    [ManagerAuthentication]
     public class DepartmentController : Controller
     {
         DepartmentRepository dRep;
@@ -26,6 +28,8 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return View();
             //TODO: bu ne işe yarıyordu
         }
+
+        [AllowAnonymous]
         public ActionResult DepartmentList()
         {
             DepartmentVM dvm = new DepartmentVM

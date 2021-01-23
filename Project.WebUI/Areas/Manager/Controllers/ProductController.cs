@@ -1,6 +1,7 @@
 ﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.COMMON.Tools;
 using Project.ENTITIES.Models;
+using Project.WebUI.AuthenticationClasses;
 using Project.WebUI.Models.VMClasses;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
+    //[ManagerAuthentication]
     public class ProductController : Controller
     {
         ProductRepository pRep;
@@ -21,7 +23,9 @@ namespace Project.WebUI.Areas.Manager.Controllers
             cRep = new CategoryRepository();
             sRep = new SupplierRepository();
         }
+
         // GET: Manager/Product
+        [AllowAnonymous]
         public ActionResult ProductList()
         {
             ProductVM pvm = new ProductVM

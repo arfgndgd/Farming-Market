@@ -26,6 +26,5 @@ namespace Project.ENTITIES.Models
         //Relational Properties
         public virtual UserProfile UserProfile { get; set; }
         public virtual List<Order> Orders { get; set; }
-        //public virtual Employee Employee { get; set; }
     }
 }

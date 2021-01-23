@@ -149,6 +149,7 @@
     <Content Include="Areas\Manager\Views\Department\DepartmentList.cshtml" />
     <Content Include="Areas\Manager\Views\Department\AddDepartment.cshtml" />
     <Content Include="Areas\Manager\Views\Department\UpdateDepartment.cshtml" />
+    <Content Include="Areas\Manager\Views\Security\Login.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -234,6 +235,7 @@
     <Compile Include="Areas\Manager\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Manager\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Manager\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Manager\Controllers\SecurityController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="AuthenticationClasses\ManagerAuthentication.cs" />
     <Compile Include="AuthenticationClasses\MemberAuthentication.cs" />
@@ -272,7 +274,6 @@
     <Content Include="Views\Register\RegisterSuccess.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\EmployeeRegister\EmployeeRegisterNow.cshtml" />
-    <Content Include="Views\EmployeeRegister\EmployeeRegisterSuccess.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -296,6 +297,10 @@
     <ProjectReference Include="..\Project.COMMON\Project.COMMON.csproj">
       <Project>{4aeec117-3191-425f-9fd3-30291a53275b}</Project>
       <Name>Project.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.DAL\Project.DAL.csproj">
+      <Project>{b2f9dfd2-5ce2-4c1f-8d11-2336731e5cf2}</Project>
+      <Name>Project.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Project.ENTITIES\Project.ENTITIES.csproj">
       <Project>{2f3f7b93-e12b-4e7e-8778-ae7c99b64254}</Project>
