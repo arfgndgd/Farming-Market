@@ -255,6 +255,7 @@
     <Compile Include="Models\VMClasses\EmployeeVM.cs" />
     <Compile Include="Models\VMClasses\ProductVM.cs" />
     <Compile Include="Models\VMClasses\StorageCategoryVM.cs" />
+    <Compile Include="Models\VMClasses\StorageVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
