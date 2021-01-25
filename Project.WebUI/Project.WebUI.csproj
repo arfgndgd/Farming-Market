@@ -155,6 +155,7 @@
     <Content Include="Areas\Manager\Views\StorageCategory\UpdateStorageCategory.cshtml" />
     <Content Include="Areas\Manager\Views\Storage\StorageList.cshtml" />
     <Content Include="Areas\Manager\Views\Storage\AddStorage.cshtml" />
+    <Content Include="Areas\Manager\Views\Storage\UpdateStorage.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
