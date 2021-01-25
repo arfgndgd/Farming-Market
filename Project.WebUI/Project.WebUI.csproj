@@ -240,6 +240,7 @@
     <Compile Include="Areas\Manager\Controllers\ProductController.cs" />
     <Compile Include="Areas\Manager\Controllers\SecurityController.cs" />
     <Compile Include="Areas\Manager\Controllers\StorageCategoryController.cs" />
+    <Compile Include="Areas\Manager\Controllers\StorageController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="AuthenticationClasses\ManagerAuthentication.cs" />
     <Compile Include="AuthenticationClasses\MemberAuthentication.cs" />
@@ -290,6 +291,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Manager\Data\" />
+    <Folder Include="Areas\Manager\Views\Storage\" />
     <Folder Include="EmployePhoto\" />
     <Folder Include="Models\ShoppingTools\" />
     <Folder Include="OutherTools\" />
