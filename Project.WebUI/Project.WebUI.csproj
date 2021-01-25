@@ -153,6 +153,7 @@
     <Content Include="Areas\Manager\Views\StorageCategory\StorageCategoryList.cshtml" />
     <Content Include="Areas\Manager\Views\StorageCategory\AddStorageCategory.cshtml" />
     <Content Include="Areas\Manager\Views\StorageCategory\UpdateStorageCategory.cshtml" />
+    <Content Include="Areas\Manager\Views\Storage\StorageList.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -291,7 +292,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Manager\Data\" />
-    <Folder Include="Areas\Manager\Views\Storage\" />
     <Folder Include="EmployePhoto\" />
     <Folder Include="Models\ShoppingTools\" />
     <Folder Include="OutherTools\" />
