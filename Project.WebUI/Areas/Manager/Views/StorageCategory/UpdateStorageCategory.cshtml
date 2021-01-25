@@ -1,0 +1,68 @@
+﻿@model StorageCategoryVM
+@{
+    ViewBag.Title = "UpdateStorageCategory";
+}
+
+
+
+<style>
+    .genislik {
+        width: 300px;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.StorageCategory.ID)
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <h4 class="panel-heading">Stok Kategori Güncelleme Sayfası</h4>
+                <br /> <br />
+                <div class="panel-body">
+                    @*...Resim eklenebilir...
+                        <div class="form-group">
+                             <label class="col-sm-2 col-sm-2 control-label">Resim Seçiniz</label>
+                             <div class="col-sm-10">
+                                 <input type="file" name="resim" class="form-control genislik" />
+                             </div>
+                        </div>*@
+
+                    <br /> <br />
+
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label"> İsim </label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.StorageCategory.StorageCategoryName, new { @class = "form-control genislik", placeholder = "Stok Kategori İsmini Güncelleyiniz" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label"> Açıklama </label>
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(x => x.StorageCategory.StorageDescription, new { @class = "form-control genislik", placeholder = "Stok Kategori Açıklaması Güncelleyiniz" })
+                        </div>
+                    </div>
+
+                    <br /> <br />
+
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <button class="btn btn-primary">
+                                Stok Kategori Güncelle
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </section>
+        </div>
+    </div>
+}
+
