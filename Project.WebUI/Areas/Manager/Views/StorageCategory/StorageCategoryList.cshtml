@@ -1,1 +1,43 @@
-﻿
+﻿@model StorageCategoryVM
+@{
+    ViewBag.Title = "StorageCategoryList";
+}
+
+<h3>Stok Kategori eklemek için @Html.ActionLink("Tıklayınız", "AddStorageCategory")</h3>
+<br />
+<br />
+<div class="panel-body">
+    <div class="adv-table">
+        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+            <thead>
+                <tr>
+                    <th class="hidden-phone">ID</th>
+                    <th class="hidden-phone">Stok Kategori</th>
+                    <th class="hidden-phone">Açıklama</th>
+                    <th class="hidden-phone">Durum</th>
+                    <th class="hidden-phone">Sil</th>
+                    <th class="hidden-phone">Güncelle</th>
+                    <th class="hidden-phone">Kaldır</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (StorageCategory item in Model.StorageCategories)
+                {
+                    <tr class="gradeX">
+                        <td>@item.ID</td>
+                        <td>@item.StorageCategoryName</td>
+                        <td>@item.StorageDescription</td>
+                        <td>@item.Status</td>
+                        <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteStorageCategory", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+
+                        <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateStorageCategory", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                        <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyStorageCategory", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
