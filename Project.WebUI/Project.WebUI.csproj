@@ -150,6 +150,7 @@
     <Content Include="Areas\Manager\Views\Department\AddDepartment.cshtml" />
     <Content Include="Areas\Manager\Views\Department\UpdateDepartment.cshtml" />
     <Content Include="Areas\Manager\Views\Security\Login.cshtml" />
+    <Content Include="Areas\Manager\Views\StorageCategory\StorageCategoryList.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -236,6 +237,7 @@
     <Compile Include="Areas\Manager\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Manager\Controllers\ProductController.cs" />
     <Compile Include="Areas\Manager\Controllers\SecurityController.cs" />
+    <Compile Include="Areas\Manager\Controllers\StorageCategoryController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="AuthenticationClasses\ManagerAuthentication.cs" />
     <Compile Include="AuthenticationClasses\MemberAuthentication.cs" />
@@ -250,6 +252,7 @@
     <Compile Include="Models\VMClasses\DepartmentVM.cs" />
     <Compile Include="Models\VMClasses\EmployeeVM.cs" />
     <Compile Include="Models\VMClasses\ProductVM.cs" />
+    <Compile Include="Models\VMClasses\StorageCategoryVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

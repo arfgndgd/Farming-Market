@@ -13,6 +13,7 @@ namespace Project.ENTITIES.Models
         public string ProductName { get; set; }
         public decimal UnitInPrice { get; set; }
         public string ImagePath { get; set; }
+        public short TotalWeight { get; set; }
         public int? SupplierID { get; set; }
         public int? StorageCategoryID { get; set; }
 
