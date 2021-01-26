@@ -1,0 +1,85 @@
+﻿@model SupplierVM
+@{
+    ViewBag.Title = "AddSupplier";
+}
+
+<style>
+    .genislik {
+        width: 300px;
+    }
+</style>
+
+@using (Html.BeginForm("AddSupplier", "Supplier", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <h4 class="panel-heading">Tedarikçi Ekleme Sayfası</h4>
+                <br /> <br />
+                       <div class="panel-body">
+                           <div class="form-group">
+                               <label class="col-sm-2 col-sm-2 control-label">Firma İsmi</label>
+                               <div class="col-sm-10">
+                                   @Html.TextBoxFor(x => x.Supplier.SupplierName, new { @class = "form-control genislik", placeholder = "Firma İsmi Giriniz" })
+                               </div>
+                           </div>
+
+                           <br /> <br />
+
+                           <div class="form-group">
+                               <label class="col-sm-2 col-sm-2 control-label">Adres</label>
+                               <div class="col-sm-10">
+                                   @Html.TextBoxFor(x => x.Supplier.Address, new { @class = "form-control genislik", placeholder = "Adres Giriniz" })
+                               </div>
+                           </div>
+
+                           <br /> <br />
+
+                           <div class="form-group">
+                               <label class="col-sm-2 col-sm-2 control-label">Şehir</label>
+                               <div class="col-sm-10">
+                                   @Html.TextBoxFor(x => x.Supplier.City, new { @class = "form-control genislik", placeholder = "Şehir Giriniz" })
+                               </div>
+                           </div>
+
+                           <br /> <br />
+
+                           <div class="form-group">
+                               <label class="col-sm-2 col-sm-2 control-label">Ülke</label>
+                               <div class="col-sm-10">
+                                   @Html.TextBoxFor(x => x.Supplier.Country, new { @class = "form-control genislik", placeholder = "Ülke Giriniz" })
+                               </div>
+                           </div>
+
+                           <br /> <br />
+
+                           <div class="form-group">
+                               <label class="col-sm-2 col-sm-2 control-label">Telefon No</label>
+                               <div class="col-sm-10">
+                                   @Html.TextBoxFor(x => x.Supplier.Phone, new { @class = "form-control genislik", placeholder = "Telefon No Giriniz" })
+                               </div>
+                           </div>
+
+                           <br /> <br /><div class="form-group">
+                               <label class="col-sm-2 col-sm-2 control-label">E-Posta</label>
+                               <div class="col-sm-10">
+                                   @Html.TextBoxFor(x => x.Supplier.Email, new { @class = "form-control genislik", placeholder = "E-Posta Giriniz" })
+                               </div>
+                           </div>
+
+                           <br /> <br />
+
+                           <div class="form-group">
+                               <div class="col-sm-10">
+                                   <button class="btn btn-primary">
+                                       Tedarikçi Ekle
+                                   </button>
+                               </div>
+                           </div>
+                       </div>
+            </section>
+        </div>
+    </div>
+}
+
+

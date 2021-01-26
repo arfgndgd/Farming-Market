@@ -160,6 +160,7 @@
     <Content Include="Areas\Manager\Views\Shipper\AddShipper.cshtml" />
     <Content Include="Areas\Manager\Views\Shipper\UpdateShipper.cshtml" />
     <Content Include="Areas\Manager\Views\Supplier\SupplierList.cshtml" />
+    <Content Include="Areas\Manager\Views\Supplier\AddSupplier.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
