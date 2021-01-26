@@ -158,6 +158,7 @@
     <Content Include="Areas\Manager\Views\Storage\UpdateStorage.cshtml" />
     <Content Include="Areas\Manager\Views\Shipper\ShipperList.cshtml" />
     <Content Include="Areas\Manager\Views\Shipper\AddShipper.cshtml" />
+    <Content Include="Areas\Manager\Views\Shipper\UpdateShipper.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
