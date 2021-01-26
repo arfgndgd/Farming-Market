@@ -11,10 +11,9 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
-    //[ManagerAuthentication]
+    [ManagerAuthentication]
     public class EmployeeController : Controller
     {
-        //TODO: Authorize nasıl yapılır (coredan farklı galiba)
         EmployeeRepository eRep;
         DepartmentRepository dRep;
         public EmployeeController()
@@ -23,7 +22,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             dRep = new DepartmentRepository();
         }
 
-        //[AllowAnonymous]
+        [AllowAnonymous]
         // GET: Manager/Employee
         public ActionResult EmployeeList()
         {
@@ -34,6 +33,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return View(evm);
         }
 
+        [ManagerAuthentication]
         public ActionResult AddEmployee()
         {
             EmployeeVM evm = new EmployeeVM
@@ -44,6 +44,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return View(evm);
         }
 
+        [ManagerAuthentication]
         [HttpPost]
         public ActionResult AddEmployee(Employee employee, HttpPostedFileBase resim)
         {
@@ -53,6 +54,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return RedirectToAction("EmployeeList"); 
         }
 
+        [ManagerAuthentication]
         public ActionResult UpdateEmployee(int id)
         {
             EmployeeVM evm = new EmployeeVM
@@ -63,6 +65,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return View(evm);
         }
 
+        [ManagerAuthentication]
         [HttpPost]
         public ActionResult UpdateEmployee(Employee employee)
         {
@@ -71,12 +74,14 @@ namespace Project.WebUI.Areas.Manager.Controllers
             eRep.Update(employee);
             return RedirectToAction("EmployeeList");
         }
+
+        [ManagerAuthentication]
         public ActionResult DeleteEmployee(int id)
         {
             eRep.Delete(eRep.Find(id));
             return RedirectToAction("EmployeeList");
         }
-
+        [ManagerAuthentication]
         public ActionResult DestroyEmployee(int id)
         {
             eRep.Destroy(eRep.Find(id));

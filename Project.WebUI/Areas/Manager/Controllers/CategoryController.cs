@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
-    //[ManagerAuthentication]
+    [ManagerAuthentication]
     public class CategoryController : Controller
     {
         CategoryRepository cRep;
@@ -28,7 +28,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             };
             return View(cvm);
         }
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public ActionResult CategoryList()
         {
             CategoryVM cvm = new CategoryVM
@@ -37,19 +37,20 @@ namespace Project.WebUI.Areas.Manager.Controllers
             };
             return View(cvm);
         }
-
+        [ManagerAuthentication]
         public ActionResult AddCategory()
         {
             return View();
         }
 
+        [ManagerAuthentication]
         [HttpPost]
         public ActionResult AddCategory(Category category)
         {
             cRep.Add(category);
             return RedirectToAction("CategoryList");
         }
-
+        [ManagerAuthentication]
         public ActionResult UpdateCategory(int id)
         {
             CategoryVM cvm = new CategoryVM
@@ -58,6 +59,8 @@ namespace Project.WebUI.Areas.Manager.Controllers
             };
             return View(cvm);
         }
+
+        [ManagerAuthentication]
         [HttpPost]
         public ActionResult UpdateCategory(Category category)
         {
@@ -65,6 +68,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return RedirectToAction("CategoryList");
         }
 
+        [ManagerAuthentication]
         public ActionResult DeleteCategory(int id)
         {
             cRep.Delete(cRep.Find(id));
@@ -72,6 +76,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
         }
 
+        [ManagerAuthentication]
         public ActionResult DestroyCategory(int id)
         {
             cRep.Destroy(cRep.Find(id));

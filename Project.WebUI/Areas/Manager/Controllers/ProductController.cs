@@ -82,12 +82,14 @@ namespace Project.WebUI.Areas.Manager.Controllers
             pRep.Update(item);
             return RedirectToAction("ProductList");
         }
+
         [ManagerAuthentication]
         public ActionResult DeleteProduct(int id)
         {
             pRep.Delete(pRep.Find(id));
             return RedirectToAction("ProductList");
         }
+
         [ManagerAuthentication]
         public ActionResult DestroyProduct(int id)
         {

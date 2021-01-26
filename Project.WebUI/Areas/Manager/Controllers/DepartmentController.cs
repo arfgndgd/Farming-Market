@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
-    //[ManagerAuthentication]
+    [ManagerAuthentication]
     public class DepartmentController : Controller
     {
         DepartmentRepository dRep;
@@ -29,7 +29,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             //TODO: bu ne işe yarıyordu
         }
 
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public ActionResult DepartmentList()
         {
             DepartmentVM dvm = new DepartmentVM
@@ -39,10 +39,13 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return View(dvm);
         }
 
+        [ManagerAuthentication]
         public ActionResult AddDepartment()
         {
             return View();
         }
+
+        [ManagerAuthentication]
         [HttpPost]
         public ActionResult AddDepartment(Department department)
         {
@@ -50,6 +53,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return RedirectToAction("DepartmentList");
         }
 
+        [ManagerAuthentication]
         public ActionResult UpdateDepartment(int id)
         {
             DepartmentVM dvm = new DepartmentVM
@@ -59,12 +63,15 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return View(dvm);
         }
 
+        [ManagerAuthentication]
         [HttpPost]
         public ActionResult UpdateDepartment(Department department)
         {
             dRep.Update(department);
             return RedirectToAction("DepartmentList");
         }
+
+        [ManagerAuthentication]
         public ActionResult DeleteDepartment(int id)
         {
             dRep.Delete(dRep.Find(id));
@@ -72,6 +79,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
         }
 
+        [ManagerAuthentication]
         public ActionResult DestroyDepartment(int id)
         {
             dRep.Destroy(dRep.Find(id));
