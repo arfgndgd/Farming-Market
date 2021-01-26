@@ -238,12 +238,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Manager\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Manager\Controllers\ShipperController.cs" />
     <Compile Include="Areas\Manager\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Manager\Controllers\EmployeeController.cs" />
     <Compile Include="Areas\Manager\Controllers\ProductController.cs" />
     <Compile Include="Areas\Manager\Controllers\SecurityController.cs" />
     <Compile Include="Areas\Manager\Controllers\StorageCategoryController.cs" />
     <Compile Include="Areas\Manager\Controllers\StorageController.cs" />
+    <Compile Include="Areas\Manager\Controllers\SupplierController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="AuthenticationClasses\ManagerAuthentication.cs" />
     <Compile Include="AuthenticationClasses\MemberAuthentication.cs" />
@@ -258,8 +260,10 @@
     <Compile Include="Models\VMClasses\DepartmentVM.cs" />
     <Compile Include="Models\VMClasses\EmployeeVM.cs" />
     <Compile Include="Models\VMClasses\ProductVM.cs" />
+    <Compile Include="Models\VMClasses\ShipperVM.cs" />
     <Compile Include="Models\VMClasses\StorageCategoryVM.cs" />
     <Compile Include="Models\VMClasses\StorageVM.cs" />
+    <Compile Include="Models\VMClasses\SupplierVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +298,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Manager\Data\" />
+    <Folder Include="Areas\Manager\Views\Default\" />
+    <Folder Include="Areas\Manager\Views\Supplier\" />
     <Folder Include="EmployePhoto\" />
     <Folder Include="Models\ShoppingTools\" />
     <Folder Include="OutherTools\" />
