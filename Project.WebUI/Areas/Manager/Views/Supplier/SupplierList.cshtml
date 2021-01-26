@@ -1,0 +1,52 @@
+﻿@model SupplierVM
+@{
+    ViewBag.Title = "SupplierList";
+}
+
+<h3>Tedarikçi eklemek için @Html.ActionLink("Tıklayınız", "AddSupplier")</h3>
+<br />
+<br />
+<div class="panel-body">
+    <div class="adv-table">
+        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+            <thead>
+                <tr>
+                    <th class="hidden-phone">ID</th>
+                    <th class="hidden-phone">Firma İsmi</th>
+                    <th class="hidden-phone">Adres</th>
+                    <th class="hidden-phone">Şehir</th>
+                    <th class="hidden-phone">Ülke</th>
+                    <th class="hidden-phone">Telefon</th>
+                    <th class="hidden-phone">E-Posta</th>
+                    <th class="hidden-phone">Durum</th>
+                    <th class="hidden-phone">Sil</th>
+                    <th class="hidden-phone">Güncelle</th>
+                    <th class="hidden-phone">Kaldır</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Supplier item in Model.Suppliers)
+                {
+                    <tr class="gradeX">
+                    <td>@item.ID</td>
+                    <td>@item.SupplierName</td>
+                    <td>@item.Address</td>
+                    <td>@item.City</td>
+                    <td>@item.Country</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Email</td>
+                    <td>@item.Status</td>
+                    <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteSupplier", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+
+                    <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateSupplier", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                    <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroySupplier", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
