@@ -23,7 +23,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             {
                 Shipper = sRep.Find(id)
             };
-            return View();
+            return View(svm);
         }
         
         public ActionResult ShipperList()
@@ -32,7 +32,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             {
                 Shippers = sRep.GetAll()
             };
-            return View();
+            return View(svm);
         }
 
         public ActionResult AddShipper()
