@@ -256,7 +256,6 @@
     <Compile Include="AuthenticationClasses\ManagerAuthentication.cs" />
     <Compile Include="AuthenticationClasses\MemberAuthentication.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EmployeeRegisterController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
