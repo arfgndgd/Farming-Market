@@ -292,7 +292,6 @@
     <Content Include="Views\Register\RegisterNow.cshtml" />
     <Content Include="Views\Register\RegisterSuccess.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\EmployeeRegister\EmployeeRegisterNow.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
