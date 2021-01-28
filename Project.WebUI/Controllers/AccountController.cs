@@ -28,7 +28,8 @@ namespace Project.WebUI.Controllers
         [HttpPost]
         public ActionResult Login(AppUser appUser)
         {
-            AppUser hesap = appRep.FirstOrDefault(x => x.UserName == appUser.UserName);
+            AppUser hesap = appRep.FirstOrDefault(x => x.UserName == appUser.UserName||x.Email == appUser.Email);
+            //TODO: ya da email
 
             string decrypted = DantexCrypt.DeCrypt(hesap.Password);         
            

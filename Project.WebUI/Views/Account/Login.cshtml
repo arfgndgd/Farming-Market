@@ -18,6 +18,7 @@
             <div class="login-wrap">
 
                 @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control", placeholder = "Kullanıcı ismi giriniz" })
+                @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "Email giriniz" })
 
                 @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Şifre Giriniz" })
 

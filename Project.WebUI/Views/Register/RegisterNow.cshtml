@@ -19,13 +19,18 @@
             <h2 class="form-signin-heading">Üye Olunuz</h2>
             <div class="login-wrap">
                 @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control ", placeholder = "Kullanıcı ismi belirleyiniz" })
-                @Html.ValidationMessageFor(x=>x.AppUser.UserName)
+                @Html.ValidationMessageFor(x => x.AppUser.UserName)
+
                 @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Şifre belirleyiniz" })
-                @Html.ValidationMessageFor(x=>x.AppUser.Password)
+                @Html.ValidationMessageFor(x => x.AppUser.Password)
+
                 @Html.PasswordFor(x => x.AppUser.ConfirmPassword, new { @class = "form-control", placeholder = "Şifre tekrar" })
-                @Html.ValidationMessageFor(x=>x.AppUser.ConfirmPassword)
+                @Html.ValidationMessageFor(x => x.AppUser.ConfirmPassword)
+
                 @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "e-mail adresinizi yazınız" })
+
                 @Html.TextBoxFor(x => x.UserProfile.FirstName, new { @class = "form-control", placeholder = "İsminizi yazınız" })
+
                 @Html.TextBoxFor(x => x.UserProfile.LastName, new { @class = "form-control", placeholder = "Soyadınızı yazınız" })
 
                 Adres giriniz:<br />
