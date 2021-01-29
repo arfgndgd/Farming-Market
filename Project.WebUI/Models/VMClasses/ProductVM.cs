@@ -6,6 +6,7 @@ using System.Web;
 
 namespace Project.WebUI.Models.VMClasses
 {
+    //PAVM ile benzer ama PAVM classında alışveriş için sayfalama yapar. Benzer class gibidir ama farklıdır
     public class ProductVM
     {
         public List<Product> Products { get; set; }

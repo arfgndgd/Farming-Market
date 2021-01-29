@@ -1,4 +1,5 @@
-﻿using Project.ENTITIES.Models;
+﻿using PagedList;
+using Project.ENTITIES.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,13 @@ namespace Project.WebUI.Models.VMClasses
 {
     public class PAVM
     {
-        //Ürünlerin listelenirken sayfalandırılması ile ilgili sınıf
+        //Ürünlerin listelenirken sayfalandırılması ile ilgili sınıf(PagedList)
         public Product Product { get; set; }
+
         public List<Product> Products { get; set; }
+
         public List<Category> Categories { get; set; }
 
+        public IPagedList<Product> PagedProducts { get; set; }
     }
 }
