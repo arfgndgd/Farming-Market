@@ -638,6 +638,7 @@
     <Content Include="Views\Register\RegisterSuccess.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shopping\ShoppingList.cshtml" />
+    <Content Include="Views\Shopping\CartPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
