@@ -1,49 +1,138 @@
 ﻿@model AppUserVM
 @{
     ViewBag.Title = "RegisterNow";
+    ViewBag.Title = "Login";
 }
 
-<style>
-    .field-validation-error {
-        color: red;
-    }
-</style>
-<body class="login-body">
-    <div class="container">
-        @using (Html.BeginForm("RegisterNow", "Register", FormMethod.Post, new { @class = "form-signin" }))
-        {
-            if (ViewBag.ZatenVar != null)
-            {
-                <h2>@ViewBag.ZatenVar</h2>
-            }
-            <h2 class="form-signin-heading">Üye Olunuz</h2>
-            <div class="login-wrap">
-                @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control ", placeholder = "Kullanıcı ismi belirleyiniz" })
-                @Html.ValidationMessageFor(x => x.AppUser.UserName)
+<main class="bg_gray">
 
-                @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Şifre belirleyiniz" })
-                @Html.ValidationMessageFor(x => x.AppUser.Password)
-
-                @Html.PasswordFor(x => x.AppUser.ConfirmPassword, new { @class = "form-control", placeholder = "Şifre tekrar" })
-                @Html.ValidationMessageFor(x => x.AppUser.ConfirmPassword)
-
-                @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "e-mail adresinizi yazınız" })
-
-                @Html.TextBoxFor(x => x.UserProfile.FirstName, new { @class = "form-control", placeholder = "İsminizi yazınız" })
-
-                @Html.TextBoxFor(x => x.UserProfile.LastName, new { @class = "form-control", placeholder = "Soyadınızı yazınız" })
-
-                Adres giriniz:<br />
-                @Html.TextAreaFor(x => x.UserProfile.Address, new { @class = "form-control", @style = "resize:none" })
-                <br />
-
-                <button class="btn btn-lg btn-login btn-block" type="submit">Üye Ol</button>
-
-                <div class="registration">
-                    @Html.ActionLink("Giriş Yap", "Login", "Account")
-                </div>
+    <div class="container margin_30">
+        <div class="page_header">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Category</a></li>
+                    <li>Page active</li>
+                </ul>
             </div>
-        }
-    </div>
-</body>
+            <h1>Sign In or Create an Account</h1>
+        </div>
+        <!-- /page_header -->
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-6 col-md-8">
+                <div class="box_account">
+                    <h3 class="client">Already Client</h3>
+                    <div class="form_container">
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 pr-lg-1">
+                                <a href="#0" class="social_bt facebook">Login with Facebook</a>
+                            </div>
+                            <div class="col-lg-6 pl-lg-1">
+                                <a href="#0" class="social_bt google">Login with Google</a>
+                            </div>
+                        </div>
+                        <div class="divider"><span>Or</span></div>
+                        @TempData["HesapAktifmi"]
+                        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-signin" }))
+                        {
+                            if (ViewBag.AktifDegil != null)
+                            {
+                                <h2>@ViewBag.AktifDegil</h2>
+                            }
 
+                            @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control", placeholder = "Kullanıcı ismi giriniz" })
+
+                            @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "Email giriniz" })
+
+                            @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Şifre Giriniz" })
+
+                            <div class="clearfix add_bottom_15">
+                                <div class="checkboxes float-left">
+                                    <label class="container_check">
+                                        Remember me
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="float-right"><a id="forgot" href="~/OuterTools/javascript:void(0);">Lost Password?</a></div>
+                            </div>
+                            <div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
+                            <div id="forgot_pw">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email_forgot" id="email_forgot" placeholder="Type your email">
+                                </div>
+                                <p>A new password will be sent shortly.</p>
+                                <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+                            </div>
+                        }
+
+                    </div>
+                    <!-- /form_container -->
+                </div>
+                <!-- /box_account -->
+                <div class="row">
+                    <div class="col-md-6 d-none d-lg-block">
+                        <ul class="list_ok">
+                            <li>Find Locations</li>
+                            <li>Quality Location check</li>
+                            <li>Data Protection</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 d-none d-lg-block">
+                        <ul class="list_ok">
+                            <li>Secure Payments</li>
+                            <li>H24 Support</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-8">
+                <div class="box_account">
+                    <h3 class="new_client">New Client</h3> <small class="float-right pt-2">* Required Fields</small>
+                    <div class="form_container">
+                       @using (Html.BeginForm("RegisterNow", "Register", FormMethod.Post, new { @class = "form-signin" }))
+                        {
+                            if (ViewBag.ZatenVar != null)
+                            {
+                                <h2>@ViewBag.ZatenVar</h2>
+                            }
+                                              
+                                @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control ", placeholder = "Kullanıcı ismi belirleyiniz" })
+                                @Html.ValidationMessageFor(x => x.AppUser.UserName)
+
+                                @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Şifre belirleyiniz" })
+                                @Html.ValidationMessageFor(x => x.AppUser.Password)
+
+                                @Html.PasswordFor(x => x.AppUser.ConfirmPassword, new { @class = "form-control", placeholder = "Şifre tekrar" })
+                                @Html.ValidationMessageFor(x => x.AppUser.ConfirmPassword)
+
+                                @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "e-mail adresinizi yazınız" })
+
+                                @Html.TextBoxFor(x => x.UserProfile.FirstName, new { @class = "form-control", placeholder = "İsminizi yazınız" })
+
+                                @Html.TextBoxFor(x => x.UserProfile.LastName, new { @class = "form-control", placeholder = "Soyadınızı yazınız" })
+                                
+                                @Html.TextAreaFor(x => x.UserProfile.Address, new { @class = "form-control", @style = "resize:none" })
+                                <hr>
+                                <div class="form-group">
+                                    <label class="container_check">
+                                        Accept <a href="#0">Terms and conditions</a>
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="text-center"><input type="submit" value="Register" class="btn_1 full-width"></div>                                   
+                        }
+
+                       
+                    </div>
+                    <!-- /form_container -->
+                </div>
+                <!-- /box_account -->
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</main>
