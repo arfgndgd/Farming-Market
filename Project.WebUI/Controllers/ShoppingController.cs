@@ -76,7 +76,7 @@ namespace Project.WebUI.Controllers
             }
 
             TempData["sepetBos"] = "Sepetinizde ürün bulunmamaktadır";
-            return RedirectToAction("ShoppinList");
+            return RedirectToAction("ShoppingList");
         }
 
         public ActionResult DeleteFromCart(int id)
