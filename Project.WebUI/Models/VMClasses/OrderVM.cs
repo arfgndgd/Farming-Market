@@ -1,4 +1,5 @@
 ﻿using Project.ENTITIES.Models;
+using Project.WebUI.Models.ShoppingTools;
 using Project.WebUI.Models.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,10 @@ namespace Project.WebUI.Models.VMClasses
         public PaymentVM PaymentVM { get; set; }
         public Order Order { get; set; }
 
+
+        public AppUser AppUser { get; set; }
+        public UserProfile UserProfile { get; set; }
+        public Cart Cart { get; set; } //TODO: sonradan eklendiler SiparisiOnayla ekranı için
+        public CartItem CartItem { get; set; }
     }
 }
