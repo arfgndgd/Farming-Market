@@ -1,8 +1,9 @@
 ﻿@model OrderVM
 @{
     ViewBag.Title = "SiparisiOnayla";
-
+    //ViewBag.Title = "CartPage";
 }
+
 
 <main class="bg_gray">
 
@@ -203,11 +204,11 @@
                                     @Html.TextAreaFor(x => x.Order.ShippedAddress, new { @class = "form-control", placeholder = "Sipariş Adresi" })
                                     <br />
                                 </div>
-                                
+
                             }
                         </div>
                     </div>
-                    
+
                 </div>
                 <!-- /step -->
 
@@ -216,7 +217,8 @@
                 <div class="step last">
                     <h3>3. Order Summary</h3>
                     <div class="box_general summary">
-                       
+
+
                         @*@foreach (CartItem item in Model.Cart.Sepetim)
                         {
                             <ul>
@@ -234,9 +236,9 @@
 
                         <a href="confirm.html" class="btn_1 full-width">Confirm and Pay</a>
                     </div>
-                    <!-- /box_general -->
-                </div>
-                <!-- /step -->
+             /box_general 
+            </div>
+             /step 
             </div>
         </div>
         <!-- /row -->

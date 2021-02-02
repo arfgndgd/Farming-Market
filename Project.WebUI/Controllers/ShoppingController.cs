@@ -99,6 +99,7 @@ namespace Project.WebUI.Controllers
         //TODO: Authenticationı ekle
         public ActionResult SiparisiOnayla()
         {
+            
             AppUser mevcutKullanici;
             if (Session["member"] != null)
             {
@@ -108,9 +109,11 @@ namespace Project.WebUI.Controllers
             {
                 TempData["anonim"] = "Kullanıcı üye değil";
             }
+            
             return View();
         }
 
+   
         [HttpPost]
         public ActionResult SiparisiOnayla(OrderVM ovm)
         {
