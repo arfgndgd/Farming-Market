@@ -217,28 +217,29 @@
                 <div class="step last">
                     <h3>3. Order Summary</h3>
                     <div class="box_general summary">
+                        <ul>
+                            <li class="clearfix"><em>1x Armor Air X Fear</em>  <span>$145.00</span></li>
+                            <li class="clearfix"><em>2x Armor Air Zoom Alpha</em> <span>$115.00</span></li>
+                        </ul>
+                        <ul>
+                            <li class="clearfix"><em><strong>Subtotal</strong></em>  <span>$450.00</span></li>
+                            <li class="clearfix"><em><strong>Shipping</strong></em> <span>$0</span></li>
 
-
-                        @*@foreach (CartItem item in Model.Cart.Sepetim)
-                        {
-                            <ul>
-                                <li class="clearfix"><em>@item.Amount x @item.Name</em>  <span>@item.Price</span></li>
-                                <li class="clearfix"><em>2x Armor Air Zoom Alpha</em> <span>$115.00</span></li>
-                            </ul>
-                            <ul>
-                                <li class="clearfix"><em><strong>Subtotal</strong></em>  <span>@item.SubTotal</span></li>
-                                <li class="clearfix"><em><strong>Shipping</strong></em> <span>$0</span></li>
-
-                            </ul>
-                            <div class="total clearfix">TOTAL <span>@item.SubTotal</span></div>
-                        }*@
-
+                        </ul>
+                        <div class="total clearfix">TOTAL <span>$450.00</span></div>
+                        <div class="form-group">
+                            <label class="container_check">
+                                Register to the Newsletter.
+                                <input type="checkbox" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
 
                         <a href="confirm.html" class="btn_1 full-width">Confirm and Pay</a>
                     </div>
-             /box_general 
-            </div>
-             /step 
+                    <!-- /box_general -->
+                </div>
+                <!-- /step -->
             </div>
         </div>
         <!-- /row -->

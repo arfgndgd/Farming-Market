@@ -640,6 +640,7 @@
     <Content Include="Views\Shopping\ShoppingList.cshtml" />
     <Content Include="Views\Shopping\CartPage.cshtml" />
     <Content Include="Views\Shopping\SiparisiOnayla.cshtml" />
+    <Content Include="Views\Shared\_cartPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

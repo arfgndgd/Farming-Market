@@ -1,0 +1,48 @@
+﻿@model CartPageVM
+@{
+
+}
+
+
+<div class="dropdown dropdown-cart">
+    <a href='@Url.Action("CartPage","Shopping")' class="cart_bt"><strong>2</strong></a>
+    <div class="dropdown-menu">
+        @foreach (CartItem item in Model.Cart.Sepetim)
+        {
+            <ul>
+                <li>
+                    <a>
+                        <figure><img data-src="@item.ImagePath" alt="" width="50" height="50" class="lazy" /></figure>
+                        <strong><span>@item.Amount x @item.Name</span>@item.SubTotal</strong>
+                    </a>
+                    <a href='@Url.Action("DeleteFromCart",new { id=item.ID})' class="action"><i class="ti-trash"></i></a>
+                </li>
+            </ul>
+            <div class="total_drop">
+                <div class="clearfix"><strong>Total</strong><span>@Model.Cart.TotalPrice</span></div>
+                <a href='@Url.Action("CartPage","Shopping")' class="btn_1 outline">View Cart</a><a href='@Url.Action("SiparisiOnayla","Shopping")' class="btn_1">Checkout</a>
+            </div>
+        }
+
+
+    </div>
+</div>
+<!-- /dropdown-cart-->
+<!--<div class="box_general summary">-->
+@*@foreach (CartItem item in Model.Cart.Sepetim)
+    {
+        <ul>
+            <li class="clearfix"><em>@item.Amount x @item.Name</em>  <span>@item.Price</span></li>
+            <li class="clearfix"><em>2x Armor Air Zoom Alpha</em> <span>$115.00</span></li>
+        </ul>
+        <ul>
+            <li class="clearfix"><em><strong>Subtotal</strong></em>  <span>@item.SubTotal</span></li>
+            <li class="clearfix"><em><strong>Shipping</strong></em> <span>$0</span></li>
+
+        </ul>
+        <div class="total clearfix">TOTAL <span>@item.SubTotal</span></div>
+    }*@
+
+<!--<a href="confirm.html" class="btn_1 full-width">Confirm and Pay</a>
+</div>-->
+<!-- /box_general -->
