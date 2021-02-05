@@ -13,10 +13,10 @@ namespace Project.WebUI.Models.VMClasses
         public PaymentVM PaymentVM { get; set; }
         public Order Order { get; set; }
 
-
-        public AppUser AppUser { get; set; }
-        public UserProfile UserProfile { get; set; }
-        public Cart Cart { get; set; } //TODO: sonradan eklendiler SiparisiOnayla ekranı için
-        public CartItem CartItem { get; set; }
+        //TODO: sonradan eklendiler SiparisiOnayla ekranı için
+        //public AppUser AppUser { get; set; }
+        //public UserProfile UserProfile { get; set; }
+        //public Cart Cart { get; set; } 
+        //public CartItem CartItem { get; set; }
     }
 }
