@@ -17,5 +17,12 @@ namespace Project.WebUI.Models.VMClasses
         public List<Category> Categories { get; set; }
 
         public IPagedList<Product> PagedProducts { get; set; }
+
+        public Blog Blog { get; set; }
+
+        public List<Blog> Blogs { get; set; }
+
+        public IPagedList<Blog> PagedBlogs { get; set; }
+
     }
 }
