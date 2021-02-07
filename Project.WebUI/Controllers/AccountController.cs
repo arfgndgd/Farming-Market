@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Project.WebUI.Controllers
 {
@@ -20,16 +21,17 @@ namespace Project.WebUI.Controllers
         }
 
         // GET: Account
-        public ActionResult Login()
+        public ActionResult Login(/*string ReturnUrl*/)
         {
+            //ViewBag.ReturnUrl = ReturnUrl;
             return View();
         }
-
+        
         [HttpPost]
-        public ActionResult Login(AppUser appUser)
+        public ActionResult Login(AppUser appUser, string ReturnUrl)
         {
             AppUser hesap = appRep.FirstOrDefault(x => x.UserName == appUser.UserName||x.Email == appUser.Email);
-            //TODO: ya da email
+            //kullanıcı adı ya da email
 
             string decrypted = DantexCrypt.DeCrypt(hesap.Password);         
            
@@ -39,6 +41,10 @@ namespace Project.WebUI.Controllers
                 {
                     return AktifKontrol();
                 }
+
+                //FormsAuthentication.SetAuthCookie(appUser.UserName, appUser.RememberMe);
+                //Beni hatırla butonu için
+                
                 Session["member"] = hesap;
                 return RedirectToAction("ShoppingList", "Shopping");
                 //Burada ShoppingList vardı 
@@ -48,6 +54,11 @@ namespace Project.WebUI.Controllers
             return View();
         }
 
+        //public ActionResult LogOut()
+        //{
+        //    FormsAuthentication.SignOut();
+        //    return RedirectToAction("Login", "Account");
+        //}
 
         private ActionResult AktifKontrol()
         {

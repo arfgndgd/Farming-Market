@@ -96,7 +96,7 @@ namespace Project.WebUI.Controllers
             return RedirectToAction("ShoppingList");
         }
 
-        //TODO: Authenticationı ekle
+        //TODO: Authenticationı eklee
         public ActionResult SiparisiOnayla()
         {
             

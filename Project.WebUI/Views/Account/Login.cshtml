@@ -30,7 +30,8 @@
                                 <a href="#0" class="social_bt google">Login with Google</a>
                             </div>
                         </div>
-                        <div class="divider"><span>Or</span></div>
+                        <div class="divider">@*<span>Or</span>*@</div>
+
                         @TempData["HesapAktifmi"]
                         @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-signin" }))
                         {
@@ -40,16 +41,17 @@
                             }
 
                             @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control", placeholder = "Kullanıcı ismi giriniz" })
-
+                            <div class="divider"><span>Or</span></div>
                             @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "Email giriniz" })
-
+                            <br />
                             @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Şifre Giriniz" })
 
+                            
                             <div class="clearfix add_bottom_15">
                                 <div class="checkboxes float-left">
                                     <label class="container_check">
                                         Remember me
-                                        <input type="checkbox">
+                                        @*@Html.CheckBoxFor(x=>x.AppUser.RememberMe, new { @class = "form-control"})*@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>

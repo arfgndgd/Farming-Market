@@ -25,6 +25,7 @@ namespace Project.ENTITIES.Models
         public bool Active { get; set; }
         public string Email { get; set; }
         public UserRole URole { get; set; }
+        public bool RememberMe { get; set; }
 
 
         public AppUser()

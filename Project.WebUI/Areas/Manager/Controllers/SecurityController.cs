@@ -102,7 +102,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
 
-            //TODO: Sabit bir login-logout butonu ekle
+            //TODO: Sabit bir login-logout butonu ekle  
         }
 
     }

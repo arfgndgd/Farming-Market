@@ -67,7 +67,7 @@ namespace Project.WebUI.Controllers
 
         public ActionResult RegisterSuccess()
         {
-            //TODO: gmail linki ekle
+            //TODO: gmail linki ekle 
             return View();
         }
 

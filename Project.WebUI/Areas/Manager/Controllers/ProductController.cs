@@ -33,7 +33,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             {
                 Products = pRep.GetAll()
                 //Products = id == null ? pRep.GetAll() : pRep.Where(x => x.CategoryID == id)
-                //TODO : burada Supplierla ilgili sorun olabilir, Classında product ve storage listeledim
+                //TODO : burada Supplierla ilgili sorun olabilir, Classında product ve storage listeledim 
             };
 
 

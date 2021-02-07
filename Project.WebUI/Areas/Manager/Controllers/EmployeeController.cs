@@ -48,7 +48,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
         [HttpPost]
         public ActionResult AddEmployee(Employee employee, HttpPostedFileBase resim)
         {
-            //TODO: Dosya yolunu değiştiremiyorum ve güncellenmede resim kayboluyor
+            //TODO: Dosya yolunu değiştiremiyorum ve güncellenmede resim kayboluyor 
             employee.Photo = ImageUploader.UploadImage("~/Pictures/", resim);
             eRep.Add(employee);
             return RedirectToAction("EmployeeList"); 

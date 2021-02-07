@@ -17,7 +17,7 @@ namespace Project.ENTITIES.Models
         public int? SupplierID { get; set; }
         public int? StorageCategoryID { get; set; }
 
-        //TODO: kilo * fiyat hesaplaması 
+        //TODO: kilo * fiyat hesaplaması
 
         //Relational Properties
         public virtual Supplier Supplier { get; set; }

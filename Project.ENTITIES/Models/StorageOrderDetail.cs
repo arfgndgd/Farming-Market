@@ -12,7 +12,7 @@ namespace Project.ENTITIES.Models
         public int OrderID { get; set; }
         public decimal TotalPrice { get; set; }
         public double Weight { get; set; }
-        //TODO: hesaplamayı düşün
+        //TODO: hesaplamayı düşün 
 
 
         //Relational Properties
