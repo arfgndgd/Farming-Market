@@ -501,6 +501,7 @@
     <Content Include="OutherTools\sass\_variables.scss" />
     <Content Include="OutherTools\video\.DS_Store" />
     <Content Include="Areas\Manager\Views\Blog\BlogList.cshtml" />
+    <Content Include="Areas\Manager\Views\Blog\AddBlog.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
