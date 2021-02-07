@@ -500,6 +500,7 @@
     <Content Include="OutherTools\sass\_mixin.scss" />
     <Content Include="OutherTools\sass\_variables.scss" />
     <Content Include="OutherTools\video\.DS_Store" />
+    <Content Include="Areas\Manager\Views\Blog\BlogList.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -581,6 +582,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Manager\Controllers\BlogController.cs" />
     <Compile Include="Areas\Manager\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Manager\Controllers\ShipperController.cs" />
     <Compile Include="Areas\Manager\Controllers\DepartmentController.cs" />
@@ -602,6 +604,7 @@
     </Compile>
     <Compile Include="Models\ShoppingTools\Cart.cs" />
     <Compile Include="Models\ShoppingTools\CartItem.cs" />
+    <Compile Include="Models\VMClasses\BlogVM.cs" />
     <Compile Include="Models\VMClasses\CartPageVM.cs" />
     <Compile Include="Models\VMClasses\OrderVM.cs" />
     <Compile Include="Models\ViewModels\PaymentVM.cs" />
