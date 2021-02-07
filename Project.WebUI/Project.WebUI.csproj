@@ -594,6 +594,7 @@
     <Compile Include="AuthenticationClasses\ManagerAuthentication.cs" />
     <Compile Include="AuthenticationClasses\MemberAuthentication.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ShoppingController.cs" />
     <Compile Include="Global.asax.cs">
@@ -641,6 +642,7 @@
     <Content Include="Views\Shopping\CartPage.cshtml" />
     <Content Include="Views\Shopping\SiparisiOnayla.cshtml" />
     <Content Include="Views\Shared\_cartPage.cshtml" />
+    <Content Include="Views\Page\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
