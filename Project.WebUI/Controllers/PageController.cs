@@ -1,4 +1,5 @@
-﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
+﻿using PagedList;
+using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.WebUI.Models.VMClasses;
 using System;
 using System.Collections.Generic;
@@ -24,11 +25,12 @@ namespace Project.WebUI.Controllers
 
         public ActionResult BlogList(int? page)
         {
-            BlogVM bvm = new BlogVM
+            PAVM pvm = new PAVM
             {
-
+                PagedBlogs = bRep.GetActives().ToPagedList(page ?? 1,20) 
             };
-            return View();
+
+            return View(pvm);
         }
 
         

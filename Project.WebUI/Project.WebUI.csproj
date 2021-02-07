@@ -648,6 +648,7 @@
     <Content Include="Views\Shopping\SiparisiOnayla.cshtml" />
     <Content Include="Views\Shared\_cartPage.cshtml" />
     <Content Include="Views\Page\Contact.cshtml" />
+    <Content Include="Views\Page\BlogList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
