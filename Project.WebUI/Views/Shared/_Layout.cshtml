@@ -32,6 +32,8 @@
     <link href="~/OutherTools/css/checkout.css" rel="stylesheet">
     <link href="~/OutherTools/css/account.css" rel="stylesheet" />
     <link href="~/OutherTools/css/blog.css" rel="stylesheet">
+    <link href="~/OutherTools/css/about.css" rel="stylesheet" />
+    <link href="~/OutherTools/css/faq.css" rel="stylesheet" />
 
     <!-- YOUR CUSTOM CSS -->
     <link href="~/OutherTools/css/custom.css" rel="stylesheet">
@@ -234,12 +236,11 @@
                         <h3 data-target="#collapse_1">Quick Links</h3>
                         <div class="collapse dont-collapse-sm links" id="collapse_1">
                             <ul>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="help.html">Faq</a></li>
-                                <li><a href="help.html">Help</a></li>
+                                <li><a href="@Url.Action("About","Page")">About us</a></li>
+                                <li><a href="@Url.Action("Faq","Page")">Faq</a></li>
                                 <li><a href="account.html">My account</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contacts.html">Contacts</a></li>
+                                <li><a href="@Url.Action("BlogList","Page")">Blog</a></li>
+                                <li><a href="@Url.Action("Contact","Page")">Contacts</a></li>
                             </ul>
                         </div>
                     </div>
@@ -278,10 +279,10 @@
                             <div class="follow_us">
                                 <h5>Follow Us</h5>
                                 <ul>
-                                    <li><a href="#0"><img src="~/OutherTools/img/twitter_icon.svg" /></a></li>
-                                    <li><a href="#0"><img src="~/OutherTools/img/facebook_icon.svg" /></a></li>
-                                    <li><a href="#0"><img src="~/OutherTools/img/instagram_icon.svg" /></a></li>
-                                    <li><a href="#0"><img src="~/OutherTools/img/youtube_icon.svg" /></a></li>
+                                    <li><a href="http://twitter.com" target="_blank"><img src="~/OutherTools/img/twitter_icon.svg" /></a></li>
+                                    <li><a href="http://facebok.com" target="_blank"><img src="~/OutherTools/img/facebook_icon.svg" /></a></li>
+                                    <li><a href="http://instagram.com" target="_blank"><img src="~/OutherTools/img/instagram_icon.svg" /></a></li>
+                                    <li><a href="http://youtube.com" target="_blank"><img src="~/OutherTools/img/youtube_icon.svg" /></a></li>
                                 </ul>
                             </div>
                         </div>

@@ -649,6 +649,8 @@
     <Content Include="Views\Shared\_cartPage.cshtml" />
     <Content Include="Views\Page\Contact.cshtml" />
     <Content Include="Views\Page\BlogList.cshtml" />
+    <Content Include="Views\Page\About.cshtml" />
+    <Content Include="Views\Page\Faq.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

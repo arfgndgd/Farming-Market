@@ -23,6 +23,11 @@ namespace Project.WebUI.Controllers
             return View();
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+
         public ActionResult BlogList(int? page)
         {
             PAVM pvm = new PAVM
@@ -33,6 +38,10 @@ namespace Project.WebUI.Controllers
             return View(pvm);
         }
 
+        public ActionResult Faq()
+        {
+            return View();
+        }
         
     }
 }
