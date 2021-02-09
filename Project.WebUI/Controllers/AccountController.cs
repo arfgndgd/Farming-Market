@@ -45,7 +45,9 @@ namespace Project.WebUI.Controllers
 
                 //FormsAuthentication.SetAuthCookie(appUser.UserName, appUser.RememberMe);
                 //Beni hatırla butonu için
-                
+
+
+
                 Session["member"] = hesap;
                 return RedirectToAction("ShoppingList", "Shopping");
                 //Burada ShoppingList vardı 
@@ -55,11 +57,11 @@ namespace Project.WebUI.Controllers
             return View();
         }
 
-        //public ActionResult LogOut()
-        //{
-        //    FormsAuthentication.SignOut();
-        //    return RedirectToAction("Login", "Account");
-        //}
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
 
         private ActionResult AktifKontrol()
         {
