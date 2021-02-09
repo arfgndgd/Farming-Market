@@ -10,7 +10,7 @@ namespace Project.ENTITIES.Models
 {
     public class AppUser:BaseEntity
     {
-        [Required(ErrorMessage = "Kullanıcı adı boş geçilemez")]
+        //[Required(ErrorMessage = "Kullanıcı adı boş geçilemez")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Şifre adı boş geçilemez")]

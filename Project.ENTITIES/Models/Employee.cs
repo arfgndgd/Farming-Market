@@ -30,6 +30,6 @@ namespace Project.ENTITIES.Models
         //Relational Properties
         public virtual Department Department { get; set; }
 
-        //TODO: Order ilişkisi eklenecek ya da direkt olarak Product ve Storage ile ilişkilenmeli ki crud işlemleri yapılsın
+        
     }
 }

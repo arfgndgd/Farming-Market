@@ -1,6 +1,7 @@
 ﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.COMMON.Tools;
 using Project.ENTITIES.Models;
+using Project.WebUI.Models.VMClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,6 +65,55 @@ namespace Project.WebUI.Controllers
         {
             ViewBag.AktifDegil = "Lutfen hesabınızı aktif hale getiriniz...Mailinizi kontrol ediniz";
             return View("Login");
+        }
+
+        public ActionResult LostPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult LostPassword(AppUserVM auvm)
+        {
+            AppUser resetPassword = appRep.FirstOrDefault(x => x.Email == auvm.AppUser.Email);
+            if (resetPassword !=null)
+            {
+                string guidMail = "Şifre sıfırlama işlemini başlatmak için yandaki bağlantıya tıklayabilirsiniz https://localhost:44317/Account/ResetPassword/" + resetPassword.ActivationCode;
+                MailSender.Send(receiver: resetPassword.Email, body: guidMail, subject: "Şifre Sıfırlama");
+                ViewBag.Metin = "Şifre sıfırlama bağlantısı mail adresinize gönderilmiştir.";
+                
+            }
+            else
+            {
+                ViewBag.Metin = "Kullanıcı kaydı bulunamadı";
+            }
+            return View();
+        }
+
+        public ActionResult ResetPassword(Guid id)
+        {
+            AppUserVM auvm = new AppUserVM();
+            auvm.AppUser = appRep.FirstOrDefault(x => x.ActivationCode == id);
+            return View(auvm);
+        }
+
+        [HttpPost]
+        public ActionResult ResetPassword(AppUser appUser)//TODO : toBeUpdated Null geliyor bakılacak.
+        {
+            //ModelState.Remove("AppUser.UserName");
+            if (!ModelState.IsValid)
+            {
+                return View();
+
+            }
+            AppUser toBeUpdated = appRep.FirstOrDefault(x => x.ActivationCode == appUser.ActivationCode);
+            toBeUpdated.Password = DantexCrypt.Crypt(appUser.Password);
+            toBeUpdated.ConfirmPassword = DantexCrypt.Crypt(appUser.ConfirmPassword);
+            appRep.Update(toBeUpdated);
+
+            TempData["Reset"] = "Şifre sıfırlama işleminiz başarılı bir şekilde gerçekleştirilmiştir.";
+
+            return RedirectToAction("Login");
         }
     }
 }

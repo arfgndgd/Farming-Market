@@ -77,6 +77,7 @@ namespace Project.WebUI.Controllers
             if (hesapAktif != null)
             {
                 hesapAktif.Active = true;
+                hesapAktif.ActivationCode = Guid.NewGuid();
                 apRep.Update(hesapAktif);
 
                 TempData["HesapAktifmi"] = "Hesap aktivasyonu tamamlandı";
