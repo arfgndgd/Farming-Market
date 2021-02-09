@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Web.SessionState;
 
 namespace Project.WebUI.Controllers
 {
@@ -22,14 +23,14 @@ namespace Project.WebUI.Controllers
         }
 
         // GET: Account
-        public ActionResult Login(/*string ReturnUrl*/)
+        public ActionResult Login()
         {
             //ViewBag.ReturnUrl = ReturnUrl;
             return View();
         }
         
         [HttpPost]
-        public ActionResult Login(AppUser appUser, string ReturnUrl)
+        public ActionResult Login(AppUser appUser)
         {
             AppUser hesap = appRep.FirstOrDefault(x => x.UserName == appUser.UserName||x.Email == appUser.Email);
             //kullanıcı adı ya da email
@@ -59,7 +60,9 @@ namespace Project.WebUI.Controllers
 
         public ActionResult LogOut()
         {
-            FormsAuthentication.SignOut();
+
+            //FormsAuthentication.SignOut();
+            Session.Contents.RemoveAll();
             return RedirectToAction("Login");
         }
 
@@ -109,6 +112,7 @@ namespace Project.WebUI.Controllers
 
             }
             AppUser toBeUpdated = appRep.FirstOrDefault(x => x.ActivationCode == appUser.ActivationCode);
+            //toBeUpdated = appRep.Find(appUser.id);
             toBeUpdated.Password = DantexCrypt.Crypt(appUser.Password);
             toBeUpdated.ConfirmPassword = DantexCrypt.Crypt(appUser.ConfirmPassword);
             appRep.Update(toBeUpdated);
