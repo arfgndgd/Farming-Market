@@ -3,40 +3,67 @@
     ViewBag.Title = "DepartmentList";
 }
 
-<h3>Departman eklemek için @Html.ActionLink("Tıklayınız", "AddDepartment")</h3>
-<br /><br />
-<div class="panel-body">
-    <div class="adv-table">
-        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
-            <thead>
-                <tr>
-                    <th class="hidden-phone">ID</th>
-                    <th class="hidden-phone">Departman</th>
-                    <th class="hidden-phone">Açıklama</th>
-                    <th class="hidden-phone">Durum</th>
-                    <th class="hidden-phone">Sil</th>
-                    <th class="hidden-phone">Güncelle</th>
-                    <th class="hidden-phone">Kaldır</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (Department item in Model.Departments)
-                {
-                    <tr class="gradeX">
-                        <td>@item.ID</td>
-                        <td>@item.DepartmentName</td>
-                        <td>@item.Description</td>
-                        <td>@item.Status</td>
-                        <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteDepartment", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Departman Sayfası</h2></header>
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                    <div class="clearfix">
+                        <div class="btn-group">
+                            <button id="editable-sample_new" class="btn green">
+                                @Html.ActionLink("Departman Ekle", "AddDepartment") <i class="icon-plus"></i>
+                            </button>
+                        </div>
+                        <div class="btn-group pull-right">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                Tools <i class="icon-angle-down"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Print</a></li>
+                                <li><a href="#">Save as PDF</a></li>
+                                <li><a href="#">Export to Excel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="space15"></div>
+                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Departman</th>
+                                <th>Açıklama</th>
+                                <th>Durum</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                                <th>Kaldır</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           @foreach (Department item in Model.Departments)
+                            {
+                                <tr class="">
+                                    <td>@item.ID</td>
+                                    <td>@item.DepartmentName</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.Status</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateDepartment", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                                    <td>@Html.ActionLink("Sil", "DeleteDepartment", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyDepartment", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div>
+                                    <td>@Html.ActionLink("Güncelle", "UpdateDepartment", new { id = item.ID }, new { @class = "btn btn-success" })</td>
 
-
+                                    <td>@Html.ActionLink("Kaldır", "DestroyDepartment", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
