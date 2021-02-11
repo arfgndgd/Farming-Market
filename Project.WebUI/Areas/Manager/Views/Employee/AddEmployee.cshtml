@@ -90,15 +90,6 @@
                                         <br /><br />
 
                                         <div class="form-group">
-                                            <label class="col-sm-2 col-sm-2 control-label">Adres</label>
-                                            <div class="col-sm-4">
-                                                @Html.TextAreaFor(x => x.Employee.Address, new { @class = "form-control genislik", @style = "resize:none", placeholder = "Adres Giriniz" })
-                                            </div>
-                                        </div>
-
-                                        <br /><br />
-
-                                        <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">Şehir</label>
                                             <div class="col-sm-4">
                                                 @Html.TextBoxFor(x => x.Employee.City, new { @class = "form-control genislik", placeholder = "Şehir Giriniz" })
@@ -125,6 +116,15 @@
 
                                         <br /> <br />
 
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Adres</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextAreaFor(x => x.Employee.Address, new { @class = "form-control genislik", @style = "resize:none", placeholder = "Adres Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /><br />
+                                        <br /> <br />
 
                                         <div class="form-group">
                                             <div class="col-sm-10">
