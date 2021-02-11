@@ -2,58 +2,68 @@
 @{
     ViewBag.Title = "AddBlog";
 }
-<style>
-    .genislik {
-        width: 300px;
-    }
-</style>
 
-@using (Html.BeginForm("AddBlog", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    <div class="row">
-        <div class="col-lg-12">
-            <section class="panel">
-                <h4 class="panel-heading">Blog Yazısı Ekleme Sayfası</h4>
-                <br /> <br />
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Resim Seçiniz</label>
-                        <div class="col-sm-10">
-                            <input type="file" name="resim" class="form-control genislik" />
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Blog Yazısı Ekleme Sayfası</h2></header>
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                    @using (Html.BeginForm("AddBlog", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <section class="panel">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Resim Seçiniz</label>
+                                            <div class="col-sm-4">
+                                                <input type="file" name="resim" class="form-control genislik" />
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Başlık</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Blog.Title, new { @class = "form-control genislik", placeholder = "Başlık Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Blog Yazısı</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextAreaFor(x => x.Blog.Description, new { @class = "form-control genislik", placeholder = "Blog Yazısı Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <div class="col-sm-10">
+                                                <button class="btn btn-primary">
+                                                    Blog Yazısı Ekle
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+                            </div>
                         </div>
-                    </div>
+                    }
 
-                    <br /> <br />
-
-                    <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Başlık</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(x => x.Blog.Title, new { @class = "form-control genislik", placeholder = "Başlık Giriniz" })
-                        </div>
-                    </div>
-
-                    <br /> <br />
-
-                    <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Blog Yazısı</label>
-                        <div class="col-sm-10">
-                            @Html.TextAreaFor(x => x.Blog.Description, new { @class = "form-control genislik", placeholder = "Blog Yazısı Giriniz" })
-                        </div>
-                    </div>
-
-                    <br /> <br />
-
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <button class="btn btn-primary">
-                                Blog Yazısı Ekle
-                            </button>
-                        </div>
-                    </div>
 
                 </div>
-            </section>
-        </div>
-    </div>
-}
-
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
