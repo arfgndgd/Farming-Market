@@ -10,7 +10,7 @@
     <section class="wrapper">
         <!-- page start-->
         <section class="panel">
-            <header class="panel-heading"><h2>Stok Kategori Ekleme Sayfası</h2></header>
+            <header class="panel-heading"><h2>Ambar Kategori Ekleme Sayfası</h2></header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                    @using (Html.BeginForm("AddStorageCategory", "StorageCategory", FormMethod.Post, new { enctype = "multipart/form-date" }))
@@ -20,19 +20,19 @@
                                 <section class="panel">
                                     <div class="panel-body">
                                         @*...Resim eklenebilir...
-                            <div class="form-group">
-                                 <label class="col-sm-2 col-sm-2 control-label">Resim Seçiniz</label>
-                                 <div class="col-sm-10">
-                                     <input type="file" name="resim" class="form-control genislik" />
-                                 </div>
-                            </div>*@
+                                        <div class="form-group">
+                                             <label class="col-sm-2 col-sm-2 control-label">Resim Seçiniz</label>
+                                             <div class="col-sm-10">
+                                                 <input type="file" name="resim" class="form-control genislik" />
+                                             </div>
+                                        </div>*@
 
                                         @*<br /> <br />*@
 
                                         <div class="form-group">
-                                            <label class="col-sm-2 col-sm-2 control-label">Stok Kategori İsmi</label>
+                                            <label class="col-sm-2 col-sm-2 control-label">Ambar Kategori İsmi</label>
                                             <div class="col-sm-4">
-                                                @Html.TextBoxFor(x => x.StorageCategory.StorageCategoryName, new { @class = "form-control genislik", placeholder = "Stok Kategori İsmi Giriniz" })
+                                                @Html.TextBoxFor(x => x.StorageCategory.StorageCategoryName, new { @class = "form-control genislik", placeholder = "Ambar Kategori İsmi Giriniz" })
                                             </div>
                                         </div>
 
@@ -41,16 +41,17 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">Açıklama</label>
                                             <div class="col-sm-4">
-                                                @Html.TextBoxFor(x => x.StorageCategory.StorageDescription, new { @class = "form-control genislik", placeholder = "Açıklama Giriniz" })
+                                                @Html.TextAreaFor(x => x.StorageCategory.StorageDescription, new { @class = "form-control genislik", placeholder = "Açıklama Giriniz" })
                                             </div>
                                         </div>
 
+                                        <br /> <br />
                                         <br /> <br />
 
                                         <div class="form-group">
                                             <div class="col-sm-10">
                                                 <button class="btn btn-primary">
-                                                    Stok Kategori Ekle
+                                                    Ambar Kategori Ekle
                                                 </button>
                                             </div>
                                         </div>

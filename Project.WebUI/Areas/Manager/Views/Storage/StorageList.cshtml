@@ -9,13 +9,13 @@
     <section class="wrapper">
         <!-- page start-->
         <section class="panel">
-            <header class="panel-heading"><h2>Stok Ürün Sayfası</h2></header>
+            <header class="panel-heading"><h2>Ambar Ürün Sayfası</h2></header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                @Html.ActionLink("Stok Ürünü Ekle", "AddStorage") <i class="icon-plus"></i>
+                                @Html.ActionLink("Ambar Ürünü Ekle", "AddStorage") <i class="icon-plus"></i>
                             </button>
                         </div>
                         <div class="btn-group pull-right">
@@ -56,7 +56,7 @@
                                     <td>@item.TotalWeight</td>
                                     @if (item.StorageCategory == null)
                                     {
-                                        <td>Stok Kategorisi Belirtilmemiş</td>
+                                        <td>Ambar Kategorisi Belirtilmemiş</td>
                                     }
                                     else
                                     {

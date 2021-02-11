@@ -8,7 +8,7 @@
     <section class="wrapper">
         <!-- page start-->
         <section class="panel">
-            <header class="panel-heading"><h2>Stok Ürün Ekleme Sayfası</h2></header>
+            <header class="panel-heading"><h2>Ambar Ürün Ekleme Sayfası</h2></header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                    @using (Html.BeginForm("AddStorage", "Storage", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -29,7 +29,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">İsim</label>
                                             <div class="col-sm-4">
-                                                @Html.TextBoxFor(x => x.Storage.ProductName, new { @class = "form-control genislik", placeholder = "Stok Ürün İsmini Giriniz" })
+                                                @Html.TextBoxFor(x => x.Storage.ProductName, new { @class = "form-control genislik", placeholder = "Ambar Ürün İsmini Giriniz" })
                                             </div>
                                         </div>
 
@@ -38,7 +38,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">Fiyat</label>
                                             <div class="col-sm-4">
-                                                @Html.TextBoxFor(x => x.Storage.UnitInPrice, new { @class = "form-control genislik", placeholder = "Stok Ürün Fiyatı Giriniz" })
+                                                @Html.TextBoxFor(x => x.Storage.UnitInPrice, new { @class = "form-control genislik", placeholder = "Ambar Ürün Fiyatı Giriniz" })
                                             </div>
                                         </div>
 
@@ -54,7 +54,7 @@
                                         <br /> <br />
 
                                         <div class="form-group">
-                                            <label class="col-sm-2 col-sm-2 control-label">Stok Kategorisi</label>
+                                            <label class="col-sm-2 col-sm-2 control-label">Ambar Kategorisi</label>
                                             <div class="col-sm-4">
                                                 @Html.DropDownListFor(x => x.Storage.StorageCategoryID, new SelectList(Model.StorageCategories, "ID", "StorageCategoryName"), "Lütfen Seçiniz")
                                             </div>
@@ -74,7 +74,7 @@
                                         <div class="form-group">
                                             <div class="col-sm-10">
                                                 <button class="btn btn-primary">
-                                                    Stok Ürün Ekle
+                                                    Ambar Ürün Ekle
                                                 </button>
                                             </div>
                                         </div>
