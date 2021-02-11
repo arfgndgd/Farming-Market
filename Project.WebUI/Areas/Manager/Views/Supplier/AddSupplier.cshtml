@@ -28,6 +28,22 @@
                                         <br /> <br />
 
                                         <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Telefon No</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Supplier.Phone, new { @class = "form-control genislik", placeholder = "Telefon No Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br /><div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">E-Posta</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Supplier.Email, new { @class = "form-control genislik", placeholder = "E-Posta Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
                                             <label class="col-sm-2 col-sm-2 control-label">Şehir</label>
                                             <div class="col-sm-4">
                                                 @Html.TextBoxFor(x => x.Supplier.City, new { @class = "form-control genislik", placeholder = "Şehir Giriniz" })
@@ -40,22 +56,6 @@
                                             <label class="col-sm-2 col-sm-2 control-label">Ülke</label>
                                             <div class="col-sm-4">
                                                 @Html.TextBoxFor(x => x.Supplier.Country, new { @class = "form-control genislik", placeholder = "Ülke Giriniz" })
-                                            </div>
-                                        </div>
-
-                                        <br /> <br />
-
-                                        <div class="form-group">
-                                            <label class="col-sm-2 col-sm-2 control-label">Telefon No</label>
-                                            <div class="col-sm-4">
-                                                @Html.TextBoxFor(x => x.Supplier.Phone, new { @class = "form-control genislik", placeholder = "Telefon No Giriniz" })
-                                            </div>
-                                        </div>
-
-                                        <br /> <br /><div class="form-group">
-                                            <label class="col-sm-2 col-sm-2 control-label">E-Posta</label>
-                                            <div class="col-sm-4">
-                                                @Html.TextBoxFor(x => x.Supplier.Email, new { @class = "form-control genislik", placeholder = "E-Posta Giriniz" })
                                             </div>
                                         </div>
 

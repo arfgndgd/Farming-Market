@@ -35,11 +35,11 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Firma İsmi</th>
-                                <th>Adres</th>
-                                <th>Şehir</th>
-                                <th>Ülke</th>
                                 <th>Telefon</th>
                                 <th>E-Posta</th>
+                                <th>Şehir</th>
+                                <th>Ülke</th>
+                                <th>Adres</th>
                                 <th>Durum</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
@@ -47,16 +47,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (Supplier item in Model.Suppliers)
+                           @foreach (Supplier item in Model.Suppliers)
                             {
                                 <tr class="">
                                     <td>@item.ID</td>
                                     <td>@item.SupplierName</td>
-                                    <td>@item.Address</td>
-                                    <td>@item.City</td>
-                                    <td>@item.Country</td>
                                     <td>@item.Phone</td>
                                     <td>@item.Email</td>
+                                    <td>@item.City</td>
+                                    <td>@item.Country</td>
+                                    <td>@item.Address</td>
+
                                     <td>@item.Status</td>
 
                                     <td>@Html.ActionLink("Sil", "DeleteSupplier", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
@@ -64,7 +65,7 @@
                                     <td>@Html.ActionLink("Güncelle", "UpdateSupplier", new { id = item.ID }, new { @class = "btn btn-success" })</td>
 
                                     <td>@Html.ActionLink("Kaldır", "DestroySupplier", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
-                                </tr>
+                            </tr>
                             }
                         </tbody>
                     </table>
