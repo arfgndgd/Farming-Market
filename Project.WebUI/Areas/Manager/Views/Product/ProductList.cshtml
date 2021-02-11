@@ -4,23 +4,18 @@
 
 }
 
-
-
-
 <!--main content start-->
 <section id="main-content">
     <section class="wrapper">
         <!-- page start-->
         <section class="panel">
-            <header class="panel-heading">
-                Editable Table
-            </header>
+            <header class="panel-heading"><h2>Ürünler Sayfası</h2></header>
             <div class="panel-body">
                 <div class="adv-table editable-table ">
                     <div class="clearfix">
                         <div class="btn-group">
                             <button id="editable-sample_new" class="btn green">
-                                @Html.ActionLink("Ürün Ekle","AddProduct") <i class="icon-plus"></i>
+                                @Html.ActionLink("Ürün Ekle", "AddProduct") <i class="icon-plus"></i>
                             </button>
                         </div>
                         <div class="btn-group pull-right">
@@ -34,6 +29,7 @@
                             </ul>
                         </div>
                     </div>
+                    <br />
                     <div class="space15"></div>
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
@@ -81,11 +77,11 @@
 
                                 <td><a class="delete" href="javascript:;">Delete</a></td>*@
 
-                                <td>@Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                                <td>@Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
-                                <td>@Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                                <td>@Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.ID }, new { @class = "btn btn-success" })</td>
 
-                                <td>@Html.ActionLink("Kaldır", "DestroyProduct", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
+                                <td>@Html.ActionLink("Kaldır", "DestroyProduct", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
                             </tr>
                             }
                         </tbody>
