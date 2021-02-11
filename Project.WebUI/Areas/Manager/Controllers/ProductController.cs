@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
-    [ManagerAuthentication]
+    //[ManagerAuthentication]
     //[MemberAuthentication]
     public class ProductController : Controller
     {
@@ -40,7 +40,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return View(pvm);
         }
 
-        [ManagerAuthentication]
+        //[ManagerAuthentication]
         public ActionResult AddProduct()
         {
             ProductVM pvm = new ProductVM
@@ -52,7 +52,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
             return View(pvm);
         }
-        [ManagerAuthentication]
+        //[ManagerAuthentication]
         [HttpPost]
         public ActionResult AddProduct([Bind(Prefix = "Product")] Product item, HttpPostedFileBase resim)
         {
@@ -63,7 +63,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
 
         }
-        [ManagerAuthentication]
+        //[ManagerAuthentication]
         public ActionResult UpdateProduct(int id)
         {
             ProductVM pvm = new ProductVM
@@ -74,7 +74,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             };
             return View(pvm);
         }
-        [ManagerAuthentication]
+        //[ManagerAuthentication]
         [HttpPost]
         public ActionResult UpdateProduct([Bind(Prefix = "Product")] Product item, HttpPostedFileBase resim)
         {
@@ -83,14 +83,14 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return RedirectToAction("ProductList");
         }
 
-        [ManagerAuthentication]
+        //[ManagerAuthentication]
         public ActionResult DeleteProduct(int id)
         {
             pRep.Delete(pRep.Find(id));
             return RedirectToAction("ProductList");
         }
 
-        [ManagerAuthentication]
+        //[ManagerAuthentication]
         public ActionResult DestroyProduct(int id)
         {
             pRep.Destroy(pRep.Find(id));
