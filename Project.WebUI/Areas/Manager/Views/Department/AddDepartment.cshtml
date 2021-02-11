@@ -3,49 +3,57 @@
     ViewBag.Title = "AddDepartment";
 }
 
-<style>
-    .genislik {
-        width: 300px;
-    }
-</style>
 
-@using (Html.BeginForm("AddDepartment", "Department", FormMethod.Post, new { enctype = "multipart/form-date" }))
-{
-    <div class="row">
-        <div class="col-lg-12">
-            <section class="panel">
-                <h4 class="panel-heading">Departman Ekleme Sayfası</h4>
-                <br /> <br />
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Departman İsmi</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(x => x.Department.DepartmentName, new { @class = "form-control genislik", placeholder = "Departman İsmi Giriniz" })
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Departman Ekleme Sayfası</h2></header>
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                   @using (Html.BeginForm("AddDepartment", "Department", FormMethod.Post, new { enctype = "multipart/form-date" }))
+                    {
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <section class="panel">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Departman İsmi</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Department.DepartmentName, new { @class = "form-control genislik", placeholder = "Departman İsmi Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Açıklama</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextAreaFor(x => x.Department.Description, new { @class = "form-control genislik", placeholder = "Açıklama Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <div class="col-sm-10">
+                                                <button class="btn btn-primary">
+                                                    Departman Ekle
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
                         </div>
-                    </div>
+                    }
 
-                    <br /> <br />
 
-                    <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Açıklama</label>
-                        <div class="col-sm-10">
-                            @Html.TextBoxFor(x => x.Department.Description, new { @class = "form-control genislik", placeholder = "Açıklama Giriniz" })
-                        </div>
-                    </div>
-
-                    <br /> <br />
-
-                    <div class="form-group">
-                        <div class="col-sm-10">
-                            <button class="btn btn-primary">
-                                Departman Ekle
-                            </button>
-                        </div>
-                    </div>
                 </div>
-            </section>
-        </div>
-    </div>
-}
-
-
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
