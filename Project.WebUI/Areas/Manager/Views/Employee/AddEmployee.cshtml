@@ -3,141 +3,147 @@
     ViewBag.Title = "AddEmployee";
 }
 
-<style>
-    .genislik {
-        width: 300px;
-    }
-</style>
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Çalışan Ekleme Sayfası</h2></header>
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                    @using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <section class="panel">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Resim Seçiniz</label>
+                                            <div class="col-sm-4">
+                                                <input type="file" name="resim" class="form-control genislik" />
+                                            </div>
+                                        </div>
 
-@using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    <div class="row">
-        <div class="col-lg-12">
-            <section class="panel">
-                <h4 class="panel-heading">Çalışan Ekleme Sayfası</h4>
-                <br /> <br />
-                       <div class="panel-body">
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">Resim Seçiniz</label>
-                               <div class="col-sm-10">
-                                   <input type="file" name="resim" class="form-control genislik" />
-                               </div>
-                           </div>
+                                        <br /> <br />
 
-                           <br /> <br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">TCNO</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Employee.TCNO, new { @class = "form-control genislik", placeholder = "TC Numarası Giriniz" })
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">TCNO</label>
-                               <div class="col-sm-10">
-                                   @Html.TextBoxFor(x => x.Employee.TCNO, new { @class = "form-control genislik", placeholder = "TC Numarası Giriniz" })
-                               </div>
-                           </div>
+                                        <br /> <br />
 
-                           <br /> <br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Şifre</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Employee.Password, new { @class = "form-control genislik", placeholder = "Şifre Giriniz" })
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">Şifre</label>
-                               <div class="col-sm-10">
-                                   @Html.TextBoxFor(x => x.Employee.Password, new { @class = "form-control genislik", placeholder = "Şifre Giriniz" })
-                               </div>
-                           </div>
+                                        <br /> <br />
 
-                           <br /> <br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">İsim</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Employee.FirstName, new { @class = "form-control genislik", placeholder = "İsim Giriniz" })
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">İsim</label>
-                               <div class="col-sm-10">
-                                   @Html.TextBoxFor(x => x.Employee.FirstName, new { @class = "form-control genislik", placeholder = "İsim Giriniz" })
-                               </div>
-                           </div>
+                                        <br /> <br />
 
-                           <br /> <br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Soyisim</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Employee.LastName, new { @class = "form-control genislik", placeholder = "Soyisim Giriniz" })
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">Soyisim</label>
-                               <div class="col-sm-10">
-                                   @Html.TextBoxFor(x => x.Employee.LastName, new { @class = "form-control genislik", placeholder = "Soyisim Giriniz" })
-                               </div>
-                           </div>
+                                        <br /> <br />
 
-                           <br /> <br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Departman</label>
+                                            <div class="col-sm-4">
+                                                @Html.DropDownListFor(x => x.Employee.DepartmentID, new SelectList(Model.Departments, "ID", "DepartmentName"), "Lütfen Seçiniz")
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">Departman</label>
-                               <div class="col-sm-10">
-                                   @Html.DropDownListFor(x => x.Employee.DepartmentID, new SelectList(Model.Departments, "ID", "DepartmentName"), "Lütfen Seçiniz")
-                               </div>
-                           </div>
+                                        <br /> <br />
 
-                           <br /> <br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">e-Posta</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Employee.Email, new { @class = "form-control genislik", placeholder = "e-Posta Giriniz" })
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">e-Posta</label>
-                               <div class="col-sm-10">
-                                   @Html.TextBoxFor(x => x.Employee.Email, new { @class = "form-control genislik", placeholder = "e-Posta Giriniz" })
-                               </div>
-                           </div>
+                                        <br /><br />
 
-                           <br /><br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Telefon No</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Employee.Phone, new { @class = "form-control genislik", placeholder = "Telefon No Giriniz" })
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">Telefon No</label>
-                               <div class="col-sm-10">
-                                   @Html.TextBoxFor(x => x.Employee.Phone, new { @class = "form-control genislik", placeholder = "Telefon No Giriniz" })
-                               </div>
-                           </div>
+                                        <br /><br />
 
-                           <br /><br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Adres</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextAreaFor(x => x.Employee.Address, new { @class = "form-control genislik", @style = "resize:none", placeholder = "Adres Giriniz" })
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">Adres</label>
-                               <div class="col-sm-10">
-                                   @Html.TextAreaFor(x => x.Employee.Address, new { @class = "form-control genislik", @style = "resize:none", placeholder = "Adres Giriniz" })
-                               </div>
-                           </div>
+                                        <br /><br />
 
-                           <br /><br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Şehir</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Employee.City, new { @class = "form-control genislik", placeholder = "Şehir Giriniz" })
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">Şehir</label>
-                               <div class="col-sm-10">
-                                   @Html.TextBoxFor(x => x.Employee.City, new { @class = "form-control genislik", placeholder = "Şehir Giriniz" })
-                               </div>
-                           </div>
+                                        <br /> <br />
 
-                           <br /> <br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Cinsiyet</label>
+                                            <div class="col-sm-4">
+                                                @Html.EnumDropDownListFor(x => x.Employee.Gender, new { @class = "form-control genislik", placeholder = "Lütfen Seçiniz" })
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">Cinsiyet</label>
-                               <div class="col-sm-10">
-                                   @Html.EnumDropDownListFor(x => x.Employee.Gender, new { @class = "form-control genislik", placeholder = "Lütfen Seçiniz" })
-                               </div>
-                           </div>
+                                        <br /> <br />
 
-                           <br /> <br />
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Rol</label>
+                                            <div class="col-sm-4">
+                                                @Html.EnumDropDownListFor(x => x.Employee.ERole, new { @class = "form-control genislik", placeholder = "Lütfen Seçiniz" })
+                                            </div>
+                                        </div>
 
-                           <div class="form-group">
-                               <label class="col-sm-2 col-sm-2 control-label">Rol</label>
-                               <div class="col-sm-10">
-                                   @Html.EnumDropDownListFor(x => x.Employee.ERole, new { @class = "form-control genislik", placeholder = "Lütfen Seçiniz" })
-                               </div>
-                           </div>
-
-                           <br /> <br />
-
-
-                           <div class="form-group">
-                               <div class="col-sm-10">
-                                   <button class="btn btn-primary">
-                                       Çalışan Ekle
-                                   </button>
-                               </div>
-                           </div>
-
-                       </div>
-            </section>
-        </div>
-    </div>
-}
+                                        <br /> <br />
 
 
+                                        <div class="form-group">
+                                            <div class="col-sm-10">
+                                                <button class="btn btn-primary">
+                                                    Çalışan Ekle
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->

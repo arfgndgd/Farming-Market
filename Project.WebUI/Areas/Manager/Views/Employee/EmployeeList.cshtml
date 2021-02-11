@@ -3,64 +3,94 @@
     ViewBag.Title = "EmployeeList";
 }
 
-<h3>Çalışan eklemek için @Html.ActionLink("Tıklayınız", "AddEmployee")</h3>
-<br /><br />
-<div class="panel-body">
-    <div class="adv-table">
-        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
-            <thead>
-                <tr>
-                    <th class="hidden-phone">Fotoğraf</th>
-                    <th class="hidden-phone">TCNO</th>
-                    <th class="hidden-phone">Şifre</th>
-                    <th class="hidden-phone">İsim</th>
-                    <th class="hidden-phone">Soyisim</th>
-                    <th class="hidden-phone">Departman</th>
-                    <th class="hidden-phone">e-Posta</th>
-                    <th class="hidden-phone">Telefon No</th>
-                    <th class="hidden-phone">Adres</th>
-                    <th class="hidden-phone">Şehir</th>
-                    <th class="hidden-phone">Cinsiyet</th>
-                    <th class="hidden-phone">Rol</th>
-                    <th class="hidden-phone">Durum</th>
-                    <th class="hidden-phone">Sil</th>
-                    <th class="hidden-phone">Güncelle</th>
-                    <th class="hidden-phone">Kaldır</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (Employee item in Model.Employees)
-                {
-                    <tr class="gradeX">
-                        <td><img width="30" height="30" title="@item.FirstName" src="@item.Photo" /> </td>
-                        <td>@item.TCNO</td>
-                        <td>@item.Password</td>
-                        <td>@item.FirstName</td>
-                        <td>@item.LastName</td>
-                        @if (item.Department == null)
-                        {
-                            <td>Departman Belirtilmemiş</td>
-                        }
-                        else
-                        {
-                            <td>@item.Department.DepartmentName</td>
-                        }
-                        <td>@item.Email</td>
-                        <td>@item.Phone</td>
-                        <td>@item.Address</td>
-                        <td>@item.City</td>
-                        <td>@item.Gender</td>
-                        <td class="hidden-phone">@item.ERole</td>
-                        <td class="hidden-phone">@item.Status</td>
-                        <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteEmployee", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateEmployee", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Çalışanlar Sayfası</h2></header>
+            <div class="panel-body">
+                <div class="adv-table">
+                    <div class="clearfix">
+                        <div class="btn-group">
+                            <button id="editable-sample_new" class="btn green">
+                                @Html.ActionLink("Çalışan Ekle", "AddEmployee") <i class="icon-plus"></i>
+                            </button>
+                        </div>
+                        <div class="btn-group pull-right">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                Tools <i class="icon-angle-down"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Print</a></li>
+                                <li><a href="#">Save as PDF</a></li>
+                                <li><a href="#">Export to Excel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                        <thead>
+                            <tr>
+                                <th>Fotoğraf</th>
+                                <th>TCNO</th>
+                                <th>Şifre</th>
+                                <th>İsim</th>
+                                <th>Soyisim</th>
+                                <th>Departman</th>
+                                <th>e-Posta</th>
+                                <th>Telefon No</th>
+                                <th>Adres</th>
+                                <th>Şehir</th>
+                                <th>Cinsiyet</th>
+                                <th>Rol</th>
+                                <th>Durum</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                                <th>Kaldır</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Employee item in Model.Employees)
+                            {
+                                <tr class="gradeX">
+                                    <td><img width="30" height="30" title="@item.FirstName" src="@item.Photo" /> </td>
+                                    <td>@item.TCNO</td>
+                                    <td>@item.Password</td>
+                                    <td>@item.FirstName</td>
+                                    <td>@item.LastName</td>
+                                    @if (item.Department == null)
+                                    {
+                                        <td>Departman Belirtilmemiş</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Department.DepartmentName</td>
+                                    }
+                                    <td>@item.Email</td>
+                                    <td>@item.Phone</td>
+                                    <td>@item.Address</td>
+                                    <td>@item.City</td>
+                                    <td>@item.Gender</td>
+                                    <td>@item.ERole</td>
+                                    <td>@item.Status</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyEmployee", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div>
+                                    <td>@Html.ActionLink("Sil", "DeleteEmployee", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                                    <td>@Html.ActionLink("Güncelle", "UpdateEmployee", new { id = item.ID }, new { @class = "btn btn-success" })</td>
+
+                                    <td>@Html.ActionLink("Kaldır", "DestroyEmployee", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
+
 
