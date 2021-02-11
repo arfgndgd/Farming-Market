@@ -3,44 +3,70 @@
     ViewBag.Title = "BlogList";
 }
 
-<h3>Blog Yazısı eklemek için @Html.ActionLink("tıklayınız", "AddBlog")</h3>
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Blog Yazıları Sayfası</h2></header>
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                    <div class="clearfix">
+                        <div class="btn-group">
+                            <button id="editable-sample_new" class="btn green">
+                                @Html.ActionLink("Blog Yazısı Ekle", "AddBlog") <i class="icon-plus"></i>
+                            </button>
+                        </div>
+                        <div class="btn-group pull-right">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                Tools <i class="icon-angle-down"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Print</a></li>
+                                <li><a href="#">Save as PDF</a></li>
+                                <li><a href="#">Export to Excel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="space15"></div>
+                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Resim</th>
+                                <th>Başlık</th>
+                                <th>Blog Yazısı</th>
+                                <th>Durum</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                                <th>Kaldır</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Blog item in Model.Blogs)
+                            {
+                                <tr class="">
+                                    <td>@item.ID</td>
+                                    <td><img width="30" height="30" title="@item.Title" src="@item.ImagePath" /> </td>
+                                    <td>@item.Title</td>
+                                    <td>@item.Description</td>
 
-<br />
-<br />
-<div class="panel-body">
-    <div class="adv-table">
-        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
-            <thead>
-                <tr>
-                    <th class="hidden-phone">ID</th>
-                    <th class="hidden-phone">Resim</th>
-                    <th class="hidden-phone">Başlık</th>
-                    <th class="hidden-phone">Blog Yazısı</th>
-                    <th class="hidden-phone">Durum</th>
-                    <th class="hidden-phone">Sil</th>
-                    <th class="hidden-phone">Güncelle</th>
-                    <th class="hidden-phone">Kaldır</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (Blog item in Model.Blogs)
-                {
-                    <tr class="gradeX">
-                        <td>@item.ID</td>
-                        <td><img width="30" height="30" title="@item.Title" src="@item.ImagePath" /> </td>
-                        <td>@item.Title</td>
-                        <td>@item.Description</td>
-                       
-                        <td class="hidden-phone">@item.Status</td>
+                                    <td>@item.Status</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Sil", "DeleteBlog", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                                    <td>@Html.ActionLink("Sil", "DeleteBlog", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Güncelle", "UpdateBlog", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                                    <td>@Html.ActionLink("Güncelle", "UpdateBlog", new { id = item.ID }, new { @class = "btn btn-success" })</td>
 
-                        <td class="center hidden-phone">@Html.ActionLink("Kaldır", "DestroyBlog", new { id = item.ID }, new { @class = "btn btn-dark" })</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div>
+                                    <td>@Html.ActionLink("Kaldır", "DestroyBlog", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
