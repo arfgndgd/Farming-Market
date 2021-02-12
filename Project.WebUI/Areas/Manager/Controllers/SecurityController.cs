@@ -99,7 +99,10 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
         public ActionResult LogOut()
         {
-            FormsAuthentication.SignOut();
+            //FormsAuthentication.SignOut();
+
+            Session.Remove("manager");
+
             return RedirectToAction("Login");
 
             //TODO: Sabit bir login-logout butonu ekle  

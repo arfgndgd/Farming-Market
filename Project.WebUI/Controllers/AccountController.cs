@@ -62,7 +62,7 @@ namespace Project.WebUI.Controllers
         {
 
             //FormsAuthentication.SignOut();
-            Session.Contents.RemoveAll();
+            Session.Remove("member");
             return RedirectToAction("Login");
         }
 

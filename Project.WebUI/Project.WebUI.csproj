@@ -2060,7 +2060,6 @@
     <Content Include="Areas\Manager\Views\Department\DepartmentList.cshtml" />
     <Content Include="Areas\Manager\Views\Department\AddDepartment.cshtml" />
     <Content Include="Areas\Manager\Views\Department\UpdateDepartment.cshtml" />
-    <Content Include="Areas\Manager\Views\Security\Login.cshtml" />
     <Content Include="Areas\Manager\Views\StorageCategory\StorageCategoryList.cshtml" />
     <Content Include="Areas\Manager\Views\StorageCategory\AddStorageCategory.cshtml" />
     <Content Include="Areas\Manager\Views\StorageCategory\UpdateStorageCategory.cshtml" />
@@ -2313,6 +2312,7 @@
     <Content Include="Areas\Manager\OuterTools\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\Manager\OuterTools\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Areas\Manager\OuterTools\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Manager\Views\Security\Login.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />

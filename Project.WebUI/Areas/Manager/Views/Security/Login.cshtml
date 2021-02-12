@@ -1,37 +1,72 @@
 ﻿@model EmployeeVM
 @{
-    ViewBag.Title = "Login";
+    Layout = null;
 }
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>FlatLab - Flat & Responsive Bootstrap Admin Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Areas/Manager/OuterTools/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Areas/Manager/OuterTools/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/Areas/Manager/OuterTools/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/Areas/Manager/OuterTools/css/style.css" rel="stylesheet">
+    <link href="~/Areas/Manager/OuterTools/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
 <body class="login-body">
+
     <div class="container">
         @*@if (ViewBag.Mesaj != null)
         {
         <h2>@ViewBag.Mesaj</h2>
         }*@
-       
-        @ViewBag.KullaniciYok
-        @ViewBag.Mesaj
+        <br />
+        <br />
+        <br />
+        
+        <p style="font-size:30pt; font-family:'Roboto'" class="text-center top"><b>@ViewBag.KullaniciYok</b><b>@ViewBag.Mesaj</b></p>
+        
         @using (Html.BeginForm("Login", "Security", FormMethod.Post, new { @class = "form-signin" }))
         {
-            
-            <h2 class="form-signin-heading">Çalışan Girişi Yapınız</h2>
-            <div class="login-wrap">
-                <div>
-                    @Html.TextBoxFor(x => x.Employee.TCNO, new { @class = "form-control", placeholder = "Çalışan ismi giriniz" })
+            <form class="form-signin" action="index.html">
+                <h2 class="form-signin-heading">Çalışan Girişi</h2>
+                <div class="login-wrap">
+
+                    <div> @Html.TextBoxFor(x => x.Employee.TCNO, new { @class = "form-control", placeholder = "Çalışan No Giriniz" })</div>
+
+                    <div> @Html.PasswordFor(x => x.Employee.Password, new { @class = "form-control", placeholder = "Şifre Giriniz" })</div>
+
+                    <button class="btn btn-lg btn-login btn-block" type="submit">Giriş Yap</button>
+
                 </div>
-                <div>
 
-                    @Html.PasswordFor(x => x.Employee.Password, new { @class = "form-control", placeholder = "Şifre Giriniz" })
-                </div>
-
-                
-
-                <br />
-                <button class="btn btn-lg btn-login btn-block" type="submit">Giriş Yap</button>
-
-            </div>
-
+            </form>
         }
     </div>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="~/Areas/Manager/OuterTools/js/jquery.js"></script>
+    <script src="~/Areas/Manager/OuterTools/js/bootstrap.min.js"></script>
+
+
 </body>
+</html>
