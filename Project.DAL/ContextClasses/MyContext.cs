@@ -1,4 +1,5 @@
-﻿using Project.ENTITIES.Models;
+﻿using Project.DAL.StrategyPatterns;
+using Project.ENTITIES.Models;
 using Project.MAP.Options;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,7 @@ namespace Project.DAL.ContextClasses
 
         public MyContext() : base("MyConnection")
         {
-            //Database.SetInitializer(new MyInit()); 
-            //TODO: SetInitializer eklemeli miyim? Admin işlemi nasıl yapılacak MyInitte, Employeede yönetim olmalı
+            Database.SetInitializer(new MyInit());
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

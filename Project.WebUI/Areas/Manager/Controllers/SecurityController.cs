@@ -105,7 +105,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
             return RedirectToAction("Login");
 
-            //TODO: Sabit bir login-logout butonu ekle  
+        
         }
 
     }
