@@ -1,0 +1,184 @@
+﻿@model ProductVM
+@{
+    ViewBag.Title = "ProductDetail";
+}
+
+
+
+
+<main>
+    <div class="container margin_30">
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="all">
+                    <div class="slider">
+                        <div class="owl-carousel owl-theme main">
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item-box"></div>
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item-box"></div>
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item-box"></div>
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item-box"></div>
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item-box"></div>
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item-box"></div>
+                        </div>
+                        <div class="left nonl"><i class="ti-angle-left"></i></div>
+                        <div class="right"><i class="ti-angle-right"></i></div>
+                    </div>
+                    <div class="slider-two">
+                        <div class="owl-carousel owl-theme thumbs">
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item active"></div>
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item"></div>
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item"></div>
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item"></div>
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item"></div>
+                            <div style="background-image: url(@Model.Product.ImagePath);" class="item"></div>
+                        </div>
+                        <div class="left-t nonl-t"></div>
+                        <div class="right-t"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Category</a></li>
+                        <li>Page active</li>
+                    </ul>
+                </div>
+                <!-- /page_header -->
+                <div class="prod_info">
+                    <h1>@Model.Product.ProductName</h1>
+                    @if (Model.Product.Supplier == null)
+                    {
+                        <p><small>Farming & Market</small></p>
+                    }
+                    else
+                    {
+                        <p><small>@Model.Product.Supplier.SupplierName</small></p>
+                    }
+                    <br />
+                    <div class="prod_options">
+                        <div class="row">
+                            <label class="col-xl-5 col-lg-5  col-md-6 col-6 pt-0"><strong>STOK</strong></label>
+                            <div class="col-xl-4 col-lg-5 col-md-6 col-6 colors">
+                                @if (Model.Product.UnitInStock == null)
+                                {
+                                    <p>STOKTA YOK</p>
+                                }
+                                else
+                                {
+
+                                    <p>@Model.Product.UnitInStock</p>
+
+                                }
+
+                            </div>
+                            
+                        </div>
+                        @*<div class="row">
+                            <label class="col-xl-5 col-lg-5 col-md-6 col-6"><strong>Size</strong> - Size Guide <a href="#0" data-toggle="modal" data-target="#size-modal"><i class="ti-help-alt"></i></a></label>
+                            <div class="col-xl-4 col-lg-5 col-md-6 col-6">
+                                <div class="custom-select-form">
+                                    <select class="wide">
+                                        <option value="" selected>Small (S)</option>
+                                        <option value="">M</option>
+                                        <option value=" ">L</option>
+                                        <option value=" ">XL</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>*@
+                        <br />
+                        <div class="row">
+                            <label class="col-xl-5 col-lg-5  col-md-6 col-6"><strong>Quantity</strong></label>
+                            <div class="col-xl-4 col-lg-5 col-md-6 col-6">
+                                <div class="numbers-row">
+                                    <input type="text" value="1" id="quantity_1" class="qty2" name="quantity_1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="price_main"><span class="new_price">@Model.Product.UnitPrice</span></div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="btn_add_to_cart"><a href="@Url.Action("AddToCart","Shopping",new { id = Model.Product.ID})" class="btn_1">Add to Cart</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /prod_info -->
+                <div class="product_actions">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="ti-heart"></i><span>Add to Wishlist</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="ti-control-shuffle"></i><span>Add to Compare</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /product_actions -->
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+    <div class="tabs_product">
+        <div class="container">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a id="tab-A" href="#pane-A" class="nav-link active" data-toggle="tab" role="tab">Description</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /tabs_product -->
+    <div class="tab_content_wrapper">
+        <div class="container">
+            <div class="tab-content" role="tablist">
+                <div id="pane-A" class="card tab-pane fade active show" role="tabpanel" aria-labelledby="tab-A">
+                    <div class="card-header" role="tab" id="heading-A">
+                        <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" href="#collapse-A" aria-expanded="false" aria-controls="collapse-A">
+                                Description
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapse-A" class="collapse" role="tabpanel" aria-labelledby="heading-A">
+                        <div class="card-body">
+                            <div class="row justify-content-between">
+                                <div class="col-lg-6">
+                                    <h3>Details</h3>
+                                    @if (Model.Product.Features == null)
+                                    {
+                                        <p>Ürün özellikleri fotoğraflarda göründüğü gibidir ya da herhangi bir özellik belirtilmemiştir</p>
+                                    }
+                                    else
+                                    {
+                                        <p>@Model.Product.Features</p>
+
+                                    }
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <!-- /tab-content -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /tab_content_wrapper -->
+
+
+
+</main>
+<!-- /main -->

@@ -10,10 +10,13 @@ namespace Project.ENTITIES.Models
     {
         public string ProductName { get; set; }
         public decimal UnitPrice { get; set; }
-        public short UnitInStock { get; set; }
+        public short? UnitInStock { get; set; }
         public string ImagePath { get; set; }
+        public string Features { get; set; }
         public int? CategoryID { get; set; }
         public int? SupplierID { get; set; }
+
+        
 
         //Relational Properties
         public virtual Category Category { get; set; }

@@ -40,6 +40,7 @@
                                 <th>Ürün Stok</th>
                                 <th>Ürün Kategori</th>
                                 <th>Ürün Tedarikçi</th>
+                                <th>Özellikler</th>
                                 <th>Durum</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
@@ -69,6 +70,15 @@
                                 else
                                 {
                                     <td>@item.Supplier.SupplierName</td>
+                                }
+
+                                @if (item.Features==null)
+                                {
+                                    <td>Özellik belirtilmemiş</td>
+                                }
+                                else
+                                {
+                                    <td>@item.Features</td>
                                 }
 
                                 <td class="hidden-phone">@item.Status</td>
