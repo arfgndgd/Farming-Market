@@ -15,7 +15,7 @@ namespace Project.DAL.ContextClasses
 
         public MyContext() : base("MyConnection")
         {
-            //Database.SetInitializer(new MyInit());
+            Database.SetInitializer(new MyInit());
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
