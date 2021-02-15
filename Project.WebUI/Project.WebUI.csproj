@@ -2417,6 +2417,7 @@
     </Compile>
     <Compile Include="Models\ShoppingTools\Cart.cs" />
     <Compile Include="Models\ShoppingTools\CartItem.cs" />
+    <Compile Include="Models\ViewModels\SearchVM.cs" />
     <Compile Include="Models\VMClasses\BlogVM.cs" />
     <Compile Include="Models\VMClasses\CartPageVM.cs" />
     <Compile Include="Models\VMClasses\OrderVM.cs" />

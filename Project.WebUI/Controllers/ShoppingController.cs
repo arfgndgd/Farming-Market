@@ -3,6 +3,7 @@ using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.COMMON.Tools;
 using Project.ENTITIES.Models;
 using Project.WebUI.Models.ShoppingTools;
+using Project.WebUI.Models.ViewModels;
 using Project.WebUI.Models.VMClasses;
 using System;
 using System.Collections.Generic;
@@ -105,7 +106,16 @@ namespace Project.WebUI.Controllers
             };
             return View(pvm);
             
-    }
+        }
+
+        public ActionResult Search(string item)
+        {
+
+            return View(pRep.Where(x => x.ProductName.Contains(item) || item == null).ToList());
+        }
+
+        
+
 
         //TODO: Authenticationı eklee
         public ActionResult SiparisiOnayla()

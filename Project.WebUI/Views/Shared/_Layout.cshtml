@@ -132,13 +132,11 @@
                                                 <div class="col-lg-3">
                                                     <h3>Listing grid</h3>
                                                     <ul>
-                                                        <li><a href="listing-grid-1-full.html">Grid Full Width</a></li>
-                                                        <li><a href="listing-grid-2-full.html">Grid Full Width 2</a></li>
-                                                        <li><a href="listing-grid-3.html">Grid Boxed</a></li>
-                                                        <li><a href="listing-grid-4-sidebar-left.html">Grid Sidebar Left</a></li>
-                                                        <li><a href="listing-grid-5-sidebar-right.html">Grid Sidebar Right</a></li>
-                                                        <li><a href="listing-grid-6-sidebar-left.html">Grid Sidebar Left 2</a></li>
-                                                        <li><a href="listing-grid-7-sidebar-right.html">Grid Sidebar Right 2</a></li>
+                                                        @*@foreach (Category item in Model.Categories)
+                                                        {
+                                                            <li><a href="@Html.ActionLink(item.CategoryName,"ShoppingList",new { categoryID = item.ID})"></a></li>
+                                                        }*@
+                                                        
                                                     </ul>
                                                 </div>
                                                 <div class="col-lg-3">

@@ -15,17 +15,14 @@ namespace Project.WebUI.Controllers
     public class AccountController : Controller
     {
         AppUserRepository appRep;
-        //EmployeeRepository empRep;
         public AccountController()
         {
             appRep = new AppUserRepository();
-            //empRep = new EmployeeRepository();
         }
 
         // GET: Account
         public ActionResult Login()
         {
-            //ViewBag.ReturnUrl = ReturnUrl;
             return View();
         }
         

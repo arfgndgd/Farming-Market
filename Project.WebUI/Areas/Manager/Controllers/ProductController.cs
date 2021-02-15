@@ -27,12 +27,11 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
         // GET: Manager/Product
         [AllowAnonymous]
-        public ActionResult ProductList()
+        public ActionResult ProductList(int? id)
         {
             ProductVM pvm = new ProductVM
             {
-                Products = pRep.GetAll()
-                //Products = id == null ? pRep.GetAll() : pRep.Where(x => x.CategoryID == id)
+                Products = id == null ? pRep.GetAll() : pRep.Where(x=>x.CategoryID == id)
                 //TODO : burada Supplierla ilgili sorun olabilir, Classında product ve storage listeledim 
             };
 

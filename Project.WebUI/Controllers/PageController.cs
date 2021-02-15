@@ -33,7 +33,7 @@ namespace Project.WebUI.Controllers
         {
             PAVM pvm = new PAVM
             {
-                PagedBlogs = bRep.GetActives().ToPagedList(page ?? 1,20) 
+                PagedBlogs = bRep.GetActives().ToPagedList(page ?? 1,6) 
             };
 
             return View(pvm);
