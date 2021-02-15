@@ -37,7 +37,7 @@ namespace Project.WebUI.Controllers
             PAVM pavm = new PAVM
             {
                 
-                PagedProducts = categoryID == null ? pRep.GetActives().ToPagedList(page ?? 1,20) : pRep.Where(x=>x.CategoryID == categoryID).ToPagedList(page ?? 1,20),Categories =cRep.GetActives()
+                PagedProducts = categoryID == null ? pRep.GetActives().ToPagedList(page ?? 1,15) : pRep.Where(x=>x.CategoryID == categoryID).ToPagedList(page ?? 1,15),Categories =cRep.GetActives()
             };
             if (categoryID != null)
             {
@@ -95,6 +95,17 @@ namespace Project.WebUI.Controllers
             }
             return RedirectToAction("ShoppingList");
         }
+
+        public ActionResult ProductDetail(int? id)
+        {
+          
+            ProductVM pvm = new ProductVM
+            {
+                Product = pRep.FirstOrDefault(x => x.ID == id)
+            };
+            return View(pvm);
+            
+    }
 
         //TODO: Authenticationı eklee
         public ActionResult SiparisiOnayla()

@@ -12,12 +12,10 @@ namespace Project.WebUI.Controllers
     public class PageController : Controller
     {
         BlogRepository bRep;
-        ProductRepository pRep;
 
         public PageController()
         {
             bRep = new BlogRepository();
-            pRep = new ProductRepository();
         }
         
         // GET: Page
@@ -46,14 +44,7 @@ namespace Project.WebUI.Controllers
             return View();
         }
         
-        public ActionResult ProductDetail(int? id)
-        {
-            ProductVM pvm = new ProductVM
-            {
-                Product = pRep.FirstOrDefault(x=> x.ID == id)
-            };
-            return View(pvm);
-        }
+       
 
     }
 }

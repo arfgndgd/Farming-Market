@@ -2023,6 +2023,7 @@
     <Content Include="OutherTools\track-order.html" />
     <Content Include="OutherTools\video\intro.mp4" />
     <Content Include="OutherTools\video\intro.ogv" />
+    <Content Include="Pictures\resimyok.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -2463,7 +2464,7 @@
     <Content Include="Views\Page\Faq.cshtml" />
     <Content Include="Views\Account\LostPassword.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Page\ProductDetail.cshtml" />
+    <Content Include="Views\Shopping\ProductDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2476,7 +2477,6 @@
     <Folder Include="Areas\Manager\Data\" />
     <Folder Include="Areas\Manager\OuterTools\assets\jquery-file-upload\server\php\files\thumbnail\" />
     <Folder Include="EmployePhoto\" />
-    <Folder Include="Pictures\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project.BLL\Project.BLL.csproj">

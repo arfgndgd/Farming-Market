@@ -129,20 +129,20 @@
                             <div class="col-6 col-md-4">
                                 <div class="grid_item">
                                     <figure>
-                                        @if (item.ImagePath == null)
+                                       @if (item.ImagePath == null)
                                         {
-                                            <a href="@Url.Action("ProductDetail","Page",new { id = item.ID})">
-                                                <img class="img-fluid lazy" src="~/OutherTools/img/products/product_placeholder_square_medium.jpg" alt="" title="@item.ProductName" />
+                                            <a href="@Url.Action("ProductDetail","Shopping",new { id = item.ID})">
+                                                <img class="img-fluid lazy" width="225" height="225" src="~/Pictures/resimyok.jpg" alt="Resim Yok" title="@item.ProductName"/>
                                             </a>
                                         }
                                         else
                                         {
-                                            <a href="@Url.Action("ProductDetail","Page",new { id = item.ID})">
-                                                <img class="img-fluid lazy" data-src="@item.ImagePath" alt="" title="@item.ProductName" />
+                                            <a href="@Url.Action("ProductDetail","Shopping",new { id = item.ID})">
+                                                <img class="img-fluid lazy" width="225" height="225" data-src="@item.ImagePath" alt="" title="@item.ProductName" />
                                             </a>
                                         }
                                     </figure>
-                                    <a href="@Url.Action("ProductDetail","Page",new { id = item.ID})">
+                                    <a href="@Url.Action("ProductDetail","Shopping",new { id = item.ID})">
                                         <h3>@item.ProductName</h3>
                                     </a>
 
@@ -165,20 +165,14 @@
                     <!-- /row -->
                     <div class="pagination__wrapper">
                         <ul class="pagination">
-                            <li><a href="#0" class="prev" title="previous page">&#10094;</a></li>
-                            <li>
-                                <a href="#0" class="active">1</a>
-                            </li>
-                            <li>
-                                <a href="#0">2</a>
-                            </li>
-                            <li>
-                                <a href="#0">3</a>
-                            </li>
-                            <li>
-                                <a href="#0">4</a>
-                            </li>
-                            <li><a href="#0" class="next" title="next page">&#10095;</a></li>
+                            @if (TempData["catID"] != null)
+                            {
+                                <li>@Html.PagedListPager(Model.PagedProducts, page => Url.Action("ShoppingList", new { page,categoryID = TempData["catID"]}))</li>
+                            }
+                            else
+                            {
+                                <li>@Html.PagedListPager(Model.PagedProducts, page => Url.Action("ShoppingList", new { page }))</li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -190,18 +184,3 @@
         <!-- /container -->
 </main>
 
-    <!-- /main -->
-    @*<div>
-            @if (TempData["catID"] != null)
-            {
-                <ul>
-                    <li>@Html.PagedListPager(Model.PagedProducts, page => Url.Action("ShoppingList", new { page, categoryID = TempData["catID"] }))</li>
-                </ul>
-            }
-            else
-            {
-                <ul>
-                    <li>@Html.PagedListPager(Model.PagedProducts, page => Url.Action("ShoppingList", new { page }))</li>
-                </ul>
-            }
-        </div>*@
