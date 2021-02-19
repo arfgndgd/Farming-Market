@@ -1,0 +1,55 @@
+﻿@model PAVM
+
+<li class="megamenu submenu">
+    <a href="javascript:void(0);" class="show-submenu-mega">FARMING-MARKET</a>
+    <div class="menu-wrapper">
+        <div class="row small-gutters">
+            <div class="col-lg-3">
+                <h3>Listing grid</h3>
+                <ul>
+                    @foreach (Category item in Model.Categories)
+                        {
+                            <li><a href="@Html.ActionLink(item.CategoryName,"ShoppingList",new { categoryID = item.ID})"></a></li>
+
+                            @*@item.CategoryName*@
+                        }
+
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Listing row &amp; Product</h3>
+                <ul>
+                    <li><a href="listing-row-1-sidebar-left.html">Row Sidebar Left</a></li>
+                    <li><a href="listing-row-2-sidebar-right.html">Row Sidebar Right</a></li>
+                    <li><a href="listing-row-3-sidebar-left.html">Row Sidebar Left 2</a></li>
+                    <li><a href="listing-row-4-sidebar-extended.html">Row Sidebar Extended</a></li>
+                    <li><a href="product-detail-1.html">Product Large Image</a></li>
+                    <li><a href="product-detail-2.html">Product Carousel</a></li>
+                    <li><a href="product-detail-3.html">Product Sticky Info</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Other pages</h3>
+                <ul>
+                    <li><a href="cart.html">Cart Page</a></li>
+                    <li><a href="checkout.html">Check Out Page</a></li>
+                    <li><a href="confirm.html">Confirm Purchase Page</a></li>
+                    <li><a href="account.html">Create Account Page</a></li>
+                    <li><a href="track-order.html">Track Order</a></li>
+                    <li><a href="help.html">Help Page</a></li>
+                    <li><a href="help-2.html">Help Page 2</a></li>
+                    <li><a href="leave-review.html">Leave a Review</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                <div class="banner_menu">
+                    <a href="#0">
+                        <img src="~/OutherTools/img/banner_menu.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /menu-wrapper -->
+</li>

@@ -11,11 +11,15 @@ namespace Project.WebUI.Controllers
 {
     public class PageController : Controller
     {
+        CategoryRepository cRep;
+        ProductRepository pRep;
         BlogRepository bRep;
 
         public PageController()
         {
             bRep = new BlogRepository();
+            pRep = new ProductRepository();
+            cRep = new CategoryRepository();
         }
         
         // GET: Page
@@ -43,8 +47,21 @@ namespace Project.WebUI.Controllers
         {
             return View();
         }
-        
-       
+
+        public ActionResult GetCategories(int? id)
+        {
+            PAVM pvm = new PAVM
+            {
+                Categories = cRep.GetActives(),
+                //Products = pRep.GetActives(),
+                Products = id == null ? pRep.GetAll() : pRep.Where(x => x.CategoryID == id)
+                //TODO: Search ayarlaıncak
+
+
+
+            };
+            return PartialView(pvm);
+        }
 
     }
 }
