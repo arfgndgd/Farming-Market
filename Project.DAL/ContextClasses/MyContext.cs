@@ -33,6 +33,7 @@ namespace Project.DAL.ContextClasses
             modelBuilder.Configurations.Add(new StorageCategoryMap());
             modelBuilder.Configurations.Add(new StorageOrderDetailMap());
             modelBuilder.Configurations.Add(new BlogMap());
+            modelBuilder.Configurations.Add(new CustomerMap());
         }
 
         public DbSet<AppUser> AppUsers { get; set; }
@@ -49,5 +50,6 @@ namespace Project.DAL.ContextClasses
         public DbSet<StorageCategory> StorageCategories { get; set; }
         public DbSet<StorageOrderDetail> StorageOrderDetails { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Customer> Customers { get; set; } //AppUserdan farklıdır Storage ürünlerine elden satış için çalışır
     }
 }
