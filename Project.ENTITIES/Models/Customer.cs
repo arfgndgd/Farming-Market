@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace Project.ENTITIES.Models
 {
-    public class Shipper : BaseEntity
+    public class Customer:BaseEntity
     {
-        public string ShipperName { get; set; }
+        //AppUser classınndan farklıdır yalnızca yüklü miktarda Storage ürünleri için elden satış için açılmış bir classtır.
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+        public string Address { get; set; }
 
-        public Shipper()
-        {
-            Orders = new List<Order>();
-            StorageOrders = new List<StorageOrder>();
-        }
         //Relational Properties
-        public virtual List<Order> Orders { get; set; }
         public virtual List<StorageOrder> StorageOrders { get; set; }
+
     }
 }

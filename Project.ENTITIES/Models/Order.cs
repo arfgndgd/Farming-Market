@@ -20,10 +20,12 @@ namespace Project.ENTITIES.Models
         public string Email { get; set; }
         public string EmailAddress { get; set; } // TODO: bunları niye kullandık araştır
 
+        
+
         //Relational Properties
         public virtual AppUser AppUser { get; set; }
         public virtual List<OrderDetail> OrderDetails { get; set; }
         public virtual Shipper Shipper { get; set; }
-        public virtual List<StorageOrderDetail> StorageOrderDetails { get; set; }
+        
     }
 }

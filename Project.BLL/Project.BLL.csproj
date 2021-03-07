@@ -55,6 +55,7 @@
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\AppUserRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\BlogRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\CategoryRepository.cs" />
+    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\CustomerRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\DepartmentRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\EmployeeRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\OrderDetailRepository.cs" />
