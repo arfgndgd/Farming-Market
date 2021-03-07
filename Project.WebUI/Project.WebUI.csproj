@@ -2314,6 +2314,12 @@
     <Content Include="Areas\Manager\OuterTools\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Areas\Manager\OuterTools\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\Manager\Views\Security\Login.cshtml" />
+    <Content Include="Areas\Manager\Views\Order\OrderList.cshtml" />
+    <Content Include="Areas\Manager\Views\Order\AddOrder.cshtml" />
+    <Content Include="Areas\Manager\Views\Order\UpdateOrder.cshtml" />
+    <Content Include="Areas\Manager\Views\OrderDetail\OrderDetailList.cshtml" />
+    <Content Include="Areas\Manager\Views\OrderDetail\AddOrderDetail.cshtml" />
+    <Content Include="Areas\Manager\Views\OrderDetail\UpdateOrderDetail.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -2397,6 +2403,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Manager\Controllers\BlogController.cs" />
     <Compile Include="Areas\Manager\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Manager\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Manager\Controllers\OrderDetailController.cs" />
     <Compile Include="Areas\Manager\Controllers\ShipperController.cs" />
     <Compile Include="Areas\Manager\Controllers\DepartmentController.cs" />
     <Compile Include="Areas\Manager\Controllers\EmployeeController.cs" />
@@ -2420,6 +2428,7 @@
     <Compile Include="Models\ViewModels\SearchVM.cs" />
     <Compile Include="Models\VMClasses\BlogVM.cs" />
     <Compile Include="Models\VMClasses\CartPageVM.cs" />
+    <Compile Include="Models\VMClasses\OrderDetailVM.cs" />
     <Compile Include="Models\VMClasses\OrderVM.cs" />
     <Compile Include="Models\ViewModels\PaymentVM.cs" />
     <Compile Include="Models\VMClasses\AppUserVM.cs" />

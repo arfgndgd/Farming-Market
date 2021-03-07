@@ -1,0 +1,77 @@
+﻿@model OrderDetailVM
+@{
+    ViewBag.Title = "OrderDetailList";
+}
+
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Sipariş Detayı Sayfası</h2><h3>Sipariş ID'lerini karşılaştırabileceğiniz Sipariş sayfasına gitmek için @Html.ActionLink("Tıklayınız", "OrderList", "Order")</h3></header>
+            
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                    <div class="clearfix">
+                        <div class="btn-group">
+                            <button id="editable-sample_new" class="btn green">
+                                @Html.ActionLink("Sipariş Detayı Ekle", "AddOrderDetail") <i class="icon-plus"></i>
+                            </button>
+                        </div>
+                        <div class="btn-group pull-right">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                Tools <i class="icon-angle-down"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Print</a></li>
+                                <li><a href="#">Save as PDF</a></li>
+                                <li><a href="#">Export to Excel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="space15"></div>
+                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                        <thead>
+                            <tr>
+                                <th>Sipariş ID</th>
+                                <th>Ürün ID</th>
+                                <th>Toplam Fiyat</th>
+                                <th>Miktar</th>
+                                <th>Durum</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                                <th>Kaldır</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (OrderDetail item in Model.OrderDetails)
+                            {
+                                <tr class="">
+                                    <td>@item.OrderID</td>
+                                    <td>@item.ProductID</td>
+                                    <td>@item.TotalPrice</td>
+                                    <td>@item.Quantity</td>
+                                    <td class="hidden-phone">@item.Status</td>
+
+                                    @*<td><a class="edit" href="javascript:;">Edit</a></td>
+
+                                        <td><a class="delete" href="javascript:;">Delete</a></td>*@
+
+                                    <td>@Html.ActionLink("Sil", "DeleteOrderDetail", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                                    <td>@Html.ActionLink("Güncelle", "UpdateOrderDetail", new { id = item.ID }, new { @class = "btn btn-success" })</td>
+
+                                    <td>@Html.ActionLink("Kaldır", "DestroyOrderDetail", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->

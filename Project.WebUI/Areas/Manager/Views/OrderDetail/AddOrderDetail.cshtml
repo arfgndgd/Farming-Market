@@ -1,0 +1,79 @@
+﻿@model OrderDetailVM
+@{
+    ViewBag.Title = "AddOrderDetail";
+}
+
+
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Sipariş Detayı Ekleme Sayfası</h2></header>
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                    @using (Html.BeginForm("AddOrderDetail", "OrderDetail", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <section class="panel">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Sipariş</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.OrderDetail.OrderID, new { @class = "form-control genislik", placeholder = "Sipariş ID Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Şehir</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.OrderDetail.ProductID, new { @class = "form-control genislik", placeholder = "Ürün ID Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Toplam Fiyat</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.OrderDetail.TotalPrice, new { @class = "form-control genislik", placeholder = "Toplam Fiyat Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Miktar</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.OrderDetail.Quantity, new { @class = "form-control genislik", placeholder = "Miktar Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <div class="col-sm-10">
+                                                <button class="btn btn-primary">
+                                                    Sipariş Detayı Ekle
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->

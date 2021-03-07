@@ -1,0 +1,114 @@
+﻿@model OrderVM
+@{
+    ViewBag.Title = "AddOrder";
+}
+
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Ürün Ekleme Sayfası</h2></header>
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                    @using (Html.BeginForm("AddOrder", "Order", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <section class="panel">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Sipariş Adresi</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Order.ShippedAddress, new { @class = "form-control genislik", placeholder = "Sipariş Adresi Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Şehir</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Order.ShippedCity, new { @class = "form-control genislik", placeholder = "Şehir Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Ülke</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.Order.ShippedCountry, new { @class = "form-control genislik", placeholder = "Ülke Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Müşteri</label>
+                                            <div class="col-sm-4">
+                                                @Html.DropDownListFor(x => x.Order.AppUserID, new SelectList(Model.AppUsers, "ID", "UserName"), "Lütfen Seçiniz")
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Kargo/Nakliye</label>
+                                            <div class="col-sm-4">
+                                                @Html.DropDownListFor(x => x.Order.ShipperID, new SelectList(Model.Shippers, "ID", "ShipperName"), "Lütfen Seçiniz")
+                                            </div>
+                                        </div>
+
+                                        <br /><br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Toplam Fiyat</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextAreaFor(x => x.Order.TotalPrice, new { @class = "form-control genislik", placeholder = "Toplam Fiyat Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /><br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Kullanıcı Adı</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextAreaFor(x => x.Order.UserName, new { @class = "form-control genislik", placeholder = "Kullanıcı Adı Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /><br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Email</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextAreaFor(x => x.Order.Email, new { @class = "form-control genislik", placeholder = "Email Giriniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /><br />
+
+                                        <div class="form-group">
+                                            <div class="col-sm-10">
+                                                <button class="btn btn-primary">
+                                                    Sipariş Ekle
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->

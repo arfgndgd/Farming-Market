@@ -12,8 +12,13 @@ namespace Project.WebUI.Models.VMClasses
     {
         public PaymentVM PaymentVM { get; set; }
         public Order Order { get; set; }
+        public List<Order> Orders { get; set; }
+        public List<AppUser> AppUsers { get; set; }
+        public List<Shipper> Shippers { get; set; }
 
         
+
+
         //public AppUser AppUser { get; set; }
         //public UserProfile UserProfile { get; set; }
         //public Cart Cart { get; set; } 

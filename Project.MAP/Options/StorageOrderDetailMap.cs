@@ -14,7 +14,7 @@ namespace Project.MAP.Options
             Ignore(x => x.ID);
             HasKey(x => new
             {
-                x.OrderID,
+                x.StorageOrderID,
                 x.StorageID
             });
         }
