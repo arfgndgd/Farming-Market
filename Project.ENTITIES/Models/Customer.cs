@@ -8,7 +8,7 @@ namespace Project.ENTITIES.Models
 {
     public class Customer:BaseEntity
     {
-        //AppUser classınndan farklıdır yalnızca yüklü miktarda Storage ürünleri için elden satış için açılmış bir classtır.
+        //Customer Storage classları ile ilgilidir. Yalnızca elden satış için açılmıştır. Erişimi Areas içinden ve WFA versiyonu içindir. AppUser Customer ve Product Storage ürünleri farklıdır. 
 
         public string FirstName { get; set; }
         public string LastName { get; set; }

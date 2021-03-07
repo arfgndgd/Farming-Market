@@ -8,6 +8,8 @@ namespace Project.ENTITIES.Models
 {
     public class StorageOrderDetail : BaseEntity
     {
+        //Customer Storage classları ile ilgilidir. Yalnızca elden satış için açılmıştır. Erişimi Areas içinden ve WFA versiyonu içindir. AppUser Customer ve Product Storage ürünleri farklıdır. 
+
         public int StorageID { get; set; }
         public int StorageOrderID { get; set; }
         public decimal TotalPrice { get; set; }

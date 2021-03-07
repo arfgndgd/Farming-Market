@@ -8,6 +8,8 @@ namespace Project.ENTITIES.Models
 {
     public class StorageOrder:BaseEntity
     {
+        //Customer Storage classları ile ilgilidir. Yalnızca elden satış için açılmıştır. Erişimi Areas içinden ve WFA versiyonu içindir. AppUser Customer ve Product Storage ürünleri farklıdır. 
+
         public string ShippedAddress { get; set; }
         public string ShippedCity { get; set; }
         public string ShippedCountry { get; set; }

@@ -8,6 +8,8 @@ namespace Project.ENTITIES.Models
 {
     public class StorageCategory : BaseEntity
     {
+        //Customer Storage classları ile ilgilidir. Yalnızca elden satış için açılmıştır. Erişimi Areas içinden ve WFA versiyonu içindir. AppUser Customer ve Product Storage ürünleri farklıdır. 
+
         public string StorageCategoryName { get; set; }
         public string StorageDescription { get; set; }
 
