@@ -36,10 +36,10 @@
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
                             <tr>
-                                <th>Ambar Sipariş ID</th>
-                                <th>Ambar Ürün ID</th>
                                 <th>Toplam Fiyat</th>
                                 <th>Ağırlık</th>
+                                <th>Ambar Sipariş ID</th>
+                                <th>Ambar Ürün ID</th>
                                 <th>Durum</th>
                                 <th>Sil</th>
                                 <th>Güncelle</th>
@@ -47,18 +47,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (StorageOrderDetail item in Model.StorageOrderDetails)
+                           @foreach (StorageOrderDetail item in Model.StorageOrderDetails)
                             {
                                 <tr class="">
-                                    <td>@item.StorageOrderID</td>
-                                    <td>@item.StorageID</td>
                                     <td>@item.TotalPrice</td>
                                     <td>@item.Weight</td>
+                                    <td>@item.StorageOrderID</td>
+                                    <td>@item.StorageID</td>
+
                                     <td class="hidden-phone">@item.Status</td>
 
                                     @*<td><a class="edit" href="javascript:;">Edit</a></td>
 
-                                        <td><a class="delete" href="javascript:;">Delete</a></td>*@
+            <td><a class="delete" href="javascript:;">Delete</a></td>*@
 
                                     <td>@Html.ActionLink("Sil", "DeleteStorageOrderDetail", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 

@@ -11,13 +11,13 @@ using System.Web.Mvc;
 namespace Project.WebUI.Areas.Manager.Controllers
 {
     [ManagerAuthentication]
-    public class StoragerOrderDetailController : Controller
+    public class StorageOrderDetailController : Controller
     {
         StorageOrderDetailRepository sodRep;
         StorageOrderRepository soRep;
         StorageRepository sRep;
 
-        public StoragerOrderDetailController()
+        public StorageOrderDetailController()
         {
             sodRep = new StorageOrderDetailRepository();
             soRep = new StorageOrderRepository();

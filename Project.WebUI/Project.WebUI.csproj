@@ -2320,12 +2320,12 @@
     <Content Include="Areas\Manager\Views\OrderDetail\OrderDetailList.cshtml" />
     <Content Include="Areas\Manager\Views\OrderDetail\AddOrderDetail.cshtml" />
     <Content Include="Areas\Manager\Views\OrderDetail\UpdateOrderDetail.cshtml" />
-    <Content Include="Areas\Manager\Views\StoragerOrderDetail\StorageOrderDetailList.cshtml" />
-    <Content Include="Areas\Manager\Views\StoragerOrderDetail\AddStorageOrderDetail.cshtml" />
-    <Content Include="Areas\Manager\Views\StoragerOrderDetail\UpdateStorageOrderDetail.cshtml" />
     <Content Include="Areas\Manager\Views\StorageOrder\StorageOrderList.cshtml" />
     <Content Include="Areas\Manager\Views\StorageOrder\AddStorageOrder.cshtml" />
     <Content Include="Areas\Manager\Views\StorageOrder\UpdateStorageOrder.cshtml" />
+    <Content Include="Areas\Manager\Views\StorageOrderDetail\AddStorageOrderDetail.cshtml" />
+    <Content Include="Areas\Manager\Views\StorageOrderDetail\StorageOrderDetailList.cshtml" />
+    <Content Include="Areas\Manager\Views\StorageOrderDetail\UpdateStorageOrderDetail.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -2419,7 +2419,7 @@
     <Compile Include="Areas\Manager\Controllers\StorageCategoryController.cs" />
     <Compile Include="Areas\Manager\Controllers\StorageController.cs" />
     <Compile Include="Areas\Manager\Controllers\StorageOrderController.cs" />
-    <Compile Include="Areas\Manager\Controllers\StoragerOrderDetailController.cs" />
+    <Compile Include="Areas\Manager\Controllers\StorageOrderDetailController.cs" />
     <Compile Include="Areas\Manager\Controllers\SupplierController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="AuthenticationClasses\ManagerAuthentication.cs" />
