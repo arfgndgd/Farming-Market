@@ -11,7 +11,6 @@ namespace Project.WebUI.Models.VMClasses
         public List<Customer> Customers { get; set; }
         public List<StorageOrder> StorageOrders { get; set; }
         public StorageOrder StorageOrder { get; set; }
-
         public List<Shipper> Shippers { get; set; }
     }
 }
