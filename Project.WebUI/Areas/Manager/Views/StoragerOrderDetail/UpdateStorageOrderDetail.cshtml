@@ -1,0 +1,76 @@
+﻿@model StorageOrderDetailVM
+@{
+    ViewBag.Title = "UpdateStorageOrderDetail";
+}
+
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Ambar Sipariş Detayı Güncelleme Sayfası</h2></header>
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.HiddenFor(x => x.StorageOrderDetail.ID)
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <section class="panel">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Ambar Sipariş</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.StorageOrderDetail.StorageOrderID, new { @class = "form-control genislik", placeholder = "Ambar Sipariş ID Güncelleyiniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Ambar Ürün</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.StorageOrderDetail.StorageID, new { @class = "form-control genislik", placeholder = "Ambar Ürün ID Güncelleyiniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Toplam Fiyat</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.StorageOrderDetail.TotalPrice, new { @class = "form-control genislik", placeholder = "Toplam Fiyat Güncelleyiniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 col-sm-2 control-label">Toplam Ağırlık</label>
+                                            <div class="col-sm-4">
+                                                @Html.TextBoxFor(x => x.StorageOrderDetail.TotalPrice, new { @class = "form-control genislik", placeholder = "Toplam Ağırlık Güncelleyiniz" })
+                                            </div>
+                                        </div>
+
+                                        <br /> <br />
+
+                                        <div class="form-group">
+                                            <div class="col-sm-10">
+                                                <button class="btn btn-primary">
+                                                    Ambar Sipariş Detayı Güncelle
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->

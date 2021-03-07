@@ -2322,6 +2322,7 @@
     <Content Include="Areas\Manager\Views\OrderDetail\UpdateOrderDetail.cshtml" />
     <Content Include="Areas\Manager\Views\StoragerOrderDetail\StorageOrderDetailList.cshtml" />
     <Content Include="Areas\Manager\Views\StoragerOrderDetail\AddStorageOrderDetail.cshtml" />
+    <Content Include="Areas\Manager\Views\StoragerOrderDetail\UpdateStorageOrderDetail.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
