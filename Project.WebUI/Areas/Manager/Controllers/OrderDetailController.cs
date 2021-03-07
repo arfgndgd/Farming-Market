@@ -70,7 +70,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
         }
         [ManagerAuthentication]
         [HttpPost]
-        public ActionResult UpdateOrder([Bind(Prefix = "OrderDetail")] OrderDetail item)
+        public ActionResult UpdateOrderDetail([Bind(Prefix = "OrderDetail")] OrderDetail item)
         {
 
             odRep.Update(item);

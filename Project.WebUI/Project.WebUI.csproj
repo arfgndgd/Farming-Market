@@ -2412,6 +2412,8 @@
     <Compile Include="Areas\Manager\Controllers\SecurityController.cs" />
     <Compile Include="Areas\Manager\Controllers\StorageCategoryController.cs" />
     <Compile Include="Areas\Manager\Controllers\StorageController.cs" />
+    <Compile Include="Areas\Manager\Controllers\StorageOrderController.cs" />
+    <Compile Include="Areas\Manager\Controllers\StoragerOrderDetailController.cs" />
     <Compile Include="Areas\Manager\Controllers\SupplierController.cs" />
     <Compile Include="Areas\Manager\ManagerAreaRegistration.cs" />
     <Compile Include="AuthenticationClasses\ManagerAuthentication.cs" />
@@ -2439,6 +2441,8 @@
     <Compile Include="Models\VMClasses\ProductVM.cs" />
     <Compile Include="Models\VMClasses\ShipperVM.cs" />
     <Compile Include="Models\VMClasses\StorageCategoryVM.cs" />
+    <Compile Include="Models\VMClasses\StorageOrderDetailVM.cs" />
+    <Compile Include="Models\VMClasses\StorageOrderVM.cs" />
     <Compile Include="Models\VMClasses\StorageVM.cs" />
     <Compile Include="Models\VMClasses\SupplierVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2487,6 +2491,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Manager\Data\" />
     <Folder Include="Areas\Manager\OuterTools\assets\jquery-file-upload\server\php\files\thumbnail\" />
+    <Folder Include="Areas\Manager\Views\StorageOrder\" />
+    <Folder Include="Areas\Manager\Views\StoragerOrderDetail\" />
     <Folder Include="EmployePhoto\" />
   </ItemGroup>
   <ItemGroup>
