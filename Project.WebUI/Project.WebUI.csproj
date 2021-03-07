@@ -2323,6 +2323,9 @@
     <Content Include="Areas\Manager\Views\StoragerOrderDetail\StorageOrderDetailList.cshtml" />
     <Content Include="Areas\Manager\Views\StoragerOrderDetail\AddStorageOrderDetail.cshtml" />
     <Content Include="Areas\Manager\Views\StoragerOrderDetail\UpdateStorageOrderDetail.cshtml" />
+    <Content Include="Areas\Manager\Views\StorageOrder\StorageOrderList.cshtml" />
+    <Content Include="Areas\Manager\Views\StorageOrder\AddStorageOrder.cshtml" />
+    <Content Include="Areas\Manager\Views\StorageOrder\UpdateStorageOrder.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -2494,7 +2497,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Manager\Data\" />
     <Folder Include="Areas\Manager\OuterTools\assets\jquery-file-upload\server\php\files\thumbnail\" />
-    <Folder Include="Areas\Manager\Views\StorageOrder\" />
     <Folder Include="EmployePhoto\" />
   </ItemGroup>
   <ItemGroup>
