@@ -50,7 +50,6 @@
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Order.cs" />
@@ -59,8 +58,6 @@
     <Compile Include="Models\Shipper.cs" />
     <Compile Include="Models\Storage.cs" />
     <Compile Include="Models\StorageCategory.cs" />
-    <Compile Include="Models\StorageOrder.cs" />
-    <Compile Include="Models\StorageOrderDetail.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

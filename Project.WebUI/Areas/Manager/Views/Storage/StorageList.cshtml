@@ -50,10 +50,10 @@
                             @foreach (Storage item in Model.Storages)
                             {
                                 <tr class="">
-                                    <td><img width="30" height="30" title="@item.ProductName" src="@item.ImagePath" /> </td>
-                                    <td>@item.ProductName</td>
+                                    <td><img width="30" height="30" title="@item.StorageName" src="@item.ImagePath" /> </td>
+                                    <td>@item.StorageName</td>
                                     <td>@item.UnitInPrice</td>
-                                    <td>@item.TotalWeight</td>
+                                    <td>@item.Quantity</td>
                                     @if (item.StorageCategory == null)
                                     {
                                         <td>Ambar Kategorisi Belirtilmemiş</td>
