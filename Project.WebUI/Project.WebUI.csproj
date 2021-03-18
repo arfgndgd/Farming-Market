@@ -2439,8 +2439,6 @@
     <Compile Include="Models\VMClasses\ProductVM.cs" />
     <Compile Include="Models\VMClasses\ShipperVM.cs" />
     <Compile Include="Models\VMClasses\StorageCategoryVM.cs" />
-    <Compile Include="Models\VMClasses\StorageOrderDetailVM.cs" />
-    <Compile Include="Models\VMClasses\StorageOrderVM.cs" />
     <Compile Include="Models\VMClasses\StorageVM.cs" />
     <Compile Include="Models\VMClasses\SupplierVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
