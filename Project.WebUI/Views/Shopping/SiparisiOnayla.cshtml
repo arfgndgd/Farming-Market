@@ -187,7 +187,7 @@
                         <div class="form_container">
                             @using (Html.BeginForm("SiparisiOnayla", "Shopping", FormMethod.Post, new { @class = "form-horizontal tasi-form" }))
                             {
-                                <div>
+                            <div>
                                 <br />
                                 @Html.TextBoxFor(x => x.PaymentVM.CardNumber, new { @class = "form-control", placeholder = "Kart Numarası" })
                                 <br />
@@ -204,8 +204,10 @@
                                 @Html.TextBoxFor(x => x.Order.ShippedCountry, new { @class = "form-control", placeholder = "Ülke" })
                                 <br />
                                 @Html.TextBoxFor(x => x.Order.ShippedCity, new { @class = "form-control", placeholder = "Şehir" })
-                                    <br />
+                                <br />
                                 @Html.TextAreaFor(x => x.Order.ShippedAddress, new { @class = "form-control", placeholder = "Sipariş Adresi" })
+                                <br />
+                                @Html.DropDownListFor(x => x.Order.ShipperID, new SelectList(Model.Shippers, "id", "ShipperName"), "Lütfen Seçiniz")
                                 <br />
                             </div>
                                 <div class="form-group">

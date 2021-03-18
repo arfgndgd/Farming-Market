@@ -52,27 +52,30 @@
                             @foreach (Order item in Model.Orders)
                             {
                                 <tr class="">
-                                    <td>@item.ID</td>
-                                    <td>@item.ShippedAddress</td>
-                                    <td>@item.ShippedCity</td>
-                                    <td>@item.ShippedCountry</td>
-                                    <td>@item.AppUserID</td>
-                                    <td>@item.ShipperID</td>
-                                    <td>@item.TotalPrice</td>
-                                    <td>@item.UserName</td>
-                                    <td>@item.Email</td>
-                                    <td class="hidden-phone">@item.Status</td>
+                                <td>@item.ID</td>
+                                <td>@item.ShippedAddress</td>
+                                <td>@item.ShippedCity</td>
+                                <td>@item.ShippedCountry</td>
+                                <td>@item.AppUserID</td>
+                                @if (item.Shipper != null)
+                                {
+                                    <td>@item.Shipper.ShipperName</td>
+                                }
+                                <td>@item.TotalPrice</td>
+                                <td>@item.UserName</td>
+                                <td>@item.Email</td>
+                                <td class="hidden-phone">@item.Status</td>
 
-                                    @*<td><a class="edit" href="javascript:;">Edit</a></td>
+                                @*<td><a class="edit" href="javascript:;">Edit</a></td>
 
-                                        <td><a class="delete" href="javascript:;">Delete</a></td>*@
+        <td><a class="delete" href="javascript:;">Delete</a></td>*@
 
-                                    <td>@Html.ActionLink("Sil", "DeleteOrder", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                                <td>@Html.ActionLink("Sil", "DeleteOrder", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
-                                    <td>@Html.ActionLink("Güncelle", "UpdateOrder", new { id = item.ID }, new { @class = "btn btn-success" })</td>
+                                <td>@Html.ActionLink("Güncelle", "UpdateOrder", new { id = item.ID }, new { @class = "btn btn-success" })</td>
 
-                                    <td>@Html.ActionLink("Kaldır", "DestroyOrder", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
-                                </tr>
+                                <td>@Html.ActionLink("Kaldır", "DestroyOrder", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                            </tr>
                             }
                         </tbody>
                     </table>

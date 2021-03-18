@@ -21,6 +21,7 @@ namespace Project.WebUI.Controllers
         CategoryRepository cRep;
         OrderRepository oRep;
         OrderDetailRepository odRep;
+        ShipperRepository sRep;
 
         public ShoppingController()
         {
@@ -28,6 +29,8 @@ namespace Project.WebUI.Controllers
             cRep = new CategoryRepository();
             oRep = new OrderRepository();
             odRep = new OrderDetailRepository();
+            sRep = new ShipperRepository();
+
         }
 
         // GET: Shopping
@@ -110,7 +113,7 @@ namespace Project.WebUI.Controllers
 
         public ActionResult Search(string item)
         {
-
+            //TODO: Search
             return View(pRep.Where(x => x.ProductName.Contains(item) || item == null).ToList());
         }
 
@@ -130,8 +133,12 @@ namespace Project.WebUI.Controllers
             {
                 TempData["anonim"] = "Kullanıcı üye değil";
             }
-            
-            return View();
+            OrderVM ovm = new OrderVM
+            {
+                Shippers = sRep.GetAll()
+            };
+
+            return View(ovm);
         }
 
    
@@ -141,7 +148,9 @@ namespace Project.WebUI.Controllers
             bool result;
             Cart sepet = Session["scart"] as Cart;
 
+
             ovm.Order.TotalPrice = ovm.PaymentVM.ShoppingPrice = sepet.TotalPrice.Value;
+
 
             //API
             using (HttpClient client = new HttpClient())
