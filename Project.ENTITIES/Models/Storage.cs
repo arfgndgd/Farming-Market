@@ -10,8 +10,6 @@ namespace Project.ENTITIES.Models
     {
         //Üretim için ürün depolama sınıfı 
 
-        //Customer Storage classları ile ilgilidir. Yalnızca elden satış için açılmıştır. Erişimi Areas içinden ve WFA versiyonu içindir. AppUser Customer ve Product Storage ürünleri farklıdır. 
-
         public string StorageName { get; set; }
         public decimal UnitInPrice { get; set; }
         public string ImagePath { get; set; }
@@ -19,7 +17,6 @@ namespace Project.ENTITIES.Models
         public int? SupplierID { get; set; }
         public int? StorageCategoryID { get; set; }
 
-        //TODO: kilo * fiyat hesaplaması
 
         //Relational Properties
         public virtual Supplier Supplier { get; set; }
