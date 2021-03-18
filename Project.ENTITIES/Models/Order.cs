@@ -14,11 +14,11 @@ namespace Project.ENTITIES.Models
         public int? AppUserID { get; set; }
         public int? ShipperID { get; set; }
 
+        public string EmailAddress { get; set; }
         public decimal TotalPrice { get; set; }
         //Sipariş işlemlerini yakalamak için açılan propertyler
         public string UserName { get; set; }
-        public string Email { get; set; }
-        public string EmailAddress { get; set; } // TODO: bunları niye kullandık araştır
+        public string Email { get; set; } // TODO: bunları niye kullandık araştır
 
         
 

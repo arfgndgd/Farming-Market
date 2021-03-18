@@ -12,10 +12,10 @@ namespace Project.ENTITIES.Models
 
         //Customer Storage classları ile ilgilidir. Yalnızca elden satış için açılmıştır. Erişimi Areas içinden ve WFA versiyonu içindir. AppUser Customer ve Product Storage ürünleri farklıdır. 
 
-        public string ProductName { get; set; }
+        public string StorageName { get; set; }
         public decimal UnitInPrice { get; set; }
         public string ImagePath { get; set; }
-        public short TotalWeight { get; set; }
+        public int Quantity { get; set; }
         public int? SupplierID { get; set; }
         public int? StorageCategoryID { get; set; }
 
@@ -24,6 +24,5 @@ namespace Project.ENTITIES.Models
         //Relational Properties
         public virtual Supplier Supplier { get; set; }
         public virtual StorageCategory StorageCategory { get; set; }
-        public virtual List<StorageOrderDetail> StorageOrderDetails { get; set; }
     }
 }

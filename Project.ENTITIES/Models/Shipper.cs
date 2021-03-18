@@ -15,10 +15,8 @@ namespace Project.ENTITIES.Models
         public Shipper()
         {
             Orders = new List<Order>();
-            StorageOrders = new List<StorageOrder>();
         }
         //Relational Properties
         public virtual List<Order> Orders { get; set; }
-        public virtual List<StorageOrder> StorageOrders { get; set; }
     }
 }

@@ -55,7 +55,6 @@
     <Compile Include="Options\BaseMap.cs" />
     <Compile Include="Options\BlogMap.cs" />
     <Compile Include="Options\CategoryMap.cs" />
-    <Compile Include="Options\CustomerMap.cs" />
     <Compile Include="Options\DepartmentMap.cs" />
     <Compile Include="Options\EmployeeMap.cs" />
     <Compile Include="Options\OrderDetailMap.cs" />
@@ -64,7 +63,6 @@
     <Compile Include="Options\ShipperMap.cs" />
     <Compile Include="Options\StorageCategoryMap.cs" />
     <Compile Include="Options\StorageMap.cs" />
-    <Compile Include="Options\StorageOrderDetailMap.cs" />
     <Compile Include="Options\SupplierMap.cs" />
     <Compile Include="Options\UserProfileMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -55,7 +55,6 @@
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\AppUserRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\BlogRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\CategoryRepository.cs" />
-    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\CustomerRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\DepartmentRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\EmployeeRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\OrderDetailRepository.cs" />
@@ -63,8 +62,6 @@
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\ProductRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\ShipperRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\StorageCategoryRepository.cs" />
-    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\StorageOrderDetailRepository.cs" />
-    <Compile Include="DesignPatterns\GenericRepositories\ConcRep\StorageOrderRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\StorageRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\SupplierRepository.cs" />
     <Compile Include="DesignPatterns\GenericRepositories\ConcRep\UserProfileRepository.cs" />
