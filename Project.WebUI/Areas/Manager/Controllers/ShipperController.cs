@@ -1,4 +1,5 @@
-﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
+﻿using PagedList;
+using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.ENTITIES.Models;
 using Project.WebUI.AuthenticationClasses;
 using Project.WebUI.Models.VMClasses;
@@ -14,9 +15,11 @@ namespace Project.WebUI.Areas.Manager.Controllers
     public class ShipperController : Controller
     {
         ShipperRepository sRep;
+        OrderRepository oRep;
         public ShipperController()
         {
             sRep = new ShipperRepository();
+            oRep = new OrderRepository();
         }
         // GET: Manager/Default
         public ActionResult ShipperByID(int id)
@@ -29,12 +32,17 @@ namespace Project.WebUI.Areas.Manager.Controllers
         }
         
         [AllowAnonymous]
-        public ActionResult ShipperList()
+        public ActionResult ShipperList(int? page, int? shipperID)
         {
             ShipperVM svm = new ShipperVM
             {
+                PagedOrders = shipperID == null ? oRep.GetAll().ToPagedList(page ?? 1,15) : oRep.Where(x=>x.ShipperID == shipperID).ToPagedList(page ?? 1, 15),
                 Shippers = sRep.GetAll()
             };
+            if (shipperID != null)
+            {
+                TempData["shipID"] = shipperID;
+            }
             return View(svm);
         }
 

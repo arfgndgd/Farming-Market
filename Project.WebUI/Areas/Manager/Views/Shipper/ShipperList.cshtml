@@ -48,7 +48,7 @@
                             {
                                 <tr class="">
                                     <td>@item.ID</td>
-                                    <td>@item.ShipperName</td>
+                                    <td>@Html.ActionLink(item.ShipperName, "ShipperList", new { shipperID = item.ID })</td>
                                     <td>@item.Phone</td>
                                     <td>@item.Email</td>
                                     <td>@item.Status</td>
@@ -64,6 +64,75 @@
 
                     </table>
                 </div>
+                <section class="panel">
+                    <div class="panel-body">
+                        <div class="pull-right">
+                            <ul class="pagination pagination-sm pro-page-list">
+                                @if (TempData["shipID"] != null)
+                                {
+                                    <li>@Html.PagedListPager(Model.PagedOrders, page => Url.Action("ShipperList", new { page, shipperID = TempData["shipID"] }))</li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        @Html.PagedListPager(Model.PagedOrders, page => Url.Action("ShipperList", new { page }))
+                                    </li>
+
+                                }
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </section>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                    <thead>
+                        <tr>
+                            <th>Sipariş ID</th>
+                            <th>Teslim Adresi</th>
+                            <th>Şehir</th>
+                            <th>Ülke</th>
+                            <th>Müşteri</th>
+                            <th>Kargo/Nakliye</th>
+                            <th>Toplam Fiyat</th>
+                            <th>Kullanıcı Adı</th>
+                            <th>Email</th>
+                            <th>Durum</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                            <th>Kaldır</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Order item in Model.PagedOrders)
+                        {
+                            <tr class="">
+                                <td>@item.ID</td>
+                                <td>@item.ShippedAddress</td>
+                                <td>@item.ShippedCity</td>
+                                <td>@item.ShippedCountry</td>
+                                <td>@item.AppUserID</td>
+                                @if (item.Shipper != null)
+                                {
+                                    <td>@item.Shipper.ShipperName</td>
+                                }
+                                <td>@item.TotalPrice</td>
+                                <td>@item.UserName</td>
+                                <td>@item.Email</td>
+                                <td class="hidden-phone">@item.Status</td>
+
+
+                                <td>@Html.ActionLink("Sil", "DeleteOrder", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                                <td>@Html.ActionLink("Güncelle", "UpdateOrder", new { id = item.ID }, new { @class = "btn btn-success" })</td>
+
+                                <td>@Html.ActionLink("Kaldır", "DestroyOrder", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
             </div>
         </section>
         <!-- page end-->
