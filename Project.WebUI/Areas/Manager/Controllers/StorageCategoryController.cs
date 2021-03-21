@@ -1,4 +1,5 @@
-﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
+﻿using PagedList;
+using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.ENTITIES.Models;
 using Project.WebUI.AuthenticationClasses;
 using Project.WebUI.Models.VMClasses;
@@ -10,14 +11,16 @@ using System.Web.Mvc;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
-    //Customer Storage classları ile ilgilidir. Yalnızca elden satış için açılmıştır. Erişimi Areas içinden ve WFA versiyonu içindir. AppUser Customer ve Product Storage ürünleri farklıdır. 
+    //Yalnızca stok ürün için açılmıştır
     [ManagerAuthentication]
     public class StorageCategoryController : Controller
     {
         StorageCategoryRepository sRep;
+        StorageRepository stRep;
         public StorageCategoryController()
         {
             sRep = new StorageCategoryRepository();
+            stRep = new StorageRepository();
         }
         // GET: Manager/StorageCategory
         public ActionResult StorageCategoryByID(int id)
@@ -29,12 +32,18 @@ namespace Project.WebUI.Areas.Manager.Controllers
             return View(scvm);
         }
         [AllowAnonymous]
-        public ActionResult StorageCategoryList()
+        public ActionResult StorageCategoryList(int? page, int? sCategoryID)
         {
             StorageCategoryVM scvm = new StorageCategoryVM
             {
+                PagedStorages = sCategoryID == null ? stRep.GetAll().ToPagedList(page ?? 1,15): stRep.Where(x=>x.StorageCategoryID == sCategoryID).ToPagedList(page ?? 1,15),
+
                 StorageCategories = sRep.GetAll()
             };
+            if (sCategoryID != null)
+            {
+                TempData["sCatID"] = sCategoryID;
+            }
             return View(scvm);
         }
         [ManagerAuthentication]
