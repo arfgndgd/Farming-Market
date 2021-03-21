@@ -1,4 +1,5 @@
-﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
+﻿using PagedList;
+using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.ENTITIES.Models;
 using Project.WebUI.AuthenticationClasses;
 using Project.WebUI.Models.VMClasses;
@@ -14,9 +15,13 @@ namespace Project.WebUI.Areas.Manager.Controllers
     public class SupplierController : Controller
     {
         SupplierRepository sRep;
+        ProductRepository pRep;
+        StorageRepository stRep;
         public SupplierController()
         {
             sRep = new SupplierRepository();
+            pRep = new ProductRepository();
+            stRep = new StorageRepository();
         }
         // GET: Manager/Supplier
         public ActionResult SupplierByID(int id)
@@ -29,12 +34,18 @@ namespace Project.WebUI.Areas.Manager.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult SupplierList()
+        public ActionResult SupplierList(int? page, int? supplierID)
         {
             SupplierVM svm = new SupplierVM
             {
+                PagedProducts = supplierID == null ? pRep.GetAll().ToPagedList(page ?? 1,15) : pRep.Where(x=>x.SupplierID == supplierID).ToPagedList(page ?? 1, 15),
+                PagedStorages = supplierID == null ? stRep.GetAll().ToPagedList(page ?? 1, 15) : stRep.Where(x => x.SupplierID == supplierID).ToPagedList(page ?? 1, 15),
                 Suppliers = sRep.GetAll()
             };
+            if (supplierID != null)
+            {
+                TempData["supID"] = supplierID;
+            }
             return View(svm);
         }
 
