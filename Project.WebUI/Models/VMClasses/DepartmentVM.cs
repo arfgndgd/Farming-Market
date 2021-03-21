@@ -1,4 +1,5 @@
-﻿using Project.ENTITIES.Models;
+﻿using PagedList;
+using Project.ENTITIES.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,8 @@ namespace Project.WebUI.Models.VMClasses
     {
         public Department Department { get; set; }
         public List<Department> Departments { get; set; }
+        public Employee Employee { get; set; }
+        public List<Employee> Employees { get; set; }
+        public IPagedList<Employee> PagedEmployees { get; set; }
     }
 }

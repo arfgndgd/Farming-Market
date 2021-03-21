@@ -43,11 +43,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                           @foreach (Department item in Model.Departments)
+                            @foreach (Department item in Model.Departments)
                             {
                                 <tr class="">
                                     <td>@item.ID</td>
-                                    <td>@item.DepartmentName</td>
+                                    <td>@Html.ActionLink(item.DepartmentName,"DepartmentList", new { departmentID = item.ID})</td>
                                     <td>@item.Description</td>
                                     <td>@item.Status</td>
 
@@ -61,6 +61,84 @@
                         </tbody>
                     </table>
                 </div>
+                <section class="panel">
+                    <div class="panel-body">
+                        <div class="pull-right">
+                            <ul class="pagination pagination-sm pro-page-list">
+                                @if (TempData["depID"] != null)
+                                {
+                                    <li>@Html.PagedListPager(Model.PagedEmployees, page => Url.Action("DepartmentList", new { page, departmentID = TempData["depID"] }))</li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        @Html.PagedListPager(Model.PagedEmployees, page => Url.Action("DepartmentList", new { page }))
+                                    </li>
+
+                                }
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </section>
+                <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                    <thead>
+                        <tr>
+                            <th>Fotoğraf</th>
+                            <th>TCNO</th>
+                            <th>Şifre</th>
+                            <th>İsim</th>
+                            <th>Soyisim</th>
+                            <th>Departman</th>
+                            <th>e-Posta</th>
+                            <th>Telefon No</th>
+                            <th>Adres</th>
+                            <th>Şehir</th>
+                            <th>Cinsiyet</th>
+                            <th>Rol</th>
+                            <th>Durum</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                            <th>Kaldır</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Employee item in Model.PagedEmployees)
+                        {
+                            <tr class="gradeX">
+                                <td><img width="30" height="30" title="@item.FirstName" src="@item.Photo" /> </td>
+                                <td>@item.TCNO</td>
+                                <td>@item.Password</td>
+                                <td>@item.FirstName</td>
+                                <td>@item.LastName</td>
+                                @if (item.Department == null)
+                                {
+                                    <td>Departman Belirtilmemiş</td>
+                                }
+                                else
+                                {
+                                    <td>@item.Department.DepartmentName</td>
+                                }
+                                <td>@item.Email</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Address</td>
+                                <td>@item.City</td>
+                                <td>@item.Gender</td>
+                                <td>@item.ERole</td>
+                                <td>@item.Status</td>
+
+                                <td>@Html.ActionLink("Sil", "DeleteEmployee", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                                <td>@Html.ActionLink("Güncelle", "UpdateEmployee", new { id = item.ID }, new { @class = "btn btn-success" })</td>
+
+                                <td>@Html.ActionLink("Kaldır", "DestroyEmployee", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
             </div>
         </section>
         <!-- page end-->

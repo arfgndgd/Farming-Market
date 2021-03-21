@@ -1,4 +1,5 @@
-﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
+﻿using PagedList;
+using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.ENTITIES.Models;
 using Project.WebUI.AuthenticationClasses;
 using Project.WebUI.Models.VMClasses;
@@ -14,9 +15,11 @@ namespace Project.WebUI.Areas.Manager.Controllers
     public class DepartmentController : Controller
     {
         DepartmentRepository dRep;
+        EmployeeRepository eRep;
         public DepartmentController()
         {
             dRep = new DepartmentRepository();
+            eRep = new EmployeeRepository();
         }
         // GET: Manager/Department
         public ActionResult DepartmentByID(int id)
@@ -30,12 +33,17 @@ namespace Project.WebUI.Areas.Manager.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult DepartmentList()
+        public ActionResult DepartmentList(int? page, int? departmentID)
         {
             DepartmentVM dvm = new DepartmentVM
             {
+                PagedEmployees = departmentID == null ? eRep.GetAll().ToPagedList(page ?? 1,15) : eRep.Where(x=>x.DepartmentID == departmentID).ToPagedList(page ?? 1, 15),
                 Departments = dRep.GetAll()
             };
+            if (departmentID != null)
+            {
+                TempData["depID"] = departmentID;
+            }
             return View(dvm);
         }
 
