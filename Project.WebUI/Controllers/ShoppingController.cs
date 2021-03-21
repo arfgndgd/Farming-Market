@@ -120,7 +120,6 @@ namespace Project.WebUI.Controllers
         
 
 
-        //TODO: Authenticationı eklee
         public ActionResult SiparisiOnayla()
         {
             

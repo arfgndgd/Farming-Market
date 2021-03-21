@@ -1,4 +1,5 @@
-﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
+﻿using PagedList;
+using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.ENTITIES.Models;
 using Project.WebUI.AuthenticationClasses;
 using Project.WebUI.Models.VMClasses;
@@ -14,9 +15,11 @@ namespace Project.WebUI.Areas.Manager.Controllers
     public class CategoryController : Controller
     {
         CategoryRepository cRep;
+        ProductRepository pRep;
         public CategoryController()
         {
             cRep = new CategoryRepository();
+            pRep = new ProductRepository();
         }
 
         // GET: Manager/Category
@@ -27,14 +30,21 @@ namespace Project.WebUI.Areas.Manager.Controllers
                 Category = cRep.Find(id)
             };
             return View(cvm);
+
         }
+
         [AllowAnonymous]
-        public ActionResult CategoryList()
+        public ActionResult CategoryList(int? page, int? categoryID)
         {
             CategoryVM cvm = new CategoryVM
             {
+                PagedProducts = categoryID == null ? pRep.GetAll().ToPagedList(page ?? 1, 15) : pRep.Where(x => x.CategoryID == categoryID).ToPagedList(page ?? 1, 15),
                 Categories = cRep.GetAll()
             };
+            if (categoryID != null)
+            {
+                TempData["catID"] = categoryID;
+            }
             return View(cvm);
         }
         [ManagerAuthentication]

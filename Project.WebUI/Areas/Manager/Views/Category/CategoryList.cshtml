@@ -43,11 +43,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                           @foreach (Category item in Model.Categories)
+                            @foreach (Category item in Model.Categories)
                             {
                                 <tr class="">
                                     <td>@item.ID</td>
-                                    <td>@item.CategoryName</td>
+                                    <td>@Html.ActionLink(item.CategoryName, "CategoryList", new { categoryID = item.ID })</td>
                                     <td>@item.Description</td>
                                     <td>@item.Status</td>
                                     <td>@Html.ActionLink("Sil", "DeleteCategory", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
@@ -59,6 +59,96 @@
                             }
                         </tbody>
                     </table>
+                </div>
+                <section class="panel">
+                    <div class="panel-body">
+                        <div class="pull-right">
+                            <ul class="pagination pagination-sm pro-page-list">
+                                @if (TempData["catID"] != null)
+                                {
+                                    <li>@Html.PagedListPager(Model.PagedProducts, page => Url.Action("CategoryList", new { page, categoryID = TempData["catID"] }))</li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        @Html.PagedListPager(Model.PagedProducts, page => Url.Action("CategoryList", new { page }))
+                                    </li>
+
+                                }
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </section>
+                <div>
+                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                        <thead>
+                            <tr>
+                                <th>Ürün Resmi</th>
+                                <th>Ürün İsmi</th>
+                                <th>Ürün Fiyatı</th>
+                                <th>Ürün Stok</th>
+                                <th>Ürün Kategori</th>
+                                <th>Ürün Tedarikçi</th>
+                                <th>Özellikler</th>
+                                <th>Durum</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                                <th>Kaldır</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Product item in Model.PagedProducts)
+                            {
+                                <tr class="">
+                                    <td><img width="30" height="30" title="@item.ProductName" src="@item.ImagePath" /> </td>
+                                    <td>@item.ProductName</td>
+                                    <td>@item.UnitPrice</td>
+                                    <td>@item.UnitInStock</td>
+                                    @if (item.Category == null)
+                                    {
+                                        <td>Kategori Belirtilmemiş</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Category.CategoryName</td>
+                                    }
+                                    @if (item.Supplier == null)
+                                    {
+                                        <td>Tedarikçi Belirtilmemiş</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Supplier.SupplierName</td>
+                                    }
+
+                                    @if (item.Features == null)
+                                    {
+                                        <td>Özellik belirtilmemiş</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Features</td>
+                                    }
+
+                                    <td class="hidden-phone">@item.Status</td>
+
+                                    @*<td><a class="edit" href="javascript:;">Edit</a></td>
+
+                        <td><a class="delete" href="javascript:;">Delete</a></td>*@
+
+                                    <td>@Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                                    <td>@Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.ID }, new { @class = "btn btn-success" })</td>
+
+                                    <td>@Html.ActionLink("Kaldır", "DestroyProduct", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </section>
