@@ -16,11 +16,11 @@ namespace Project.WebUI.Models.VMClasses
         public List<AppUser> AppUsers { get; set; }
         public List<Shipper> Shippers { get; set; }
 
-        
 
 
-        //public AppUser AppUser { get; set; }
-        //public UserProfile UserProfile { get; set; }
+
+        public AppUser AppUser { get; set; }
+        public UserProfile UserProfile { get; set; }
         //public Cart Cart { get; set; } 
         //public CartItem CartItem { get; set; }
     }

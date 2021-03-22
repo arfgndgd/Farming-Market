@@ -8,9 +8,8 @@
         <div class="page_header">
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li>Page active</li>
+                    <li><a href="@Url.Action("ShoppingList","Shopping")">Home</a></li>
+                    <li>Cart Page</li>
                 </ul>
             </div>
             <h1>Cart page</h1>
@@ -72,13 +71,6 @@
         <div class="row add_top_30 flex-sm-row-reverse cart_actions">
             <div class="col-sm-4 text-right">
                 <button type="button" class="btn_1 gray">@Html.ActionLink("Update Cart","ShoppingList")</button>
-            </div>
-            <div class="col-sm-8">
-                <div class="apply-coupon">
-                    <div class="form-group form-inline">
-                        <input type="text" name="coupon-code" value="" placeholder="Promo code" class="form-control"><button type="button" class="btn_1 outline">Apply Coupon</button>
-                    </div>
-                </div>
             </div>
         </div>
         <!-- /cart_actions -->
