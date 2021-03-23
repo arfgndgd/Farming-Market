@@ -1,4 +1,5 @@
-﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
+﻿using PagedList;
+using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.COMMON.Tools;
 using Project.ENTITIES.Models;
 using Project.WebUI.AuthenticationClasses;
@@ -24,12 +25,16 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
         [AllowAnonymous]
         // GET: Manager/Employee
-        public ActionResult EmployeeList()
+        public ActionResult EmployeeList(int? page)
         {
             EmployeeVM evm = new EmployeeVM
             {
-                Employees = eRep.GetAll()
+                PagedEmployees = eRep.GetAll().ToPagedList(page ?? 1, 15)
             };
+            if (true)
+            {
+                TempData["empID"] = true;
+            }
             return View(evm);
         }
 

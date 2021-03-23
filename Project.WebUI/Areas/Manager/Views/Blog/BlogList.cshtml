@@ -44,7 +44,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (Blog item in Model.Blogs)
+                            @foreach (Blog item in Model.PagedBlogs)
                             {
                                 <tr class="">
                                     <td>@item.ID</td>
@@ -63,6 +63,18 @@
                             }
                         </tbody>
                     </table>
+                    <div class="pagination__wrapper">
+                        <ul class="pagination">
+                            @if (TempData["bID"] != null)
+                            {
+                                <li>@Html.PagedListPager(Model.PagedBlogs, page => Url.Action("BlogList", new { page, categoryID = TempData["bID"] }))</li>
+                            }
+                            else
+                            {
+                                <li>@Html.PagedListPager(Model.PagedBlogs, page => Url.Action("BlogList", new { page }))</li>
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

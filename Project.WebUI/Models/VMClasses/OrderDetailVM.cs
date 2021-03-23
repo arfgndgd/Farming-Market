@@ -1,4 +1,5 @@
-﻿using Project.ENTITIES.Models;
+﻿using PagedList;
+using Project.ENTITIES.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace Project.WebUI.Models.VMClasses
         public OrderDetail OrderDetail { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
         public List<Order> Orders { get; set; }
+        public IPagedList<OrderDetail> PagedOrderDetails { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
+﻿using PagedList;
+using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.COMMON.Tools;
 using Project.ENTITIES.Models;
 using Project.WebUI.AuthenticationClasses;
@@ -22,12 +23,16 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
         [AllowAnonymous]
         // GET: Manager/Blog
-        public ActionResult BlogList()
+        public ActionResult BlogList(int? page)
         {
             BlogVM bvm = new BlogVM
             {
-                Blogs = bRep.GetAll()
+                PagedBlogs = bRep.GetAll().ToPagedList(page ?? 1,15)
             };
+            if (true)
+            {
+                TempData["bID"] = true;
+            }
             return View(bvm);
         }
 

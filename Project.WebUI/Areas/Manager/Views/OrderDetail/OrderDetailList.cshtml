@@ -46,7 +46,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (OrderDetail item in Model.OrderDetails)
+                            @foreach (OrderDetail item in Model.PagedOrderDetails)
                             {
                                 <tr class="">
                                     <td>@item.OrderID</td>
@@ -57,7 +57,7 @@
 
                                     @*<td><a class="edit" href="javascript:;">Edit</a></td>
 
-                                        <td><a class="delete" href="javascript:;">Delete</a></td>*@
+                        <td><a class="delete" href="javascript:;">Delete</a></td>*@
 
                                     <td>@Html.ActionLink("Sil", "DeleteOrderDetail", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
@@ -68,6 +68,18 @@
                             }
                         </tbody>
                     </table>
+                    <div class="pagination__wrapper">
+                        <ul class="pagination">
+                            @if (TempData["orID"] != null)
+                            {
+                                <li>@Html.PagedListPager(Model.PagedOrderDetails, page => Url.Action("OrderList", new { page, categoryID = TempData["orID"] }))</li>
+                            }
+                            else
+                            {
+                                <li>@Html.PagedListPager(Model.PagedOrderDetails, page => Url.Action("OrderDetailList", new { page }))</li>
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

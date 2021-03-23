@@ -1,4 +1,5 @@
-﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
+﻿using PagedList;
+using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.COMMON.Tools;
 using Project.ENTITIES.Models;
 using Project.WebUI.AuthenticationClasses;
@@ -30,12 +31,16 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
         [AllowAnonymous]
         // GET: Manager/Storage
-        public ActionResult StorageList()
+        public ActionResult StorageList(int? page)
         {
             StorageVM svm = new StorageVM
             {
-                Storages = sRep.GetAll()
+                PagedStorages = sRep.GetAll().ToPagedList(page ?? 1, 15)
             };
+            if (true)
+            {
+                TempData["stoID"] = true;
+            }
             return View(svm);
         }
 

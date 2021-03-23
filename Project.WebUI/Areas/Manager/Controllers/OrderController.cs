@@ -1,4 +1,5 @@
-﻿using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
+﻿using PagedList;
+using Project.BLL.DesignPatterns.GenericRepositories.ConcRep;
 using Project.ENTITIES.Models;
 using Project.WebUI.AuthenticationClasses;
 using Project.WebUI.Models.VMClasses;
@@ -26,12 +27,16 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
         [AllowAnonymous]
         // GET: Manager/Order
-        public ActionResult OrderList()
+        public ActionResult OrderList(int? page)
         {
             OrderVM ovm = new OrderVM
             {
-                Orders = oRep.GetAll()  
+                PagedOrders = oRep.GetAll().ToPagedList(page?? 1,15)
             };
+            if (true)
+            {
+                TempData["orID"] = true;
+            }
             return View(ovm);
         }
 

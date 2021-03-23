@@ -1,4 +1,5 @@
-﻿using Project.ENTITIES.Models;
+﻿using PagedList;
+using Project.ENTITIES.Models;
 using Project.WebUI.Models.ShoppingTools;
 using Project.WebUI.Models.ViewModels;
 using System;
@@ -15,7 +16,7 @@ namespace Project.WebUI.Models.VMClasses
         public List<Order> Orders { get; set; }
         public List<AppUser> AppUsers { get; set; }
         public List<Shipper> Shippers { get; set; }
-
+        public IPagedList<Order> PagedOrders { get; set; }
 
 
 

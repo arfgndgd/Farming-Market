@@ -52,7 +52,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (Employee item in Model.Employees)
+                            @foreach (Employee item in Model.PagedEmployees)
                             {
                                 <tr class="gradeX">
                                     <td><img width="30" height="30" title="@item.FirstName" src="@item.Photo" /> </td>
@@ -85,6 +85,18 @@
                             }
                         </tbody>
                     </table>
+                    <div class="pagination__wrapper">
+                        <ul class="pagination">
+                            @if (TempData["empID"] != null)
+                            {
+                                <li>@Html.PagedListPager(Model.PagedEmployees, page => Url.Action("EmployeeList", new { page, categoryID = TempData["empID"] }))</li>
+                            }
+                            else
+                            {
+                                <li>@Html.PagedListPager(Model.PagedEmployees, page => Url.Action("EmployeeList", new { page }))</li>
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

@@ -47,7 +47,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (Storage item in Model.Storages)
+                            @foreach (Storage item in Model.PagedStorages)
                             {
                                 <tr class="">
                                     <td><img width="30" height="30" title="@item.StorageName" src="@item.ImagePath" /> </td>
@@ -82,6 +82,18 @@
                             }
                         </tbody>
                     </table>
+                    <div class="pagination__wrapper">
+                        <ul class="pagination">
+                            @if (TempData["stoID"] != null)
+                            {
+                                <li>@Html.PagedListPager(Model.PagedStorages, page => Url.Action("StorageList", new { page, categoryID = TempData["stoID"] }))</li>
+                            }
+                            else
+                            {
+                                <li>@Html.PagedListPager(Model.PagedStorages, page => Url.Action("StorageList", new { page }))</li>
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
