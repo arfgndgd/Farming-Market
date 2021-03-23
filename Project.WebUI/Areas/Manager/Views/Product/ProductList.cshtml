@@ -21,11 +21,11 @@
                         @using (Html.BeginForm("Search", "Product", new { area = "Manager" }, FormMethod.Get))
                         {
                             @Html.TextBox("search")<input type="submit" value="Search">
-                                
-                           
-                         }
-                        
-                        
+
+
+                        }
+
+
                         <div class="btn-group pull-right">
                             <button class="btn dropdown-toggle" data-toggle="dropdown">
                                 Tools <i class="icon-angle-down"></i>
@@ -57,55 +57,67 @@
                             </tr>
                         </thead>
                         <tbody>
-                           @foreach (Product item in Model.Products)
-                                {
-                            <tr class="">
-                                <td><img width="30" height="30" title="@item.ProductName" src="@item.ImagePath" /> </td>
-                                <td>@item.ID</td>
-                                <td>@item.ProductName</td>
-                                <td>@item.UnitPrice</td>
-                                <td>@item.UnitInStock</td>
-                                @if (item.Category == null)
-                                {
-                                    <td>Kategori Belirtilmemiş</td>
-                                }
-                                else
-                                {
-                                    <td>@item.Category.CategoryName</td>
-                            }
-                            @if (item.Supplier == null)
+                            @foreach (Product item in Model.PagedProducts)
                             {
-                                    <td>Tedarikçi Belirtilmemiş</td>
-                                }
-                                else
-                                {
-                                    <td>@item.Supplier.SupplierName</td>
-                        }
+                                <tr class="">
+                                    <td><img width="30" height="30" title="@item.ProductName" src="@item.ImagePath" /> </td>
+                                    <td>@item.ID</td>
+                                    <td>@item.ProductName</td>
+                                    <td>@item.UnitPrice</td>
+                                    <td>@item.UnitInStock</td>
+                                    @if (item.Category == null)
+                                    {
+                                        <td>Kategori Belirtilmemiş</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Category.CategoryName</td>
+                                    }
+                                    @if (item.Supplier == null)
+                                    {
+                                        <td>Tedarikçi Belirtilmemiş</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Supplier.SupplierName</td>
+                                    }
 
-                        @if (item.Features==null)
-                                {
-                                    <td>Özellik belirtilmemiş</td>
-                                }
-                                else
-                        {
-                                    <td>@item.Features</td>
-                                }
+                                    @if (item.Features == null)
+                                    {
+                                        <td>Özellik belirtilmemiş</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Features</td>
+                                    }
 
-                                <td class="hidden-phone">@item.Status</td>
+                                    <td class="hidden-phone">@item.Status</td>
 
-                                @*<td><a class="edit" href="javascript:;">Edit</a></td>
+                                    @*<td><a class="edit" href="javascript:;">Edit</a></td>
 
-                                <td><a class="delete" href="javascript:;">Delete</a></td>*@
+                        <td><a class="delete" href="javascript:;">Delete</a></td>*@
 
-                                <td>@Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                                    <td>@Html.ActionLink("Sil", "DeleteProduct", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
-                                <td>@Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.ID }, new { @class = "btn btn-success" })</td>
+                                    <td>@Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.ID }, new { @class = "btn btn-success" })</td>
 
-                                <td>@Html.ActionLink("Kaldır", "DestroyProduct", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
-                            </tr>
+                                    <td>@Html.ActionLink("Kaldır", "DestroyProduct", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                                </tr>
                             }
                         </tbody>
-                    </table>
+                    </table>                       
+                    <div class="pagination__wrapper">
+                        <ul class="pagination">
+                            @if (TempData["proID"] != null)
+                            {
+                                <li>@Html.PagedListPager(Model.PagedProducts, page => Url.Action("ProductList", new { page, categoryID = TempData["proID"] }))</li>
+                            }
+                            else
+                            {
+                                <li>@Html.PagedListPager(Model.PagedProducts, page => Url.Action("ProductList", new { page }))</li>
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
