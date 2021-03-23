@@ -18,6 +18,14 @@
                                 @Html.ActionLink("Ürün Ekle", "AddProduct") <i class="icon-plus"></i>
                             </button>
                         </div>
+                        @using (Html.BeginForm("Search", "Product", new { area = "Manager" }, FormMethod.Get))
+                        {
+                            @Html.TextBox("search")<input type="submit" value="Search">
+                                
+                           
+                         }
+                        
+                        
                         <div class="btn-group pull-right">
                             <button class="btn dropdown-toggle" data-toggle="dropdown">
                                 Tools <i class="icon-angle-down"></i>
@@ -50,7 +58,7 @@
                         </thead>
                         <tbody>
                            @foreach (Product item in Model.Products)
-                            {
+                                {
                             <tr class="">
                                 <td><img width="30" height="30" title="@item.ProductName" src="@item.ImagePath" /> </td>
                                 <td>@item.ID</td>
@@ -64,22 +72,22 @@
                                 else
                                 {
                                     <td>@item.Category.CategoryName</td>
-                                }
-                                @if (item.Supplier == null)
-                                {
+                            }
+                            @if (item.Supplier == null)
+                            {
                                     <td>Tedarikçi Belirtilmemiş</td>
                                 }
                                 else
                                 {
                                     <td>@item.Supplier.SupplierName</td>
-                                }
+                        }
 
-                                @if (item.Features==null)
+                        @if (item.Features==null)
                                 {
                                     <td>Özellik belirtilmemiş</td>
                                 }
                                 else
-                                {
+                        {
                                     <td>@item.Features</td>
                                 }
 

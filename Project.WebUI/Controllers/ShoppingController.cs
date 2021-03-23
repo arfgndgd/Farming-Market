@@ -50,6 +50,17 @@ namespace Project.WebUI.Controllers
 
             return View(pavm);
         }
+
+        public ActionResult Search(string search)
+        {
+            if (!string.IsNullOrEmpty(search))
+            {
+                pRep.Where(x => x.ProductName.StartsWith(search)).ToList();
+
+            }
+            return RedirectToAction("ShoppingList");
+        }
+
         public ActionResult AddToCart(int id)
         {
             Cart c = Session["scart"] == null ? new Cart() : Session["scart"] as Cart;
@@ -111,11 +122,11 @@ namespace Project.WebUI.Controllers
             
         }
 
-        public ActionResult Search(string item)
-        {
-            //TODO: Search
-            return View(pRep.Where(x => x.ProductName.Contains(item) || item == null).ToList());
-        }
+        //public ActionResult Search(string item)
+        //{
+        //    //TODO: Search
+        //    return View(pRep.Where(x => x.ProductName.Contains(item) || item == null).ToList());
+        //}
 
         
 

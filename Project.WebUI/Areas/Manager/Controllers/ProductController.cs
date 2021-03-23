@@ -27,16 +27,30 @@ namespace Project.WebUI.Areas.Manager.Controllers
 
         // GET: Manager/Product
         [AllowAnonymous]
-        public ActionResult ProductList(int? id)
+        public ActionResult ProductList(int? id/*,string search*/)
         {
             ProductVM pvm = new ProductVM
             {
                 Products = id == null ? pRep.GetAll() : pRep.Where(x=>x.CategoryID == id)
                 //TODO : burada Supplierla ilgili sorun olabilir, Classında product ve storage listeledim 
+                
             };
-
-
+            //if (search == "ProductName")
+            //{
+            //    pRep.Where(x => x.ProductName.StartsWith(search)).ToList();
+            //}
             return View(pvm);
+        }
+        
+        [AllowAnonymous]
+        public ActionResult Search(string search)
+        {
+            if (!string.IsNullOrEmpty(search))
+            {
+               pRep.Where(x => x.ProductName.StartsWith(search)).ToList() ;
+               
+            }
+            return RedirectToAction("ProductList");
         }
 
         [ManagerAuthentication]
