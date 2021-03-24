@@ -1,0 +1,48 @@
+﻿@model BlogVM
+@{
+    ViewBag.Title = "BlogDetail";
+}
+<main class="bg_gray">
+    <div class="container margin_30">
+        <div class="page_header">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="@Url.Action("About","Page")">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /page_header -->
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="singlepost">
+                    <figure><img width="500" height="300" alt="" class="img-fluid" src="@Model.Blog.ImagePath"></figure>
+                    <h1>@Model.Blog.Title</h1>
+                    <div class="post-content">
+                        
+                        <div class="dropcaps">
+                            <p>
+
+                                @Model.Blog.Description
+                            </p>
+                        </div>
+
+                    </div>
+                    <!-- /post -->
+                </div>
+                <!-- /single-post -->
+
+               
+                <hr>
+
+                
+
+            </div>
+            <!-- /col -->
+
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</main>
+<!--/main-->

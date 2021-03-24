@@ -69,6 +69,8 @@ namespace Project.WebUI.Controllers
             return View("Login");
         }
 
+        
+
         public ActionResult LostPassword()
         {
             return View();

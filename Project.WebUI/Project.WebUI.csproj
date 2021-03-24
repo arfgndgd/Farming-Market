@@ -1778,6 +1778,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="EmployePhoto\ciftci1.jpg" />
+    <Content Include="EmployePhoto\ciftci2.jpg" />
+    <Content Include="EmployePhoto\ciftci3.jpg" />
+    <Content Include="EmployePhoto\ciftci4.jpg" />
+    <Content Include="EmployePhoto\ciftci5.jpg" />
+    <Content Include="EmployePhoto\sulama.jpg" />
+    <Content Include="EmployePhoto\tarla.jpg" />
+    <Content Include="EmployePhoto\traktor1.jpg" />
     <Content Include="Global.asax" />
     <Content Include="OutherTools\404.html" />
     <Content Include="OutherTools\about-2.html" />
@@ -2467,7 +2475,6 @@
     <Content Include="Views\Shopping\ShoppingList.cshtml" />
     <Content Include="Views\Shopping\CartPage.cshtml" />
     <Content Include="Views\Shopping\SiparisiOnayla.cshtml" />
-    <Content Include="Views\Shared\_cartPage.cshtml" />
     <Content Include="Views\Page\Contact.cshtml" />
     <Content Include="Views\Page\BlogList.cshtml" />
     <Content Include="Views\Page\About.cshtml" />
@@ -2475,7 +2482,7 @@
     <Content Include="Views\Account\LostPassword.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Shopping\ProductDetail.cshtml" />
-    <Content Include="Views\Page\GetCategories.cshtml" />
+    <Content Include="Views\Page\BlogDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2487,7 +2494,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Manager\Data\" />
     <Folder Include="Areas\Manager\OuterTools\assets\jquery-file-upload\server\php\files\thumbnail\" />
-    <Folder Include="EmployePhoto\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Project.BLL\Project.BLL.csproj">

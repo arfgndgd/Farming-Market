@@ -48,19 +48,15 @@ namespace Project.WebUI.Controllers
             return View();
         }
 
-        public ActionResult GetCategories(int? id)
+        public ActionResult BlogDetail(int? id)
         {
-            PAVM pvm = new PAVM
+
+            BlogVM bvm = new BlogVM
             {
-                Categories = cRep.GetActives(),
-                //Products = pRep.GetActives(),
-                Products = id == null ? pRep.GetAll() : pRep.Where(x => x.CategoryID == id)
-                //TODO: Search ayarlaıncak
-
-
-
+                Blog = bRep.FirstOrDefault(x => x.ID == id)
             };
-            return PartialView(pvm);
+            return View(bvm);
+
         }
 
     }
