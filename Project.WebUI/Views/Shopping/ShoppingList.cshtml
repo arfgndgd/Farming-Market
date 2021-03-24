@@ -21,15 +21,12 @@
                                 <ul>
                                     @foreach (Category item in Model.Categories)
                                     {
-
-                                        <li>
-                                            <label class="container_check">
-                                                @Html.ActionLink(item.CategoryName, "ShoppingList", new { categoryID = item.ID }@*, new { @class = "btn btn-primary" }*@) <small>12</small>
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </li>
-
+                                            <li>
+                                                <label class="container">
+                                                    @Html.ActionLink(item.CategoryName, "ShoppingList", new { categoryID = item.ID }) 
+                                                    <small>@item.Products.Count</small>
+                                                </label>
+                                            </li>
                                     }
                                 </ul>
                             </div>
@@ -72,9 +69,9 @@
                         </div>*@
                         <!-- /filter_type -->
 
-                        <div class="buttons">
+                        @*<div class="buttons">
                             <a href="@Url.Action("ShoppingList")" class="btn_1">Filter</a> <a href="#0" class="btn_1 gray">Reset</a>
-                        </div>
+                        </div>*@
                     </div>
                 </aside>
                 <!-- /col -->

@@ -60,6 +60,8 @@
                         </td>
                         <td class="options">
                             <a href="@Url.Action("DeleteFromCart",new { id=item.ID})"><i class="ti-trash"></i></a>
+                            <a href="@Url.Action("AddToCartCartPage",new { id=item.ID})"><i class="ti-shopping-cart"></i></a>
+
                         </td>
                     </tr>
                     
@@ -87,7 +89,7 @@
                             <span>Subtotal</span>@Model.Cart.TotalPrice
                         </li>
                         <li>
-                            <span>Shipping</span> $7.00
+                            <span>Shipping</span> Free
                         </li>
                         <li>
                             <span>Total</span> @Model.Cart.TotalPrice

@@ -74,9 +74,40 @@ namespace Project.WebUI.Controllers
                 Price = eklenecekUrun.UnitPrice,
                 ImagePath = eklenecekUrun.ImagePath
             };
-
+            if (c.Sepetim.Count == 0)
+            {
+                c.SepeteEkle(ci);
+                Session["scart"] = c;
+                return RedirectToAction("ShoppingList");
+            }
             c.SepeteEkle(ci);
             Session["scart"] = c;
+
+            return RedirectToAction("ShoppingList");
+        }
+
+        public ActionResult AddToCartCartPage(int id)
+        {
+            Cart c = Session["scart"] == null ? new Cart() : Session["scart"] as Cart;
+
+            Product eklenecekUrun = pRep.Find(id);
+
+            CartItem ci = new CartItem
+            {
+                ID = eklenecekUrun.ID,
+                Name = eklenecekUrun.ProductName,
+                Price = eklenecekUrun.UnitPrice,
+                ImagePath = eklenecekUrun.ImagePath
+            };
+            if (c.Sepetim.Count >=1)
+            {
+                c.SepeteEkle(ci);
+                Session["scart"] = c;
+                return RedirectToAction("CartPage");
+            }
+            c.SepeteEkle(ci);
+            Session["scart"] = c;
+
             return RedirectToAction("ShoppingList");
         }
 
@@ -89,11 +120,9 @@ namespace Project.WebUI.Controllers
                 cpvm.Cart = c;
                 return View(cpvm);
             }
-
             TempData["sepetBos"] = "Sepetinizde ürün bulunmamaktadır";
             return RedirectToAction("ShoppingList");
         }
-
         public ActionResult DeleteFromCart(int id)
         {
             if (Session["scart"] != null)
