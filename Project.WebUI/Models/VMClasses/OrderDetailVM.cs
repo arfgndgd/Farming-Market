@@ -15,5 +15,7 @@ namespace Project.WebUI.Models.VMClasses
         public List<OrderDetail> OrderDetails { get; set; }
         public List<Order> Orders { get; set; }
         public IPagedList<OrderDetail> PagedOrderDetails { get; set; }
+        public IPagedList<Order> PagedOrders { get; set; }
+
     }
 }

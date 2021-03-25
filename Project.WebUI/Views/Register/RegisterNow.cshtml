@@ -23,15 +23,6 @@
                     <div class="box_account">
                         <h3 class="client">Already Client</h3>
                         <div class="form_container">
-                            <div class="row no-gutters">
-                                <div class="col-lg-6 pr-lg-1">
-                                    <a href="#0" class="social_bt facebook">Login with Facebook</a>
-                                </div>
-                                <div class="col-lg-6 pl-lg-1">
-                                    <a href="#0" class="social_bt google">Login with Google</a>
-                                </div>
-                            </div>
-                            <div class="divider"><span>Or</span></div>
                             @TempData["HesapAktifmi"]
                             @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-signin" }))
                             {
@@ -42,10 +33,11 @@
 
                                 @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control", placeholder = "Kullanıcı ismi giriniz" })
                                 <br />
-
+                                <div class="divider"><span>Or</span></div>
+                                <br />
                                 @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "Email giriniz" })
                                 <br />
-
+                                <hr />
                                 @Html.PasswordFor(x => x.AppUser.Password, new { @class = "form-control", placeholder = "Şifre Giriniz" })
                                 <br />
 

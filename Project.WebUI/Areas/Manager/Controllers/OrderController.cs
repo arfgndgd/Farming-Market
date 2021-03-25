@@ -15,6 +15,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
     public class OrderController : Controller
     {
         OrderRepository oRep;
+        OrderDetailRepository odRep;
         AppUserRepository aRep;
         ShipperRepository sRep;
 
@@ -23,15 +24,17 @@ namespace Project.WebUI.Areas.Manager.Controllers
             oRep = new OrderRepository();
             aRep = new AppUserRepository();
             sRep = new ShipperRepository();
+            odRep = new OrderDetailRepository();
         }
 
         [AllowAnonymous]
         // GET: Manager/Order
-        public ActionResult OrderList(int? page)
+        public ActionResult OrderList(int? page, int? orderID)
         {
             OrderVM ovm = new OrderVM
             {
-                PagedOrders = oRep.GetAll().ToPagedList(page?? 1,15)
+                PagedOrderDetails = orderID == null ? odRep.GetAll().ToPagedList(page ?? 1, 15) : odRep.Where(x => x.OrderID == orderID).ToPagedList(page ?? 1, 15),
+                Orders = oRep.GetAll()
             };
             if (true)
             {
@@ -96,5 +99,8 @@ namespace Project.WebUI.Areas.Manager.Controllers
             oRep.Destroy(oRep.Find(id));
             return RedirectToAction("OrderList");
         }
+
+        
+        
     }
 }

@@ -35,7 +35,7 @@ namespace Project.WebUI.Areas.Manager.Controllers
             };
             if (true)
             {
-                TempData["orID"] = true;
+                TempData["ordID"] = true;
             }
             return View(odvm);
         }

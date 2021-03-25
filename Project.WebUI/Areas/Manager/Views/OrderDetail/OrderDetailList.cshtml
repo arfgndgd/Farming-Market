@@ -70,9 +70,9 @@
                     </table>
                     <div class="pagination__wrapper">
                         <ul class="pagination">
-                            @if (TempData["orID"] != null)
+                            @if (TempData["ordID"] != null)
                             {
-                                <li>@Html.PagedListPager(Model.PagedOrderDetails, page => Url.Action("OrderList", new { page, categoryID = TempData["orID"] }))</li>
+                                <li>@Html.PagedListPager(Model.PagedOrderDetails, page => Url.Action("OrderDetailList", new { page, categoryID = TempData["ordID"] }))</li>
                             }
                             else
                             {

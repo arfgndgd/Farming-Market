@@ -1,0 +1,41 @@
+﻿@model AppUserVM
+@{
+    ViewBag.Title = "UserProfile";
+}
+
+
+<main>
+    <div class="container margin_30">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="prod_info">
+                    <h1>@Model.AppUser.UserName</h1>
+                    <h1>@Model.UserProfile.FirstName + &nbsp; + @Model.UserProfile.LastName</h1>
+                    <div>
+                        <h2>Orders</h2>
+                        <br />
+                        @if (Model.AppUser.Orders == null)
+                        {
+                            <h2>Henüz bir siparişiniz yok</h2>
+                        }
+                        else
+                        {
+                            foreach (AppUser item in Model.AppUsers)
+                            {
+                                <ul>
+                                    @item.Orders
+                                </ul>
+                            }
+                        }
+                        @*@foreach (AppUser item in Model.AppUsers)
+        {
+            <ul>
+                @item.Orders
+            </ul>
+        }*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

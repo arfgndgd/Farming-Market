@@ -9,6 +9,8 @@ namespace Project.WebUI.Models.VMClasses
     public class AppUserVM
     {
         public AppUser AppUser { get; set; }
+        public List<AppUser> AppUsers { get; set; }
         public UserProfile UserProfile { get; set; }
+        public List<Order> Orders { get; set; }
     }
 }

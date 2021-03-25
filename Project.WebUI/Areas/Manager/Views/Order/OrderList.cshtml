@@ -34,6 +34,7 @@
                         <thead>
                             <tr>
                                 <th>Sipariş ID</th>
+                                <th>Sipariş Detayları</th>
                                 <th>Teslim Adresi</th>
                                 <th>Şehir</th>
                                 <th>Ülke</th>
@@ -49,10 +50,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (Order item in Model.PagedOrders)
+                            @foreach (Order item in Model.Orders)
                             {
                                 <tr class="">
                                     <td>@item.ID</td>
+                                    <td>@Html.ActionLink("Detayları Gör", "OrderList", new { orderID = item.ID })</td>
                                     <td>@item.ShippedAddress</td>
                                     <td>@item.ShippedCity</td>
                                     <td>@item.ShippedCountry</td>
@@ -83,14 +85,51 @@
                         <ul class="pagination">
                             @if (TempData["orID"] != null)
                             {
-                                <li>@Html.PagedListPager(Model.PagedOrders, page => Url.Action("OrderList", new { page, categoryID = TempData["orID"] }))</li>
+                                <li>@Html.PagedListPager(Model.PagedOrderDetails, page => Url.Action("OrderList", new { page, categoryID = TempData["orID"] }))</li>
                             }
                             else
                             {
-                                <li>@Html.PagedListPager(Model.PagedOrders, page => Url.Action("OrderList", new { page }))</li>
+                                <li>@Html.PagedListPager(Model.PagedOrderDetails, page => Url.Action("OrderList", new { page }))</li>
                             }
                         </ul>
                     </div>
+                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                        <thead>
+                            <tr>
+                                <th>Sipariş ID</th>
+                                <th>Ürün ID</th>
+                                <th>Toplam Fiyat</th>
+                                <th>Miktar</th>
+                                <th>Durum</th>
+                                @*<th>Sil</th>
+                                <th>Güncelle</th>
+                                <th>Kaldır</th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (OrderDetail item in Model.PagedOrderDetails)
+                            {
+                                <tr class="">
+                                    <td>@item.OrderID</td>
+                                    <td>@item.ProductID</td>
+                                    <td>@item.TotalPrice</td>
+                                    <td>@item.Quantity</td>
+                                    <td class="hidden-phone">@item.Status</td>
+
+                                    @*<td><a class="edit" href="javascript:;">Edit</a></td>
+
+                        <td><a class="delete" href="javascript:;">Delete</a></td>*@
+
+                                    @*<td>@Html.ActionLink("Sil", "DeleteOrderDetail", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                                    <td>@Html.ActionLink("Güncelle", "UpdateOrderDetail", new { id = item.ID }, new { @class = "btn btn-success" })</td>
+
+                                    <td>@Html.ActionLink("Kaldır", "DestroyOrderDetail", new { id = item.ID }, new { @class = "btn btn-danger" })</td>*@
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
         </section>

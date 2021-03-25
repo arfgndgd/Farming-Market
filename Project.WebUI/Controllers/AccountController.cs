@@ -15,9 +15,15 @@ namespace Project.WebUI.Controllers
     public class AccountController : Controller
     {
         AppUserRepository appRep;
+        OrderRepository oRep;
+        OrderDetailRepository odRep;
+
         public AccountController()
         {
             appRep = new AppUserRepository();
+            oRep = new OrderRepository();
+            odRep = new OrderDetailRepository();
+
         }
 
         // GET: Account
@@ -69,7 +75,14 @@ namespace Project.WebUI.Controllers
             return View("Login");
         }
 
-        
+        public ActionResult UserProfile(int? id)
+        {
+            AppUserVM avm = new AppUserVM
+            {
+                AppUser = appRep.FirstOrDefault(x => x.ID == id)
+            };
+            return View(avm);
+        }
 
         public ActionResult LostPassword()
         {
