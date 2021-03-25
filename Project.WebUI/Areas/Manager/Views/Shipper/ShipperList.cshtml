@@ -90,6 +90,7 @@
 
                     <table class="table table-striped table-hover table-bordered" id="editable-sample">
                         <thead>
+                            <h3>Bu alanda CRUD işlemleri yapamazsınız lütfen ilgili sayfaya gidiniz</h3>
                             <tr>
                                 <th>Sipariş ID</th>
                                 <th>Teslim Adresi</th>
@@ -101,9 +102,9 @@
                                 <th>Kullanıcı Adı</th>
                                 <th>Email</th>
                                 <th>Durum</th>
-                                <th>Sil</th>
+                                @*<th>Sil</th>
                                 <th>Güncelle</th>
-                                <th>Kaldır</th>
+                                <th>Kaldır</th>*@
                             </tr>
                         </thead>
                         <tbody>
@@ -125,11 +126,11 @@
                                     <td class="hidden-phone">@item.Status</td>
 
 
-                                    <td>@Html.ActionLink("Sil", "DeleteOrder", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+                                    @*<td>@Html.ActionLink("Sil", "DeleteOrder", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
 
                                     <td>@Html.ActionLink("Güncelle", "UpdateOrder", new { id = item.ID }, new { @class = "btn btn-success" })</td>
 
-                                    <td>@Html.ActionLink("Kaldır", "DestroyOrder", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+                                    <td>@Html.ActionLink("Kaldır", "DestroyOrder", new { id = item.ID }, new { @class = "btn btn-danger" })</td>*@
                                 </tr>
                             }
                         </tbody>
