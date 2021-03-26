@@ -3,6 +3,9 @@
     ViewBag.Title = "CartPage";
 }
 
+@*<h2 style="color:red">@TempData["sepetBos"]</h2>*@
+
+
 <main class="bg_gray">
     <div class="container margin_30">
         <div class="page_header">
@@ -36,12 +39,12 @@
                 </tr>
             </thead>
             <tbody>
-               @foreach (CartItem item in Model.Cart.Sepetim)
+                @foreach (CartItem item in Model.Cart.Sepetim)
                 {
                     <tr>
                         <td>
                             <div class="thumb_cart">
-                                <img src="img/products/product_placeholder_square_small.jpg" data-src="@item.ImagePath" class="lazy" alt="Image"/>
+                                <img src="img/products/product_placeholder_square_small.jpg" data-src="@item.ImagePath" class="lazy" alt="Image" />
                             </div>
                             <span class="item_cart">@item.Name</span>
                         </td>
@@ -60,15 +63,15 @@
 
                         </td>
                     </tr>
-                    
+
                 }
             </tbody>
-           
+
         </table>
 
         <div class="row add_top_30 flex-sm-row-reverse cart_actions">
             <div class="col-sm-4 text-right">
-                <button type="button" class="btn_1 gray">@Html.ActionLink("Update Cart","ShoppingList")</button>
+                <button type="button" class="btn_1 gray">@Html.ActionLink("Update Cart", "ShoppingList")</button>
             </div>
         </div>
         <!-- /cart_actions -->

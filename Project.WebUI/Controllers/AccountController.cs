@@ -83,8 +83,8 @@ namespace Project.WebUI.Controllers
             };
             return View(avm);
 
-            //Kullanıcı profili oluştur
-            //AppUser kontrolü oluştur listeleme için
+            //TODO: Kullanıcı profili oluştur
+            //TODO: AppUser kontrolü oluştur listeleme için
         }
 
         public ActionResult LostPassword()

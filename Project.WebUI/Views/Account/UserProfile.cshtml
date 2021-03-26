@@ -15,12 +15,12 @@
                         <h2>Orders</h2>
                         <br />
                         <div class="space15"></div>
-                        @if (Model.AppUser.Orders == null)
+                        @*@if (Model.AppUser.Orders == null)
                         {
                             <h2>Henüz bir siparişiniz yok</h2>
                         }
                         else
-                        {
+                        {*@
                           
                                 <table class="table table-striped table-hover table-bordered" id="editable-sample">
                                     <thead>
@@ -35,7 +35,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach (Order item in Model.Orders)
+                                        @*@foreach (Order item in Model.Orders)
                                         {
                                             <tr class="">
                                                 <td>@item.ID</td>
@@ -50,7 +50,7 @@
                                                 <td>@item.TotalPrice</td>
 
                                             </tr>
-                                        }
+                                        }*@
                                     </tbody>
                                 </table>
 

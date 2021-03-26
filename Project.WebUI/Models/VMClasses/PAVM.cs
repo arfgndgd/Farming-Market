@@ -24,5 +24,6 @@ namespace Project.WebUI.Models.VMClasses
 
         public IPagedList<Blog> PagedBlogs { get; set; }
 
+
     }
 }

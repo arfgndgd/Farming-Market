@@ -157,30 +157,30 @@ namespace Project.WebUI.Controllers
         //    return View(pRep.Where(x => x.ProductName.Contains(item) || item == null).ToList());
         //}
 
-        
-
-
         public ActionResult SiparisiOnayla()
         {
-            
-            AppUser mevcutKullanici;
-            if (Session["member"] != null)
+            if (Session["scart"] != null)
             {
-                mevcutKullanici = Session["member"] as AppUser;
+                AppUser mevcutKullanici;
+                if (Session["member"] != null)
+                {
+                    mevcutKullanici = Session["member"] as AppUser;
+                }
+                else
+                {
+                    TempData["anonim"] = "Kullanıcı üye değil";
+                }
+                OrderVM ovm = new OrderVM
+                {
+                    Shippers = sRep.GetAll()
+                };
+                return View(ovm);
             }
-            else
-            {
-                TempData["anonim"] = "Kullanıcı üye değil";
-            }
-            OrderVM ovm = new OrderVM
-            {
-                Shippers = sRep.GetAll()
-            };
-
-            return View(ovm);
+            TempData["sepetBos"] = "Sepetinizde ürün bulunmamaktadır";
+            return RedirectToAction("ShoppingList");
         }
 
-   
+
         [HttpPost]
         public ActionResult SiparisiOnayla(OrderVM ovm)
         {
@@ -189,6 +189,7 @@ namespace Project.WebUI.Controllers
 
 
             ovm.Order.TotalPrice = ovm.PaymentVM.ShoppingPrice = sepet.TotalPrice.Value;
+            TempData["sepetBos"] = "Sepetinizde ürün bulunmamaktadır";
 
 
             //API

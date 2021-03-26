@@ -121,21 +121,24 @@
                                             <a href='@Url.Action("RegisterNow","Register")' class="btn_1">Sign Up</a>
                                             <br />
                                             <a href='@Url.Action("Login","Account")' class="btn_1">Sign In</a>
+                                            @*@foreach (AppUser item in Model.)
+                                            {*@
+                                                <ul>
+                                                    @*<li>
+                                                        <a href="account.html"><i class="ti-package"></i>My Orders</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="@Url.Action("UserProfile","Account",new { id = item.ID})"><i class="ti-user"></i>My Profile</a>
+                                                    </li>*@
+                                                    <li>
+                                                        <a href="@Url.Action("Faq","Page")"><i class="ti-help-alt"></i>Help and Faq</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="@Url.Action("LogOut","Account")"><i class="ti-help-alt"></i>LogOut</a>
+                                                    </li>
+                                                </ul>
 
-                                            <ul>
-                                                <li>
-                                                    <a href="account.html"><i class="ti-package"></i>My Orders</a>
-                                                </li>
-                                                <li>
-                                                    <a href="@Url.Action("UserProfile","Account")"><i class="ti-user"></i>My Profile</a>
-                                                </li>
-                                                <li>
-                                                    <a href="@Url.Action("Faq","Page")"><i class="ti-help-alt"></i>Help and Faq</a>
-                                                </li>
-                                                <li>
-                                                    <a href="@Url.Action("LogOut","Account")"><i class="ti-help-alt"></i>LogOut</a>
-                                                </li>
-                                            </ul>
+                                            @*}*@
                                         </div>
                                     </div>
                                     <!-- /dropdown-access-->
