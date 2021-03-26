@@ -33,7 +33,6 @@ namespace Project.WebUI.Areas.Manager.Controllers
             ProductVM pvm = new ProductVM
             {
                 PagedProducts = id == null ? pRep.GetAll().ToPagedList(page?? 1,15) : pRep.Where(x=>x.CategoryID == id).ToPagedList(page ?? 1, 15)
-                //TODO : burada Supplierla ilgili sorun olabilir, Classında product ve storage listeledim 
 
             };
             //if (search == "ProductName")

@@ -82,6 +82,9 @@ namespace Project.WebUI.Controllers
                 AppUser = appRep.FirstOrDefault(x => x.ID == id)
             };
             return View(avm);
+
+            //Kullanıcı profili oluştur
+            //AppUser kontrolü oluştur listeleme için
         }
 
         public ActionResult LostPassword()

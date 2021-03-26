@@ -29,7 +29,6 @@ namespace Project.WebUI.Areas.Manager.Controllers
                 Department = dRep.Find(id)
             };
             return View();
-            //TODO: bu ne işe yarıyordu
         }
 
         [AllowAnonymous]
