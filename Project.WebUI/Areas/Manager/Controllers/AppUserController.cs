@@ -12,6 +12,7 @@ using Project.COMMON.Tools;
 
 namespace Project.WebUI.Areas.Manager.Controllers
 {
+    //Yalnızca admin panelinde görüntülüme yetkisi olacak ekleme silme güncelleme yok
     [ManagerAuthentication]
 
     public class AppUserController : Controller
