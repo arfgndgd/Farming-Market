@@ -1,0 +1,151 @@
+﻿@model AppUserVM
+@{
+    ViewBag.Title = "AppUserList";
+}
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <section class="panel">
+            <header class="panel-heading"><h2>Kullanıcılar Sayfası</h2></header>
+            <div class="panel-body">
+                <div class="adv-table editable-table ">
+                    <div class="clearfix">
+                        @*<div class="btn-group">
+                            <button id="editable-sample_new" class="btn green">
+                                @Html.ActionLink("Kullanıcı Ekle", "AddShipper") <i class="icon-plus"></i>
+                            </button>
+                        </div>*@
+                        <div class="btn-group pull-right">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                Tools <i class="icon-angle-down"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Print</a></li>
+                                <li><a href="#">Save as PDF</a></li>
+                                <li><a href="#">Export to Excel</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="space15"></div>
+                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>UserName</th>
+                                <th>Email</th>
+                                <th>İsim</th>
+                                <th>Soyisim</th>
+                                <th>Adres</th>
+                                @*<th>Durum</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+                                <th>Kaldır</th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (AppUser item in Model.AppUsers)
+                            {
+                            <tr class="">
+                                <td>@item.ID</td>
+                                <td>@Html.ActionLink(item.UserName, "AppUserList", new { appUserID = item.ID })</td>
+                                <td>@item.Email</td>
+                                <td>@item.UserProfile.FirstName</td>
+                                <td>@item.UserProfile.LastName</td>
+                                <td>@item.UserProfile.Address</td>
+
+                                @*<td>@item.Status</td>
+
+        <td>@Html.ActionLink("Sil", "DeleteAppUser", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+        <td>@Html.ActionLink("Güncelle", "UpdateAppUser", new { id = item.ID }, new { @class = "btn btn-success" })</td>
+
+        <td>@Html.ActionLink("Kaldır", "DestroyAppUser", new { id = item.ID }, new { @class = "btn btn-danger" })</td>*@
+                            </tr>
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+                <section class="panel">
+                    <div class="panel-body">
+                        <div class="pull-right">
+                            <ul class="pagination pagination-sm pro-page-list">
+                                @if (TempData["appID"] != null)
+                                {
+                                    <li>@Html.PagedListPager(Model.PagedOrders, page => Url.Action("AppUserList", new { page, appUserID = TempData["appID"] }))</li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        @Html.PagedListPager(Model.PagedOrders, page => Url.Action("AppUserList", new { page }))
+                                    </li>
+
+                                }
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </section>
+                <div>
+
+                    <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                        <thead>
+                            <h3>Bu alanda CRUD işlemleri yapamazsınız lütfen ilgili sayfaya gidiniz</h3>
+                            <tr>
+                                <th>Sipariş ID</th>
+                                <th>Teslim Adresi</th>
+                                <th>Şehir</th>
+                                <th>Ülke</th>
+                                <th>Müşteri</th>
+                                <th>Kargo/Nakliye</th>
+                                <th>Toplam Fiyat</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>Email</th>
+                                <th>Durum</th>
+                                @*<th>Sil</th>
+                                    <th>Güncelle</th>
+                                    <th>Kaldır</th>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Order item in Model.PagedOrders)
+                            {
+                                <tr class="">
+                                    <td>@item.ID</td>
+                                    <td>@item.ShippedAddress</td>
+                                    <td>@item.ShippedCity</td>
+                                    <td>@item.ShippedCountry</td>
+                                    <td>@item.AppUserID</td>
+                                    @if (item.Shipper != null)
+                                    {
+                                        <td>@item.Shipper.ShipperName</td>
+                                    }
+                                    <td>@item.TotalPrice</td>
+                                    <td>@item.UserName</td>
+                                    <td>@item.Email</td>
+                                    <td class="hidden-phone">@item.Status</td>
+
+
+                                    @*<td>@Html.ActionLink("Sil", "DeleteOrder", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+
+                                        <td>@Html.ActionLink("Güncelle", "UpdateOrder", new { id = item.ID }, new { @class = "btn btn-success" })</td>
+
+                                        <td>@Html.ActionLink("Kaldır", "DestroyOrder", new { id = item.ID }, new { @class = "btn btn-danger" })</td>*@
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->

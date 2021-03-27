@@ -2328,6 +2328,7 @@
     <Content Include="Areas\Manager\Views\OrderDetail\OrderDetailList.cshtml" />
     <Content Include="Areas\Manager\Views\OrderDetail\AddOrderDetail.cshtml" />
     <Content Include="Areas\Manager\Views\OrderDetail\UpdateOrderDetail.cshtml" />
+    <Content Include="Areas\Manager\Views\AppUser\AppUserList.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -2409,6 +2410,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Manager\Controllers\AppUserController.cs" />
     <Compile Include="Areas\Manager\Controllers\BlogController.cs" />
     <Compile Include="Areas\Manager\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Manager\Controllers\OrderController.cs" />
