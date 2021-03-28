@@ -37,7 +37,7 @@
                                 <th>UserName</th>
                                 <th>Email</th>
                                 <th>İsim</th>
-                                <th>Soyisim</th>
+                                <th>Telefon</th>
                                 <th>Adres</th>
                                 @*<th>Durum</th>
                                 <th>Sil</th>
@@ -52,8 +52,8 @@
                                 <td>@item.ID</td>
                                 <td>@Html.ActionLink(item.UserName, "AppUserList", new { appUserID = item.ID })</td>
                                 <td>@item.Email</td>
-                                <td>@item.UserProfile.FirstName</td>
-                                <td>@item.UserProfile.LastName</td>
+                                <td>@item.UserProfile.FirstName &nbsp; @item.UserProfile.LastName</td>
+                                <td>@item.UserProfile.Phone</td>
                                 <td>@item.UserProfile.Address</td>
 
                                 @*<td>@item.Status</td>

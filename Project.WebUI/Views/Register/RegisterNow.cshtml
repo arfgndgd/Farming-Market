@@ -23,12 +23,17 @@
                     <div class="box_account">
                         <h3 class="new_client">New Client</h3> <small class="float-right pt-2">* Required Fields</small>
                         <div class="form_container">
-                            @using (Html.BeginForm("RegisterNow", "Register", FormMethod.Post, new { @class = "form-signin" }))
+                           @using (Html.BeginForm("RegisterNow", "Register", FormMethod.Post, new { @class = "form-signin" }))
                             {
                                 if (ViewBag.ZatenVar != null)
                                 {
                                     <h2>@ViewBag.ZatenVar</h2>
                                 }
+                                @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "E-mail adresinizi yazınız" })
+
+                                @Html.TextBoxFor(x => x.UserProfile.FirstName, new { @class = "form-control", placeholder = "İsminizi yazınız" })
+
+                                @Html.TextBoxFor(x => x.UserProfile.LastName, new { @class = "form-control", placeholder = "Soyadınızı yazınız" })
 
                                 @Html.TextBoxFor(x => x.AppUser.UserName, new { @class = "form-control ", placeholder = "Kullanıcı ismi belirleyiniz" })
                                 @Html.ValidationMessageFor(x => x.AppUser.UserName)
@@ -39,15 +44,11 @@
                                 @Html.PasswordFor(x => x.AppUser.ConfirmPassword, new { @class = "form-control", placeholder = "Şifre tekrar" })
                                 @Html.ValidationMessageFor(x => x.AppUser.ConfirmPassword)
 
-                                @Html.TextBoxFor(x => x.AppUser.Email, new { @class = "form-control", placeholder = "e-mail adresinizi yazınız" })
+                                @Html.TextBoxFor(x => x.UserProfile.Phone, new { @class = "form-control", placeholder = "Telefon No Giriniz" })
 
-                                @Html.TextBoxFor(x => x.UserProfile.FirstName, new { @class = "form-control", placeholder = "İsminizi yazınız" })
-
-                                @Html.TextBoxFor(x => x.UserProfile.LastName, new { @class = "form-control", placeholder = "Soyadınızı yazınız" })
-
-                                @Html.TextAreaFor(x => x.UserProfile.Address, new { @class = "form-control",placeholder ="Adres Giriniz" })
+                                @Html.TextAreaFor(x => x.UserProfile.Address, new { @class = "form-control", placeholder = "Adres Giriniz" })
                                 <hr>
-                                
+                            
                                 <div class="text-center"><input type="submit" value="Register" class="btn_1 full-width"></div>
                             }
 

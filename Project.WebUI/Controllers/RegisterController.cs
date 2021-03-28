@@ -57,7 +57,7 @@ namespace Project.WebUI.Controllers
             MailSender.Send(appUser.Email, body: hesapKayit, subject: "Hesap Aktivasyon!");
             apRep.Add(appUser);
 
-            if (!string.IsNullOrEmpty(profile.FirstName) || !string.IsNullOrEmpty(profile.LastName) || !string.IsNullOrEmpty(profile.Address))
+            if (!string.IsNullOrEmpty(profile.FirstName) || !string.IsNullOrEmpty(profile.LastName) || !string.IsNullOrEmpty(profile.Address) || !string.IsNullOrEmpty(profile.Phone))
             {
                 profile.ID = appUser.ID;
                 usRep.Add(profile);
