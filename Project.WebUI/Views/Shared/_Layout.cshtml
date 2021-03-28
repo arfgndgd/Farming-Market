@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -121,13 +120,13 @@
                                             <a href='@Url.Action("RegisterNow","Register")' class="btn_1">Sign Up</a>
                                             <br />
                                             <a href='@Url.Action("Login","Account")' class="btn_1">Sign In</a>
-                                            @*@foreach (AppUser item in Model.)
+                                            @*@foreach (AppUser item in Model.AppUsers)
                                             {*@
                                                 <ul>
-                                                    @*<li>
+                                                    <li>
                                                         <a href="account.html"><i class="ti-package"></i>My Orders</a>
                                                     </li>
-                                                    <li>
+                                                    @*<li>
                                                         <a href="@Url.Action("UserProfile","Account",new { id = item.ID})"><i class="ti-user"></i>My Profile</a>
                                                     </li>*@
                                                     <li>
