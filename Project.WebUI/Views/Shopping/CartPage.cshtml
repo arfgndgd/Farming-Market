@@ -39,7 +39,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (CartItem item in Model.Cart.Sepetim)
+                @foreach (CartItem item in Model.Cart.MyCart)
                 {
                     <tr>
                         <td>
@@ -94,7 +94,7 @@
                             <span>Total</span> @Model.Cart.TotalPrice
                         </li>
                     </ul>
-                    <a href="@Url.Action("SiparisiOnayla")" class="btn_1 full-width cart">Proceed to Checkout</a>
+                    <a href="@Url.Action("ConfirmOrder")" class="btn_1 full-width cart">Proceed to Checkout</a>
                 </div>
             </div>
         </div>

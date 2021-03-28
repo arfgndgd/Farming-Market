@@ -2476,7 +2476,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shopping\ShoppingList.cshtml" />
     <Content Include="Views\Shopping\CartPage.cshtml" />
-    <Content Include="Views\Shopping\SiparisiOnayla.cshtml" />
+    <Content Include="Views\Shopping\ConfirmOrder.cshtml" />
     <Content Include="Views\Page\Contact.cshtml" />
     <Content Include="Views\Page\BlogList.cshtml" />
     <Content Include="Views\Page\About.cshtml" />

@@ -7,42 +7,42 @@ namespace Project.WebUI.Models.ShoppingTools
 {
     public class Cart
     {
-        Dictionary<int, CartItem> _sepetim;
+        Dictionary<int, CartItem> myCart;
 
         public Cart()
         {
-            _sepetim = new Dictionary<int, CartItem>();
+            myCart = new Dictionary<int, CartItem>();
         }
 
         //Sepet CartItem sınıfını da içinde tutar
-        public List<CartItem> Sepetim
+        public List<CartItem> MyCart
         {
             get
             {
-                return _sepetim.Values.ToList();
+                return myCart.Values.ToList();
             }
         }
 
         //Sepete ekleme CartItem içindeki Amount propu sayesinde arttırma yapar
-        public void SepeteEkle(CartItem item)
+        public void AddToCart(CartItem item)
         {
-            if (_sepetim.ContainsKey(item.ID))
+            if (myCart.ContainsKey(item.ID))
             {
-                _sepetim[item.ID].Amount += 1;
+                myCart[item.ID].Amount += 1;
                 return;
             }
-            _sepetim.Add(item.ID, item);
+            myCart.Add(item.ID, item);
         }
 
         //Amount sayesinde yine çıkarma yapılabilir
-        public void SepettenSil(int id)
+        public void DeleteToCart(int id)
         {
-            if (_sepetim[id].Amount > 1)
+            if (myCart[id].Amount > 1)
             {
-                _sepetim[id].Amount--;
+                myCart[id].Amount--;
                 return;
             }
-            _sepetim.Remove(id);
+            myCart.Remove(id);
         }
 
         //Sepetin Toplamı (CartItem classında Price*Amount çarpımından gelen fiyat)
@@ -50,7 +50,7 @@ namespace Project.WebUI.Models.ShoppingTools
         {
             get
             {
-                return _sepetim.Sum(x => x.Value.SubTotal);
+                return myCart.Sum(x => x.Value.SubTotal);
             }
         }
 

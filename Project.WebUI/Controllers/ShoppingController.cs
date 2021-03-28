@@ -51,36 +51,36 @@ namespace Project.WebUI.Controllers
             return View(pavm);
         }
 
-        public ActionResult Search(string search)
-        {
-            if (!string.IsNullOrEmpty(search))
-            {
-                pRep.Where(x => x.ProductName.StartsWith(search)).ToList();
+        //public ActionResult Search(string search)
+        //{
+        //    if (!string.IsNullOrEmpty(search))
+        //    {
+        //        pRep.Where(x => x.ProductName.StartsWith(search)).ToList();
 
-            }
-            return RedirectToAction("ShoppingList");
-        }
+        //    }
+        //    return RedirectToAction("ShoppingList");
+        //}
 
         public ActionResult AddToCart(int id)
         {
             Cart c = Session["scart"] == null ? new Cart() : Session["scart"] as Cart;
 
-            Product eklenecekUrun = pRep.Find(id);
+            Product addProduct = pRep.Find(id);
 
             CartItem ci = new CartItem
             {
-                ID = eklenecekUrun.ID,
-                Name = eklenecekUrun.ProductName,
-                Price = eklenecekUrun.UnitPrice,
-                ImagePath = eklenecekUrun.ImagePath
+                ID = addProduct.ID,
+                Name = addProduct.ProductName,
+                Price = addProduct.UnitPrice,
+                ImagePath = addProduct.ImagePath
             };
-            if (c.Sepetim.Count == 0)
+            if (c.MyCart.Count == 0)
             {
-                c.SepeteEkle(ci);
+                c.AddToCart(ci);
                 Session["scart"] = c;
                 return RedirectToAction("ShoppingList");
             }
-            c.SepeteEkle(ci);
+            c.AddToCart(ci);
             Session["scart"] = c;
 
             return RedirectToAction("ShoppingList");
@@ -90,22 +90,22 @@ namespace Project.WebUI.Controllers
         {
             Cart c = Session["scart"] == null ? new Cart() : Session["scart"] as Cart;
 
-            Product eklenecekUrun = pRep.Find(id);
+            Product addProduct = pRep.Find(id);
 
             CartItem ci = new CartItem
             {
-                ID = eklenecekUrun.ID,
-                Name = eklenecekUrun.ProductName,
-                Price = eklenecekUrun.UnitPrice,
-                ImagePath = eklenecekUrun.ImagePath
+                ID = addProduct.ID,
+                Name = addProduct.ProductName,
+                Price = addProduct.UnitPrice,
+                ImagePath = addProduct.ImagePath
             };
-            if (c.Sepetim.Count >=1)
+            if (c.MyCart.Count >=1)
             {
-                c.SepeteEkle(ci);
+                c.AddToCart(ci);
                 Session["scart"] = c;
                 return RedirectToAction("CartPage");
             }
-            c.SepeteEkle(ci);
+            c.AddToCart(ci);
             Session["scart"] = c;
 
             return RedirectToAction("ShoppingList");
@@ -128,8 +128,8 @@ namespace Project.WebUI.Controllers
             if (Session["scart"] != null)
             {
                 Cart c = Session["scart"] as Cart;
-                c.SepettenSil(id);
-                if (c.Sepetim.Count == 0)
+                c.DeleteToCart(id);
+                if (c.MyCart.Count == 0)
                 {
                     Session.Remove("scart");
                     TempData["sepetBos"] = "Sepetinizde ürün bulunmamaktadır";
@@ -151,13 +151,8 @@ namespace Project.WebUI.Controllers
             
         }
 
-        //public ActionResult Search(string item)
-        //{
-        //    //TODO: Search
-        //    return View(pRep.Where(x => x.ProductName.Contains(item) || item == null).ToList());
-        //}
 
-        public ActionResult SiparisiOnayla()
+        public ActionResult ConfirmOrder()
         {
             if (Session["scart"] != null)
             {
@@ -182,7 +177,7 @@ namespace Project.WebUI.Controllers
 
 
         [HttpPost]
-        public ActionResult SiparisiOnayla(OrderVM ovm)
+        public ActionResult ConfirmOrder(OrderVM ovm)
         {
             bool result;
             Cart sepet = Session["scart"] as Cart;
@@ -232,7 +227,7 @@ namespace Project.WebUI.Controllers
 
                     oRep.Add(ovm.Order); //OrderRepository bu noktada Order'i eklerken onun ID'sini olusturuyor...
 
-                    foreach (CartItem item in sepet.Sepetim)
+                    foreach (CartItem item in sepet.MyCart)
                     {
                         OrderDetail od = new OrderDetail();
                         od.OrderID = ovm.Order.ID;

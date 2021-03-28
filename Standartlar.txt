@@ -1,0 +1,13 @@
+Proje Standartlarý
+
+1. Proje Ýngilizce dilinde yazýldý.
+2. Kod yazýmýnda Türkçe karakter kullanýlmadý.
+3. TempData, Session, ViewBag, ViewData ifadelerinde Türkçe ifadeler kullanýldý(Kullanýcý arayüzüne yansýyan kýsýmlarda)
+4. View'lar üzerinde kullanýcýnýn muhatap olacaðý kýsýmlarda Türkçe ifadeler kullanýldý.
+5. Method isimleri PascalCase ile emir kipinde yazýldý.
+5. Field isimleri camelCase olarak yazýldý.
+6. Class isimleri tekil olarak belirlendi.
+7. Controller isimleri tekil olarak belirlendi.
+8. Propertyler Ýngilizce dilinde Türkçe karakter kullanmadan PascalCase olarak yazýldý.
+9. Local Variablelar Ýngilizce dilinde Türkçe karakter kullanmadan camelCase olarak yazýldý.
+10. Proje içerisinde yazýlýmcýlarýn yararlanabileceði Türkçe bilgilendirme ve yorumlar bulunuyor.

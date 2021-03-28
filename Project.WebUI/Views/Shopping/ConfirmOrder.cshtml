@@ -1,6 +1,6 @@
 ﻿@model OrderVM
 @{
-    ViewBag.Title = "SiparisiOnayla";
+    ViewBag.Title = "ConfirmOrder";
     //ViewBag.Title = "CartPage";
 }
 
@@ -48,7 +48,7 @@
 
                     <div class="box_account">
                         <div class="form_container">
-                            @using (Html.BeginForm("SiparisiOnayla", "Shopping", FormMethod.Post, new { @class = "form-horizontal tasi-form" }))
+                            @using (Html.BeginForm("ConfirmOrder", "Shopping", FormMethod.Post, new { @class = "form-horizontal tasi-form" }))
                             {
                                 <div>
                                     @Html.TextBoxFor(x => x.PaymentVM.CardNumber, new { @class = "form-control", placeholder = "Kart Numarası" })

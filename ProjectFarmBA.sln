@@ -15,6 +15,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.WebUI", "Project.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.COMMON", "Project.COMMON\Project.COMMON.csproj", "{4AEEC117-3191-425F-9FD3-30291A53275B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BC288E0A-DCF5-4DA8-A388-5D0769D5B2CE}"
+	ProjectSection(SolutionItems) = preProject
+		Olumsuzluklar.txt = Olumsuzluklar.txt
+		ProjeHakkinda.txt = ProjeHakkinda.txt
+		Standartlar.txt = Standartlar.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

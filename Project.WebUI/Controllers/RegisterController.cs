@@ -52,9 +52,9 @@ namespace Project.WebUI.Controllers
             }
 
             //Başarılı kayıt sonrası mail gönderme işlemi
-            string hesapKayit = "Tebrikler, hesabınız oluşturulmuştur. Hesabınızı aktive etmek için https://localhost:44317/Register/Activation/" + appUser.ActivationCode + " linkine tıklayabilirsiniz.";
+            string register = "Tebrikler, hesabınız oluşturulmuştur. Hesabınızı aktive etmek için https://localhost:44317/Register/Activation/" + appUser.ActivationCode + " linkine tıklayabilirsiniz.";
 
-            MailSender.Send(appUser.Email, body: hesapKayit, subject: "Hesap Aktivasyon!");
+            MailSender.Send(appUser.Email, body: register, subject: "Hesap Aktivasyon!");
             apRep.Add(appUser);
 
             if (!string.IsNullOrEmpty(profile.FirstName) || !string.IsNullOrEmpty(profile.LastName) || !string.IsNullOrEmpty(profile.Address) || !string.IsNullOrEmpty(profile.Phone))

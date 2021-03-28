@@ -1,0 +1,15 @@
+Projede Gerçekleþtirilmeyenler:
+
+Proje mailinde opsiyonel olarak belirtilen konaklama eðitim gibi alanlar için spesifik bir konumlandýrma yapýlmamýþtýr. Ancak Admin panelinde Blog sekmesi ile Manager rolünde bir çalýþan bu tür faaliyetleri listeleyebilir.
+
+Admin panelinde Worker rolündeki çalýþanlarýn yetkisi olmayan ekleme-silme-güncelleme iþlemlerinde karþýlarýna çýkan hata ekraný yerine belirlenmiþ bir hata sayfasý eklenemedi.
+
+Güncellenen veriler içerisinde resim ekleme özelliðine sahip sýnýflarda veri güncellendiðinde ilk yüklenen resim kayboluyor.(Resim güncellensin ya da güncellenmesin)
+
+Þifre yenileme iþleminin tüm aþamalarý gerçekleþiyor ancak mailden sonra gelen yönlendirmede yeni þifre ekleme aþamasýnda null deðer alýyor yeni þifreyi kabul etmiyor. Gelen mail içindeki aktivasyon kodu ise ilgili sýnýfta "new ActivationCode" olarak belirtmeme raðmen her seferinde ayný geliyor.
+
+Arama ile ilgili metod eklendi ancak arama yapýldýðýnda çalýþmýyor(JavaScript ile ilgili olabilir)
+
+Ajax kütüphanesi ile sayfa yenilemeden Crud iþlemlerini yapmak istedim ancak projeye ekleyemedim.
+
+Kullanýcý giriþi yapmýþ olan kiþinin kendi sipariþlerini listeleyebileceði bir sayfa yapmak istedim ancak ilgili butonla gitmek istenen sayfa için tuttuðum ID olmasýna raðmen yapamadým. Buton proje þablonunda yer alýyor ve Layouta model gönderdiðimde de baþarýsýz oldum.

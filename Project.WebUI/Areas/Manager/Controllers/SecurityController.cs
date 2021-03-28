@@ -39,23 +39,6 @@ namespace Project.WebUI.Areas.Manager.Controllers
                 return View("Login");
             }
 
-            //Employee login = db.Employees.FirstOrDefault(x => x.TCNO == employee.TCNO && x.Password == employee.Password);
-
-            //if (login != null && login.ERole == ENTITIES.Enums.EmployeeRole.Manager)
-            //{
-            //    FormsAuthentication.SetAuthCookie(employee.TCNO,false);
-            //    Session["manager"] = login;
-            //    return RedirectToAction("AddProduct", "Product",new { Area ="Manager"});
-            //}
-            //else if (login.ERole == ENTITIES.Enums.EmployeeRole.Worker)
-            //{
-            //    Session["worker"] = login;
-            //    return RedirectToAction("ProductList", "Product");
-            //}
-
-            //ViewBag.Mesaj = "Böyle bir çalışan yok";
-            //return View();
-            //&& x.Password == employee.Password
 
             Employee login = emRep.FirstOrDefault(x => x.TCNO == employee.TCNO );
             if (login == null)
@@ -83,18 +66,6 @@ namespace Project.WebUI.Areas.Manager.Controllers
             }
 
 
-
-            //Employee login = _db.Employees.FirstOrDefault(x => x.TCNO == employee.TCNO && x.Password == employee.Password);
-            //if (login != null)
-            //{
-            //    FormsAuthentication.SetAuthCookie(employee.TCNO, false);
-            //    return RedirectToAction("ProductList", "Product");
-            //}
-            //else
-            //{
-            //    ViewBag.Mesaj = "Böyle bir çalışan yok";
-            //    return View();
-            //}
         }
 
         public ActionResult LogOut()

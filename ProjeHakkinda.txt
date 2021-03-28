@@ -1,0 +1,42 @@
+Farming-Market Nedir?
+
+Proje, üretimden satýþ anýna kadar her adýmý içeren bir çiftçilik aðýdýr. Tarým, hayvancýlýk ve market alanlarýnda faaliyet gösterecek kuruluþ, ürettiði ürünleri satmayý hedeflemesi asýl amaç olsa da civar üreticilerin de ürünlerini organik marketinde satýþa açabilecek.
+Proje temel olarak veritabaný modellemesi üzerine kurulmuþ ve içerisinde bulunan sýnýflara göre þekillendirilmiþtir.
+
+
+Nasýl Çalýþýr?
+
+Proje ilk çalýþtýðýnda Farming-Market hakkýnda olan faaliyet sayfasý ile tarayýcýda görüntülenir. "Shopping Now" butonu ile kullanýcýlar Farming-Market üzerinde listelenmiþ ürün ve ürün kategorilerine ulaþabilir.
+Kullanýcýlar sepetine ekledikleri ürünleri ister üye olarak ister olmadan yalnýzca kredi kartý ödemesi yaparak sipariþ verebilirler.
+
+
+Admin Paneli Nasýl Çalýþýr?
+
+Manager Areasý altýnda sisteme giriþ yapan çalýþanýn TC Kimlik Numarasýna göre çalýþanlar farklý alanlara yönlendirilir.
+Manager rolüne sahip kullanýcýlar Area içinde tüm yetkilere sahiptir .
+Worker rolüne sahip kullanýcýlar ise yalnýzca listeleme yetkisine sahiptir. Aksi bir hamle yapmak istediklerinde hata ile karþýlacaklardýr.
+
+
+Proje Sýnýflarý:
+
+-BaseEntity: Tüm sýnýflarýn miras aldýðý sýnýftýr.
+-Product: Satýþa sunulacak ürünler.
+-Category: Ürünlerin kategorileri.
+-Storage: Üretim ve hammadde için depolanacak ürünler listelenir.
+-StorageCategory: Depolanacak ürün kategorileri.
+-Employee: Çalýþan listelemesi.
+-Department: Çalýþan departmanlarý listelenir.
+-AppUser: Kullanýcý kayýtlarý tutulur.
+-UserProfile: Kullanýcýnýn ayrýntýlý bilgileri tutulur.
+-Order: Sipariþler listelenir.
+-OrderDetail: Product ve Order sýnýflarýn (n-n) iliþkisi için oluþturulan sýnýftýr.
+-Blog: Farming-Market faaliyetleri ile ilgili blog yazýlarý listelenir.
+-Shipper: Kargo/Nakliye firmalarý listelenir.
+-Supplier: Ürün ve hammadde tedariði için oluþturulmuþ sýnýftýr.
+
+Enumlar:
+
+-DataStatus: Veri ekleme, veri güncelleme, veri silme tarihleri ve veri durumlarý enum olarak belirlenmiþtir.
+-EmployeeGender: Çalýþan cinsiyetleri enum olarak belirlenmiþtir.
+-EmployeeRole: Çalýþan rolleri enum olarak belirlenmiþtir.
+-UserRole: Kullanýcý rolleri enum olarak belirlenmiþtir.

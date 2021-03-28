@@ -35,16 +35,16 @@ namespace Project.WebUI.Controllers
         [HttpPost]
         public ActionResult Login(AppUser appUser)
         {
-            AppUser hesap = appRep.FirstOrDefault(x => x.UserName == appUser.UserName||x.Email == appUser.Email);
+            AppUser account = appRep.FirstOrDefault(x => x.UserName == appUser.UserName||x.Email == appUser.Email);
             //kullanıcı adı ya da email
 
-            string decrypted = DantexCrypt.DeCrypt(hesap.Password);         
+            string decrypted = DantexCrypt.DeCrypt(account.Password);         
            
-            if (appUser.Password == decrypted && hesap != null && hesap.URole == ENTITIES.Enums.UserRole.Member)
+            if (appUser.Password == decrypted && account != null && account.URole == ENTITIES.Enums.UserRole.Member)
             {
-                if (!hesap.Active)
+                if (!account.Active)
                 {
-                    return AktifKontrol();
+                    return ActiveControl();
                 }
 
                 //FormsAuthentication.SetAuthCookie(appUser.UserName, appUser.RememberMe);
@@ -52,7 +52,7 @@ namespace Project.WebUI.Controllers
 
 
 
-                Session["member"] = hesap;
+                Session["member"] = account;
                 return RedirectToAction("ShoppingList", "Shopping");
                 //Burada ShoppingList vardı 
             }
@@ -69,7 +69,7 @@ namespace Project.WebUI.Controllers
             return RedirectToAction("Login");
         }
 
-        private ActionResult AktifKontrol()
+        private ActionResult ActiveControl()
         {
             ViewBag.AktifDegil = "Lutfen hesabınızı aktif hale getiriniz...Mailinizi kontrol ediniz";
             return View("Login");
