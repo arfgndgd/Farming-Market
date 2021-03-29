@@ -79,7 +79,18 @@ namespace Project.WebUI.Controllers
             {
                 UserProfileVM avm = new UserProfileVM
                 {
-                    Orders =  oRep.Where(x=>x.AppUserID == appUserID).ToList()
+                    Orders =  oRep.Where(x=>x.AppUserID == appUserID).Select(x=>
+                    new Order()
+                    { 
+                        ID = x.ID,
+                        CreatedDate = x.CreatedDate,
+                        ShippedAddress = x.ShippedAddress,
+                        ShippedCity = x.ShippedCity,
+                        ShippedCountry = x.ShippedCountry,
+                        ShipperID = x.ShipperID,
+                        TotalPrice = x.TotalPrice
+                    }
+                    ).OrderByDescending(x=>x.CreatedDate).ToList()
                     
                 };
                 return View(avm);

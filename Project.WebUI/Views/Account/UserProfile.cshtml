@@ -18,14 +18,13 @@
                             <thead>
                                 <tr>
                                     <th>Sipariş ID</th>
+                                    <th>Tarih</th>
                                     <th>Teslim Adresi</th>
                                     <th>Şehir</th>
                                     <th>Ülke</th>
                                     <th>Müşteri</th>
                                     <th>Kargo/Nakliye</th>
                                     <th>Toplam Fiyat</th>
-                                    <th>Kullanıcı Adı</th>
-                                    <th>Email</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,17 +33,15 @@
 
                                     <tr class="">
                                         <td>@item.ID</td>
+                                        <td>@item.CreatedDate</td>
                                         <td>@item.ShippedAddress</td>
                                         <td>@item.ShippedCity</td>
                                         <td>@item.ShippedCountry</td>
-                                        <td>@item.AppUserID</td>
                                         @if (item.Shipper != null)
                                         {
                                             <td>@item.Shipper.ShipperName</td>
                                         }
                                         <td>@item.TotalPrice</td>
-                                        <td>@item.UserName</td>
-                                        <td>@item.Email</td>
                                     </tr>
                                 }
                             </tbody>
