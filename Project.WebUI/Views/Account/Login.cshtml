@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Login";
 }
+<h2 style="color:red">@TempData["giris"]</h2>
 
 <main class="bg_gray">
 
@@ -14,7 +15,7 @@
                 </ul>
             </div>
 
-            <h1>Sing In Your Account or @Html.ActionLink("Create Account","RegisterNow","Register")</h1>
+            <h1>Sing In Your Account or @Html.ActionLink("Create Account", "RegisterNow", "Register")</h1>
         </div>
         <!-- /page_header -->
         <div class="row justify-content-center">
@@ -44,12 +45,12 @@
                             </div>
                             <div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
                             @*<div id="forgot_pw">
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email_forgot" id="email_forgot" placeholder="Type your email">
-                        </div>
-                        <p>A new password will be sent shortly.</p>
-                        <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
-                    </div>*@
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email_forgot" id="email_forgot" placeholder="Type your email">
+                                    </div>
+                                    <p>A new password will be sent shortly.</p>
+                                    <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+                                </div>*@
                         }
 
                     </div>

@@ -17,13 +17,14 @@ namespace Project.WebUI.Controllers
         AppUserRepository appRep;
         OrderRepository oRep;
         OrderDetailRepository odRep;
+        UserProfileRepository uRep;
 
         public AccountController()
         {
             appRep = new AppUserRepository();
             oRep = new OrderRepository();
             odRep = new OrderDetailRepository();
-
+            uRep = new UserProfileRepository();
         }
 
         // GET: Account
@@ -49,9 +50,6 @@ namespace Project.WebUI.Controllers
 
                 //FormsAuthentication.SetAuthCookie(appUser.UserName, appUser.RememberMe);
                 //Beni hatırla butonu için
-
-
-
                 Session["member"] = account;
                 return RedirectToAction("ShoppingList", "Shopping");
                 //Burada ShoppingList vardı 
@@ -75,15 +73,19 @@ namespace Project.WebUI.Controllers
             return View("Login");
         }
 
-        public ActionResult UserProfile(int? id)
+        public ActionResult UserProfile(int? appUserID)
         {
-            AppUserVM avm = new AppUserVM
+            if (Session["member"] != null)
             {
-                AppUser = appRep.FirstOrDefault(x => x.ID == id)
-            };
-            return View(avm);
-
-            //TODO: Kullanıcı profili oluştur
+                UserProfileVM avm = new UserProfileVM
+                {
+                    Orders =  oRep.Where(x=>x.AppUserID == appUserID).ToList()
+                    
+                };
+                return View(avm);
+            }
+            TempData["giris"] = "Önce giriş yapınız";
+            return RedirectToAction("Login");
         }
 
         public ActionResult LostPassword()

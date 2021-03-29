@@ -1,0 +1,46 @@
+﻿
+@{
+    AppUser user = (AppUser)Session["member"];
+}
+
+<li>
+
+    <div class="dropdown dropdown-access">
+        <a href="account.html" class="access_link"><span>Account</span></a>
+
+
+        @if (user == null)
+        {
+
+
+            <div class="dropdown-menu">
+                <a href='@Url.Action("RegisterNow","Register")' class="btn_1">Sign Up</a>
+                <br />
+                <a href='@Url.Action("Login","Account")' class="btn_1">Sign In</a>
+            </div>
+
+
+        }
+        else
+        {
+    <div class="dropdown dropdown-cart">
+        <div class="dropdown-menu">
+            <ul>
+                <li>
+                    <a href="account.html"><i class="ti-package"></i>My Orders</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("UserProfile","Account")"><i class="ti-user"></i>My Profile</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Faq","Page")"><i class="ti-help-alt"></i>Help and Faq</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("LogOut","Account")"><i class="ti-help-alt"></i>LogOut</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        }
+    </div>
+</li>

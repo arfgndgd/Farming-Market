@@ -2451,6 +2451,7 @@
     <Compile Include="Models\VMClasses\StorageCategoryVM.cs" />
     <Compile Include="Models\VMClasses\StorageVM.cs" />
     <Compile Include="Models\VMClasses\SupplierVM.cs" />
+    <Compile Include="Models\VMClasses\UserProfileVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2486,6 +2487,7 @@
     <Content Include="Views\Shopping\ProductDetail.cshtml" />
     <Content Include="Views\Page\BlogDetail.cshtml" />
     <Content Include="Views\Account\UserProfile.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

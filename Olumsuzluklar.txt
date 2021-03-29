@@ -12,4 +12,4 @@ Arama ile ilgili metod eklendi ancak arama yapýldýðýnda çalýþmýyor(JavaScript il
 
 Ajax kütüphanesi ile sayfa yenilemeden Crud iþlemlerini yapmak istedim ancak projeye ekleyemedim.
 
-Kullanýcý giriþi yapmýþ olan kiþinin kendi sipariþlerini listeleyebileceði bir sayfa yapmak istedim ancak ilgili butonla gitmek istenen sayfa için tuttuðum ID olmasýna raðmen yapamadým. Buton proje þablonunda yer alýyor ve Layouta model gönderdiðimde de baþarýsýz oldum.
+Kullanýcý giriþi yapmýþ olan kiþinin kendi sipariþlerini listeleyebileceði bir sayfa yapmak istedim ancak ilgili butonla gitmek istenen sayfa için tuttuðum ID olmasýna raðmen yapamadým. Buton proje þablonunda yer alýyor ve Layouta model gönderdiðimde de baþarýsýz oldum. PartialView yardýmý ile bir Sipariþler sayfasý oluþturdum ancak kiþiye ait sipariþleri yine de listeleyemedim.

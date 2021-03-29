@@ -71,7 +71,7 @@
                                     <li>
                                         <a href='@Url.Action("ShoppingList","Shopping")'>SHOPPING NOW</a>
                                     </li>
-                                    
+
                                     <!-- /row -->
                                     <!--</div>-->
                                     <!-- /menu-wrapper -->
@@ -79,7 +79,7 @@
                                     <li>
                                         <a href='@Url.Action("About","Page")'>FARMING-MARKET</a>
                                     </li>
-                                    
+
                                     <!-- /row -->
                                     <!--</div>-->
                                     <!-- /menu-wrapper -->
@@ -113,35 +113,9 @@
                                     </div>
                                     <!-- /dropdown-cart-->
                                 </li>
-                                <li>
-                                    <div class="dropdown dropdown-access">
-                                        <a href="account.html" class="access_link"><span>Account</span></a>
-                                        <div class="dropdown-menu">
-                                            <a href='@Url.Action("RegisterNow","Register")' class="btn_1">Sign Up</a>
-                                            <br />
-                                            <a href='@Url.Action("Login","Account")' class="btn_1">Sign In</a>
-                                            @*@foreach (AppUser item in Model.AppUsers)
-                                            {*@
-                                                <ul>
-                                                    <li>
-                                                        <a href="account.html"><i class="ti-package"></i>My Orders</a>
-                                                    </li>
-                                                    @*<li>
-                                                        <a href="@Url.Action("UserProfile","Account",new { id = item.ID})"><i class="ti-user"></i>My Profile</a>
-                                                    </li>*@
-                                                    <li>
-                                                        <a href="@Url.Action("Faq","Page")"><i class="ti-help-alt"></i>Help and Faq</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="@Url.Action("LogOut","Account")"><i class="ti-help-alt"></i>LogOut</a>
-                                                    </li>
-                                                </ul>
-
-                                            @*}*@
-                                        </div>
-                                    </div>
-                                    <!-- /dropdown-access-->
-                                </li>
+                                
+                                    @Html.Partial("_LoginPartial")
+                                
                                 <li>
                                     <a href="javascript:void(0);" class="search_panel"><span>Search</span></a>
                                 </li>
@@ -202,7 +176,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="collapse dont-collapse-sm" id="collapse_4">
-                            
+
                             <div class="follow_us">
                                 <h5>Follow Us</h5>
                                 <ul>
